@@ -4,6 +4,7 @@ import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import Player from './Player';
 
 class App extends React.Component {
     state = {
@@ -29,6 +30,7 @@ class App extends React.Component {
     render() {
         return (
             <>
+            <Player />
             <Router>
                 <Switch>
                     <Route path="/play">
