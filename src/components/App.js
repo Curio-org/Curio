@@ -31,24 +31,29 @@ class App extends React.Component {
             <>
             <Router>
                 <Switch>
-                    <Route path="/search">
-                        <SearchBar />
+                    <Route path="/play">
+                        <h2>Video Will Play here.</h2>
+                    </Route>
+                    <Route path="/record">
+                        <h2>This is the Recorder Page</h2>
+                    </Route>
+                    <Route path="/">
+                        <div className='ui container' style={{marginTop: '1em'}}>
+                            <SearchBar handleFormSubmit={this.handleSubmit}/>
+                            <div className='ui grid'>
+                                <div className="ui row">
+                                    <div className="eleven wide column">
+                                        <VideoDetail video={this.state.selectedVideo}/>
+                                    </div>
+                                    <div className="five wide column">
+                                        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </Route>
                 </Switch>
             </Router>
-            <div className='ui container' style={{marginTop: '1em'}}>
-                <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid'>
-                    <div className="ui row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo}/>
-                        </div>
-                        <div className="five wide column">
-                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </>
         )
     }
