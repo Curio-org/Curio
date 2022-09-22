@@ -5,7 +5,8 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 import Player from './Player';
-
+import Mynavbar from './Navbar';
+import './styles.css';
 class App extends React.Component {
     state = {
         videos: [],
@@ -30,6 +31,7 @@ class App extends React.Component {
     render() {
         return (
             <>
+            <Mynavbar />
             <Player />
             <Router>
                 <Switch>
