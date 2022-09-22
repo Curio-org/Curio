@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
@@ -27,6 +28,14 @@ class App extends React.Component {
 
     render() {
         return (
+            <>
+            <Router>
+                <Switch>
+                    <Route path="/search">
+                        <SearchBar />
+                    </Route>
+                </Switch>
+            </Router>
             <div className='ui container' style={{marginTop: '1em'}}>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
                 <div className='ui grid'>
@@ -40,6 +49,7 @@ class App extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 }
