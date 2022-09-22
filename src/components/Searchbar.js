@@ -1,4 +1,7 @@
 import React from 'react';
+import { Input } from 'rsuite';
+import { IconButton } from 'rsuite';
+import SearchIcon from '@rsuite/icons/Search';
 
 class Searchbar extends React.Component {
     handleChange = (event) => {
@@ -16,12 +19,13 @@ class Searchbar extends React.Component {
         
         return (
             <>
-            {/* <h2  style={{textAlign:"center"}}><img style={{width:'200px', height:'100px',justifyContent:'center'}} src='' alt="Curio Logo"></img></h2> */}
             <div className='search-bar ui segment'>
                 <form onSubmit={this.handleSubmit} className='ui form'>
                     <div className='field'>
-                        <label htmlFor="video-search">Video Search</label>
+                        <label htmlFor="video-search"><h3>Video Search</h3></label>
+                        {/* <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search.."/> */}
                         <input onChange={this.handleChange} name='video-search' type="text" placeholder="Search.."/>
+                        <IconButton onClick={this.handleSubmit} size="sm" id='searchButton' icon={<SearchIcon />} />
                     </div>
                 </form>
             </div>

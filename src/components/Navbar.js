@@ -25,5 +25,4 @@ const Mynavbar = () => (
   </Navbar>
 );
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 export default Mynavbar;
