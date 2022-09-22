@@ -1,35 +1,23 @@
-import React, { Component } from 'react';
-import VideoPlayer from 'react-video-player-extended';
+import React from 'react';
+import YouTube from 'react-youtube';
 
-class Player extends Component {
-  state = {
-    isPlaying: false,
-    volume: 0.7
-  };
+class Player extends React.Component {
+  render() {
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+      },
+    };
 
-  handlePlay = () => {
-    this.setState({isPlaying: true});
-  };
+    return <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={this._onReady} />;
+  }
 
-  handlePause = () => {
-    this.setState({isPlaying: false});
-  };
-
-  handleVolume = value => {
-    this.setState({volume: value});
-  };
-
-  render () {
-    const {isPlaying, volume} = this.state;
-
-    return <VideoPlayer
-      url="https://media.w3.org/2010/05/bunny/trailer.mp4"
-      isPlaying={isPlaying}
-      volume={volume}
-      onPlay={this.handlePlay}
-      onPause={this.handlePause}
-      onVolume={this.handleVolume}
-     />
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
   }
 }
 

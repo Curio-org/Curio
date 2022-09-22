@@ -6,7 +6,7 @@ import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 import Player from './Player';
 import Mynavbar from './Navbar';
-import './styles.css';
+import '../style/styles.css';
 class App extends React.Component {
     state = {
         videos: [],
@@ -32,10 +32,10 @@ class App extends React.Component {
         return (
             <>
             <Mynavbar />
-            <Player />
             <Router>
                 <Switch>
                     <Route path="/play">
+                        <Player />
                         <h2>Video Will Play here.</h2>
                     </Route>
                     <Route path="/record">
