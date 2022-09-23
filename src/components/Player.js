@@ -1,19 +1,19 @@
 import React from 'react';
-import YouTube from 'react-youtube';
-import VideoDetail from './VideoDetail';
+// import YouTube from 'react-youtube';
+// import VideoDetail from './VideoDetail';
 
 
 
 class Player extends React.Component{
   render(){
-    const opts = {
-            height: '390',
-            width: '640',
-            playerVars: {
-              // https://developers.google.com/youtube/player_parameters
-              autoplay: 1,
-            },
-          };
+    // const opts = {
+    //         height: '390',
+    //         width: '640',
+    //         playerVars: {
+    //           // https://developers.google.com/youtube/player_parameters
+    //           autoplay: 1,
+    //         },
+    //       };
     return <><h1>hello bro</h1></>
   }
 }
