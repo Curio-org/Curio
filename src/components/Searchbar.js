@@ -1,8 +1,11 @@
 import React from 'react';
-import { Input } from 'rsuite';
-import { IconButton } from 'rsuite';
+import { Input , InputGroup} from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 
+const styles = {
+    width: 300,
+    marginBottom: 10
+};
 class Searchbar extends React.Component {
     handleChange = (event) => {
         this.setState({
@@ -15,6 +18,8 @@ class Searchbar extends React.Component {
         this.props.handleFormSubmit(this.state.term);
     }
 
+
+      
     render() {
         
         return (
@@ -23,10 +28,15 @@ class Searchbar extends React.Component {
                 <form onSubmit={this.handleSubmit} className='ui form'>
                     <div className='field'>
                         <label htmlFor="video-search"><h3>Video Search</h3></label>
-                        <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search.."/>
-                        <IconButton onClick={this.handleSubmit} size="sm" id='searchButton' icon={<SearchIcon />} />
+                        <InputGroup style={styles}>
+                            <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search.."/>
+                            <InputGroup.Button onClick={this.handleSubmit} size="sm" id='searchButton'>
+                                <SearchIcon />
+                            </InputGroup.Button>
+                        </InputGroup>
                     </div>
                 </form>
+                
             </div>
             </>
         )

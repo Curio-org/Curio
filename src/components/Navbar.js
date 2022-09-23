@@ -1,7 +1,6 @@
 import { Navbar, Nav } from 'rsuite';
 // import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
 import HomeIcon from '@rsuite/icons/legacy/Home';
-import CogIcon from '@rsuite/icons/legacy/Cog';
 
 const Mynavbar = () => (
   <Navbar>
@@ -18,9 +17,6 @@ const Mynavbar = () => (
           <Nav.Item>Via telephone</Nav.Item>
         </Nav.Menu>
       </Nav.Menu>
-    </Nav>
-    <Nav pullRight>
-      <Nav.Item icon={<CogIcon />}>Settings</Nav.Item>
     </Nav>
   </Navbar>
 );
