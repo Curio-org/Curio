@@ -4,6 +4,7 @@ import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import Recorder from './Recorder';
 import Player from './Player';
 import Mynavbar from './Navbar';
 import '../style/styles.css';
@@ -39,6 +40,7 @@ class App extends React.Component {
                         <h2>Video Will Play here.</h2>
                     </Route>
                     <Route path="/record">
+                        <Recorder />
                         <h2>This is the Recorder Page</h2>
                     </Route>
                     <Route path="/">

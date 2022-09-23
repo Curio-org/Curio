@@ -5,7 +5,7 @@ import CogIcon from '@rsuite/icons/legacy/Cog';
 
 const Mynavbar = () => (
   <Navbar>
-    <Navbar.Brand href="/">CURIO</Navbar.Brand>
+    <Navbar.Brand href="/"><b>CURIO</b></Navbar.Brand>
     <Nav>
       <Nav.Item href="/" icon={<HomeIcon />}>Home</Nav.Item>
       <Nav.Item href="/record">Record</Nav.Item>
