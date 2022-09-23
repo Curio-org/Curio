@@ -35,29 +35,29 @@ class App extends React.Component {
             <Mynavbar />
             <Router>
                 <Switch>
+
                     <Route path="/play">
                         <Player />
                         <h2>Video Will Play here.</h2>
                     </Route>
+
                     <Route path="/record">
                         <Recorder />
                         <h2>This is the Recorder Page</h2>
                     </Route>
+
                     <Route path="/">
-                        <div className='ui container' style={{marginTop: '1em'}}>
+                        <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
-                            <div className='ui grid'>
-                                <div className="ui row">
-                                    <div className="eleven wide column">
-                                        <VideoDetail video={this.state.selectedVideo}/>
-                                    </div>
-                                    <div className="five wide column">
-                                        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-                                    </div>
+                            <div>
+                                <div>
+                                    <VideoDetail video={this.state.selectedVideo}/>
+                                    <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                                 </div>
                             </div>
                         </div>
                     </Route>
+                    
                 </Switch>
             </Router>
             </>
