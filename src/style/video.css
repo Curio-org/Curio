@@ -5,6 +5,7 @@
 }
 
 .video-item.item img {
-    max-width: 200px;
-    max-height: 250px ;
+    max-width: 600px;
+    max-height: 480px ;
+    padding: 1%;
 }

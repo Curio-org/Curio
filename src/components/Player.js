@@ -1,5 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import VideoDetail from './VideoDetail';
+console.log(VideoDetail);
 
 class Player extends React.Component {
   render() {
