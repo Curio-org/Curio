@@ -51,7 +51,7 @@ export default class Recorder extends React.Component {
           this.setState({ isRecording: true });
         }).catch((e) => console.error(e));
     }
-    let duration = document.querySelector('input').value;
+    let duration = document.getElementById('stop-recording').value - document.getElementById('start-recording').value;
     setTimeout(this.stop , duration * 1000)
   }
 
@@ -93,9 +93,9 @@ export default class Recorder extends React.Component {
          <div>
             <h2>Enter Duration In Seconds</h2> <br />
             <InputGroup>
-              <InputNumber id = "start-recording" min={0} max={60}  onChange={this.setDuration.handleChange} value={this.setDuration.duration} />
+              <InputNumber id = "start-recording" min={0} onChange={this.setDuration.handleChange} value={this.setDuration.duration} />
               <InputGroup.Addon>To</InputGroup.Addon>
-              <InputNumber min={this.state.rStart} max={60} />
+              <InputNumber id = "stop-recording" min={this.state.rStart} />
             </InputGroup>
         </div>
         <Button onClick = {this.setDuration}>Set Duration</Button>
