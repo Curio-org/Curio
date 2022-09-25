@@ -1,4 +1,5 @@
 import React from 'react';
+// import {useState} from 'react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import { Button , InputNumber , InputGroup} from 'rsuite';
 
@@ -11,11 +12,13 @@ export default class Recorder extends React.Component {
         blobURL: '',
         isBlocked: false,
         isRecordingStp: false,
+        rStart : 0
       }
 
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
     this.reset = this.reset.bind(this);
+    this.setDuration = this.setDuration.bind(this);
    }
 
   componentDidMount(){
@@ -69,16 +72,16 @@ export default class Recorder extends React.Component {
         }).catch((e) => console.log(e));
 
   };
-
-  getDuration () {
-    let duration = document.querySelector('input').value;
-    console.log(duration);
-  }
   reset() {
       document.getElementsByTagName('audio')[0].src = '';
       this.setState({ isRecordingStp: false });
   };
 
+  setDuration() {
+      const rStart = document.getElementById('start-recording').value;
+      console.log(rStart);
+      this.setState({rStart : Number(rStart)});
+  }
 
 
   render() {
@@ -90,18 +93,16 @@ export default class Recorder extends React.Component {
          <div>
             <h2>Enter Duration In Seconds</h2> <br />
             <InputGroup>
-              <InputNumber min={0} max={60} />
+              <InputNumber id = "start-recording" min={0} max={60}  onChange={this.setDuration.handleChange} value={this.setDuration.duration} />
               <InputGroup.Addon>To</InputGroup.Addon>
-              <InputNumber min={0} max={60} />
+              <InputNumber min={this.state.rStart} max={60} />
             </InputGroup>
-            {/* <input id="duration" type="number" min={0} max={60} placeholder='1-60'/> */}
-            {/* <Button id = "record" onClick={this.getDuration}  type="button">
-              Set Timer
-            </Button> */}
         </div>
-
+        <Button onClick = {this.setDuration}>Set Duration</Button>
+        <br />
+        <br />
         <Button id = "record" onClick={this.start} disabled={this.state.isRecording} type="button">
-               Record
+               Start Recording
         </Button>
 
         <br />
