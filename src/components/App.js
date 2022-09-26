@@ -25,10 +25,10 @@ class App extends React.Component {
         })
         console.log("this is resp",response);
     };
-    handleVideoSelect = (video) => {
-        this.setState({selectedVideo: video})
+    setVidId = (vidId) => {
+        this.setState({selectedVideo: vidId})
+        console.log(vidId);
     }
-
     render() {
         return (
             <>
@@ -52,7 +52,7 @@ class App extends React.Component {
                             <div>
                                 <div>
                                     <VideoDetail video={this.state.selectedVideo}/>
-                                    <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                                    <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
                                 </div>
                             </div>
                         </div>
