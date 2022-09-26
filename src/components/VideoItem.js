@@ -6,8 +6,7 @@ const VideoItem = ({video , handleVideoSelect}) => {
         <div >
             <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
             <div>
-                <div>{video.snippet.title}</div>
-                {/* <button onClick={this.location.replace('/play')} type="submit">Click Me</button> */}
+                <div><b><h3>{video.snippet.title}</h3></b></div>
             </div>
         </div>
     )

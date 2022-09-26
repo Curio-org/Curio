@@ -62,7 +62,6 @@ export default class Recorder extends React.Component {
 
       .then(([buffer , blob])=>{
         const blobURL = URL.createObjectURL(blob);
-
         let dataArray = [];
         dataArray.push(blobURL);
         console.log(dataArray);
