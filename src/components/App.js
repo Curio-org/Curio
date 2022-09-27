@@ -34,8 +34,8 @@ class App extends React.Component {
             <Router>
                 <Switch>
 
-                    <Route path="/play">
-                        
+                    <Route path="/play/:vidId">
+                        <Player video={this.state.selectedVideo}/>
                         <h2>Video Will Play here.</h2>
                     </Route>
 
@@ -47,12 +47,8 @@ class App extends React.Component {
                     <Route path="/">
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
-                            <div>
-                                <div>
-                                    <Player video={this.state.selectedVideo}/>
+                                    {/* <Player video={this.state.selectedVideo}/> */}
                                     <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
-                                </div>
-                            </div>
                         </div>
                     </Route>
                     

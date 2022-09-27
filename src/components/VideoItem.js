@@ -5,10 +5,10 @@ import '../style/video.css';
 const VideoItem = ({video , setVidId}) => {
     return (
         <div>
-            <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
+            <img  src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
             <div>
                 <div><b><h3>{video.snippet.title}</h3></b></div>
-                <Button onClick={() => setVidId(video) &&  document.location.replace('/play') }>Click Meh</Button>
+                <Button onClick={() => setVidId(video)}>Watch Video</Button>
             </div>
         </div>
     )
