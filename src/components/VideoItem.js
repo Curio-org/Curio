@@ -1,12 +1,14 @@
 import React from 'react';
+import { Button } from 'rsuite';
 import '../style/video.css';
 
-const VideoItem = ({video , handleVideoSelect}) => {
+const VideoItem = ({video , setVidId}) => {
     return (
-        <div >
+        <div>
             <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
             <div>
                 <div><b><h3>{video.snippet.title}</h3></b></div>
+                <Button onClick={() => setVidId(video) &&  document.location.replace('/play') }>Click Meh</Button>
             </div>
         </div>
     )

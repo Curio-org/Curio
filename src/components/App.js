@@ -3,7 +3,6 @@ import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
 import Recorder from './Recorder';
 import Player from './Player';
 import Mynavbar from './Navbar';
@@ -27,7 +26,6 @@ class App extends React.Component {
     };
     setVidId = (vidId) => {
         this.setState({selectedVideo: vidId})
-        console.log(vidId);
     }
     render() {
         return (
@@ -37,7 +35,7 @@ class App extends React.Component {
                 <Switch>
 
                     <Route path="/play">
-                        <Player />
+                        
                         <h2>Video Will Play here.</h2>
                     </Route>
 
@@ -51,7 +49,7 @@ class App extends React.Component {
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
                             <div>
                                 <div>
-                                    <VideoDetail video={this.state.selectedVideo}/>
+                                    <Player video={this.state.selectedVideo}/>
                                     <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
                                 </div>
                             </div>
