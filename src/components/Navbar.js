@@ -8,7 +8,7 @@ const Mynavbar = () => (
     <Nav>
       <Nav.Item href="/" icon={<HomeIcon />}>Home</Nav.Item>
       <Nav.Item href="/record">Record</Nav.Item>
-      <Nav.Item href="/play">Watch</Nav.Item>
+      <Nav.Item href="/play/:vidId">Watch</Nav.Item>
       <Nav.Menu title="About">
         <Nav.Item>Company</Nav.Item>
         <Nav.Item>Team</Nav.Item>

@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import { useParams } from 'react-router-dom';
 
 
 // const Player = ({ video }) => {
@@ -28,24 +29,46 @@ import YouTube from 'react-youtube';
 //   );
 // };
 
-class Player extends React.Component  {
-  render() {
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-      },
-    };
+// class Player extends React.Component  {
+//   render() {
+//     const {vidId} = useParams();
+//     const opts = {
+//       height: '390',
+//       width: '640',
+//       playerVars: {
+//         // https://developers.google.com/youtube/player_parameters
+//         autoplay: 1,
+//       },
+//     };
 
-    return <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={this._onReady} />;
-  }
+//           return <YouTube videoId={vidId} opts={opts} onReady={this._onReady} />;
+//   }
 
-  _onReady(event) {
+//   _onReady(event) {
+//     // access to player in all event handlers via event.target
+//     event.target.pauseVideo();
+//   }
+// }
+
+
+const Player = () => {
+  const {vidId} = useParams();
+      const opts = {
+        height: '390',
+        width: '640',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 1,
+        },
+      };
+
+       const _onReady = (event) => {
     // access to player in all event handlers via event.target
-    event.target.pauseVideo();
+      event.target.pauseVideo();
   }
-}
 
+      return <YouTube videoId={vidId} opts={opts} onReady={_onReady} />;
+
+
+}
 export default Player;

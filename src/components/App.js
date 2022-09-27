@@ -7,10 +7,12 @@ import Recorder from './Recorder';
 import Player from './Player';
 import Mynavbar from './Navbar';
 import '../style/styles.css';
+// import YouTube from 'react-youtube';
 class App extends React.Component {
     state = {
         videos: [],
-        selectedVideo: null
+        vidId : "",
+        // selectedVideo: null
     }
     handleSubmit = async (termFromSearchBar) => {
         const response = await youtube.get('/search', {
@@ -25,7 +27,8 @@ class App extends React.Component {
         console.log("this is resp",response);
     };
     setVidId = (vidId) => {
-        this.setState({selectedVideo: vidId})
+        // this.setState({selectedVideo: vidId})
+        this.setState({vidId: vidId})
     }
     render() {
         return (
@@ -34,7 +37,7 @@ class App extends React.Component {
             <Router>
                 <Switch>
 
-                    <Route path="/play/:vidId">
+                    <Route path="/play/:vidId" component={this.vidId}>
                         <Player video={this.state.selectedVideo}/>
                         <h2>Video Will Play here.</h2>
                     </Route>
@@ -48,6 +51,9 @@ class App extends React.Component {
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
                                     {/* <Player video={this.state.selectedVideo}/> */}
+                                    
+                                    {console.log(this.state.vidId)}
+                                    {/* <YouTube videoId={this.state.selectedVideo} /> */}
                                     <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
                         </div>
                     </Route>
