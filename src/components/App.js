@@ -9,10 +9,6 @@ import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
     state = {
         videos: [],
         vidId : "",
