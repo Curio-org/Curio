@@ -31,6 +31,10 @@ class App extends React.Component {
         this.setState({vidId : vidId})
         window.location.href = `/play/${vidId}`
     }
+    setRecId = (vidId) => {
+        this.setState({vidId : vidId})
+        window.location.href = `/record/${vidId}`
+    }
     render() {
         return (
             <>
@@ -43,7 +47,8 @@ class App extends React.Component {
                         <h2>Video Will Play here.</h2>
                     </Route>
 
-                    <Route path="/record">
+                    <Route path="/record/:vidId">
+                        <Player/>
                         <Recorder />
                         <h2>This is the Recorder Page</h2>
                     </Route>
@@ -55,7 +60,7 @@ class App extends React.Component {
                                     
                                     {/* {console.log(this.state.vidId)} */}
                                     {/* <YouTube videoId={this.state.selectedVideo} /> */}
-                                    <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
+                                    <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
                         </div>
                     </Route>
                     
