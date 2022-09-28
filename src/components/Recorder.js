@@ -1,14 +1,12 @@
 import React from 'react';
 import { Button } from 'rsuite';
 import { saveAs } from 'file-saver';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './App.css';
 
 
 var audioBufferUtils = require("audio-buffer-utils")
 var encodeWAV = require('audiobuffer-to-wav')
 
-let audio = new Audio();
+// let audio = new Audio();
 var context = new AudioContext()
 var audioBuffer = []
 const Recorder = () => {
@@ -63,10 +61,12 @@ const Recorder = () => {
 
   return (
         <div >
-          <Button id="listen" onClick={listen}>Listen</Button>
-          <Button id="stop" onClick={pauseRecording}>play/pause</Button>
-
-          <Button id="stop" onClick={saveAudio}>Save</Button>
+        <br />
+        <br />
+        <br />
+          <Button id="listen" onClick={listen}>Listen</Button><br /><br />
+          <Button id="stop" onClick={pauseRecording}>play/pause</Button><br /><br />
+          <Button id="stop" onClick={saveAudio}>Save</Button><br /><br />
         </div>
   );
 }
