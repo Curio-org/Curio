@@ -1,116 +1,74 @@
 import React from 'react';
-// import {useState} from 'react';
-import MicRecorder from 'mic-recorder-to-mp3';
-import { Button , InputNumber , InputGroup} from 'rsuite';
+import { Button } from 'rsuite';
+import { saveAs } from 'file-saver';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css';
 
-const Mp3Recorder = new MicRecorder({ bitRate: 128 });
-export default class Recorder extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        isRecording: false,
-        blobURL: '',
-        isBlocked: false,
-        isRecordingStp: false,
-        rStart : 0
-      }
 
-    this.start = this.start.bind(this);
-    this.stop = this.stop.bind(this);
-    this.reset = this.reset.bind(this);
-    this.setDuration = this.setDuration.bind(this);
-   }
+var audioBufferUtils = require("audio-buffer-utils")
+var encodeWAV = require('audiobuffer-to-wav')
 
-  componentDidMount(){
-    navigator.getUserMedia = (
-      navigator.getUserMedia ||
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia
-     );
+let audio = new Audio();
+var context = new AudioContext()
+var audioBuffer = []
+const Recorder = () => {
 
-     navigator.getUserMedia({ audio: true },
-      () => {
-        console.log('Permission Granted');
-        this.setState({ isBlocked: false });
-      },
-      () => {
-        console.log('Permission Denied');
-        this.setState({ isBlocked: true })
-      },
-    );
+  var status  = true
+
+  function listen() {
+    initDevice()
   }
- 
-  start(){
-    if (this.state.isBlocked) {
-      alert('Permission Denied');
-    } else {
-      Mp3Recorder
-        .start()
-        .then(() => {
-          this.setState({ isRecording: true });
-        }).catch((e) => console.error(e));
+
+  function pauseRecording(){
+    if (status){
+      context.suspend()
+      status = false
     }
-    let duration = document.getElementById('stop-recording').value - document.getElementById('start-recording').value;
-    setTimeout(this.stop , duration * 1000)
+    else{
+      context.resume()
+      status = true
+    }
+    
   }
 
-  stop() {
-    Mp3Recorder
-      .stop()
-      .getMp3()
-
-      .then(([buffer , blob])=>{
-        const blobURL = URL.createObjectURL(blob);
-        let dataArray = [];
-        dataArray.push(blobURL);
-        console.log(dataArray);
-
-        this.setState({ blobURL, isRecording: false });
-        this.setState({ isRecordingStp: true });
-        }).catch((e) => console.log(e));
-
-  };
-  reset() {
-      document.getElementsByTagName('audio')[0].src = '';
-      this.setState({ isRecordingStp: false });
+  function initDevice(){
+  const handleSuccess = function(stream) {
+    const source = context.createMediaStreamSource(stream);
+    const processor = context.createScriptProcessor(1024, 1, 1);
+    
+    source.connect(processor);
+    processor.connect(context.destination);
+    processor.onaudioprocess = function(e) {
+      audioBuffer =  audioBufferUtils.concat(audioBuffer,e.inputBuffer)
+    };
   };
 
-  setDuration() {
-      const rStart = document.getElementById('start-recording').value;
-      console.log(rStart);
-      this.setState({rStart : Number(rStart)});
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+  };
+  function saveAudio(){
+    context.suspend()
+    var wav = encodeWAV(audioBuffer)
+    var blob = new Blob([ new DataView(wav) ], {
+      type: 'audio/wav'
+    })
+
+    let finalAudio = new Audio()
+    var url = window.URL.createObjectURL(blob)        
+    finalAudio.src = url
+    finalAudio.play()
+    saveAs(blob,"test.wav")
+
   }
 
+  return (
+        <div >
+          <Button id="listen" onClick={listen}>Listen</Button>
+          <Button id="stop" onClick={pauseRecording}>play/pause</Button>
 
-  render() {
-
-    return(
-      <>
-       <form>
-
-         <div>
-            <h2>Enter Duration In Seconds</h2> <br />
-            <InputGroup>
-              <InputNumber id = "start-recording" min={0} onChange={this.setDuration.handleChange} value={this.setDuration.duration} />
-              <InputGroup.Addon>To</InputGroup.Addon>
-              <InputNumber id = "stop-recording" min={this.state.rStart} />
-            </InputGroup>
+          <Button id="stop" onClick={saveAudio}>Save</Button>
         </div>
-        <Button onClick = {this.setDuration}>Set Duration</Button>
-        <br />
-        <br />
-        <Button id = "record" onClick={this.start} disabled={this.state.isRecording} type="button">
-               Start Recording
-        </Button>
-
-        <br />
-        
-        <h3> {this.isRecording ? <span>🛑🎙️  Not Recording</span> : <span>🎙️ Click <b>Record</b> to Start Recording</span>} </h3> 
-       </form>
-
-        <audio src={this.state.blobURL} controls  type="audio" />
-     </>
-    );
-  }
+  );
 }
+
+export default Recorder;
