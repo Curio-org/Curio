@@ -28,7 +28,8 @@ class App extends React.Component {
     };
     setVidId = (vidId) => {
         // this.setState({selectedVideo: vidId})
-        this.setState({vidId: vidId})
+        this.setState({vidId : vidId})
+        // console.log(vidId);
     }
     render() {
         return (
@@ -37,8 +38,8 @@ class App extends React.Component {
             <Router>
                 <Switch>
 
-                    <Route path="/play/:vidId" component={this.vidId}>
-                        <Player video={this.state.selectedVideo}/>
+                    <Route path="/play/:vidId" component={this.state.vidId}>
+                        <Player video={this.state.vidId}/>
                         <h2>Video Will Play here.</h2>
                     </Route>
 
@@ -52,7 +53,7 @@ class App extends React.Component {
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
                                     {/* <Player video={this.state.selectedVideo}/> */}
                                     
-                                    {console.log(this.state.vidId)}
+                                    {/* {console.log(this.state.vidId)} */}
                                     {/* <YouTube videoId={this.state.selectedVideo} /> */}
                                     <VideoList setVidId={this.setVidId} videos={this.state.videos}/>
                         </div>
