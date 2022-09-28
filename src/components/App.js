@@ -9,6 +9,10 @@ import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        
+    }
     state = {
         videos: [],
         vidId : "",
@@ -29,7 +33,7 @@ class App extends React.Component {
     setVidId = (vidId) => {
         // this.setState({selectedVideo: vidId})
         this.setState({vidId : vidId})
-        // console.log(vidId);
+        window.location.href = `/play/${vidId}`
     }
     render() {
         return (
@@ -38,8 +42,8 @@ class App extends React.Component {
             <Router>
                 <Switch>
 
-                    <Route path="/play/:vidId" component={this.state.vidId}>
-                        <Player video={this.state.vidId}/>
+                    <Route path="/play/:vidId">
+                        <Player/>
                         <h2>Video Will Play here.</h2>
                     </Route>
 

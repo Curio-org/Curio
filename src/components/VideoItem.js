@@ -8,7 +8,7 @@ const VideoItem = ({video , setVidId}) => {
             <img  src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
             <div>
                 <div><b><h3>{video.snippet.title}</h3></b></div>
-                <Button onClick={setVidId}>Watch Video</Button>
+                <Button onClick={() => {setVidId(video.id.videoId)}}>Watch Video</Button>
             </div>
         </div>
     )
