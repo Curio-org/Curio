@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
+import HeaderCurio from './Header';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import Recorder from './Recorder';
 import Player from './Player';
-import Mynavbar from './Navbar';
+// import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';
 class App extends React.Component {
@@ -38,7 +39,8 @@ class App extends React.Component {
     render() {
         return (
             <>
-            <Mynavbar />
+            <HeaderCurio/>
+            {/* <Mynavbar /> */}
             <Router>
                 <Switch>
 
