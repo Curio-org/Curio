@@ -4,7 +4,7 @@ import HeaderCurio from './Header';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
-import Recorder from './Recorder';
+import RecordView from './Recorder';
 import Player from './Player';
 // import Mynavbar from './Navbar';
 import '../style/styles.css';
@@ -50,8 +50,8 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/record/:vidId">
-                        <Player/>
-                        <Recorder />
+                        {/* <Player/> */}
+                        <RecordView />
                         <h2>This is the Recorder Page</h2>
                     </Route>
 

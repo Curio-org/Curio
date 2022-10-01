@@ -1,74 +1,98 @@
-import React from 'react';
+import { useReactMediaRecorder } from "react-media-recorder";
+import React, { useEffect, useState } from "react";
 import { Button } from 'rsuite';
-import { saveAs } from 'file-saver';
 
+const RecordView = (props) => {
+  const [second, setSecond] = useState("00");
+  const [minute, setMinute] = useState("00");
+  const [isActive, setIsActive] = useState(false);
+  const [counter, setCounter] = useState(0);
 
-var audioBufferUtils = require("audio-buffer-utils")
-var encodeWAV = require('audiobuffer-to-wav')
+  useEffect(() => {
+    let intervalId;
 
-// let audio = new Audio();
-var context = new AudioContext()
-var audioBuffer = []
-const Recorder = () => {
+    if (isActive) {
+      intervalId = setInterval(() => {
+        const secondCounter = counter % 60;
+        const minuteCounter = Math.floor(counter / 60);
 
-  var status  = true
+        let computedSecond =
+          String(secondCounter).length === 1
+            ? `0${secondCounter}`
+            : secondCounter;
+        let computedMinute =
+          String(minuteCounter).length === 1
+            ? `0${minuteCounter}`
+            : minuteCounter;
 
-  function listen() {
-    initDevice()
-  }
+        setSecond(computedSecond);
+        setMinute(computedMinute);
 
-  function pauseRecording(){
-    if (status){
-      context.suspend()
-      status = false
+        setCounter((counter) => counter + 1);
+      }, 650);
     }
-    else{
-      context.resume()
-      status = true
-    }
-    
+
+    return () => clearInterval(intervalId);
+  }, [isActive, counter]);
+
+  function stopTimer() {
+    setIsActive(false);
+    setCounter(0);
+    setSecond("00");
+    setMinute("00");
   }
 
-  function initDevice(){
-  const handleSuccess = function(stream) {
-    const source = context.createMediaStreamSource(stream);
-    const processor = context.createScriptProcessor(1024, 1, 1);
-    
-    source.connect(processor);
-    processor.connect(context.destination);
-    processor.onaudioprocess = function(e) {
-      audioBuffer =  audioBufferUtils.concat(audioBuffer,e.inputBuffer)
-    };
-  };
-
-  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-      .then(handleSuccess);
-  };
-  function saveAudio(){
-    context.suspend()
-    var wav = encodeWAV(audioBuffer)
-    var blob = new Blob([ new DataView(wav) ], {
-      type: 'audio/wav'
-    })
-
-    let finalAudio = new Audio()
-    var url = window.URL.createObjectURL(blob)        
-    finalAudio.src = url
-    finalAudio.play()
-    saveAs(blob,"test.wav")
-
-  }
-
+  const {
+    status,
+    startRecording,
+    stopRecording,
+    pauseRecording,
+    mediaBlobUrl
+  } = useReactMediaRecorder({
+    video: false,
+    audio: true,
+    echoCancellation: true
+  });
+  console.log("deed", mediaBlobUrl);
+  
   return (
-        <div >
-        <br />
-        <br />
-        <br />
-          <Button id="listen" onClick={listen}>Listen</Button><br /><br />
-          <Button id="stop" onClick={pauseRecording}>play/pause</Button><br /><br />
-          <Button id="stop" onClick={saveAudio}>Save</Button><br /><br />
-        </div>
-  );
-}
+    <div>
+        <h4>
+          {status}
+        </h4>
+ 
+        {" "}
+        <audio src={mediaBlobUrl} controls loop />
 
-export default Recorder;
+      <div>
+        <Button onClick={stopTimer}>
+          Clear
+        </Button>
+        <div>
+        <h3>
+          <span className="minute">{minute}</span>
+          <span>:</span>
+          <span className="second">{second}</span>
+        </h3>
+        </div>
+
+        <div>
+            <h3>
+              Press the Start to record
+            </h3>
+            <br />
+
+              <Button onClick={() => { if (!isActive) { startRecording(); } else { pauseRecording(); } setIsActive(!isActive); }} >
+                {isActive ? "Pause" : "Start"}
+              </Button>
+              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive);}}>
+                Stop
+              </Button>
+
+        </div>
+        <b></b>
+      </div>
+    </div>
+  );
+};
+export default RecordView;
