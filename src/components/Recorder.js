@@ -7,6 +7,7 @@ const RecordView = (props) => {
   const [minute, setMinute] = useState("00");
   const [isActive, setIsActive] = useState(false);
   const [counter, setCounter] = useState(0);
+  var [audios , setAudios] = useState([]);
 
   useEffect(() => {
     let intervalId;
@@ -53,28 +54,38 @@ const RecordView = (props) => {
     audio: true,
     echoCancellation: true
   });
-  console.log("deed", mediaBlobUrl);
-  
+  // console.log("Audio", mediaBlobUrl);
+
+  setAudios = () => {
+    audios.push(mediaBlobUrl);
+  }
+  // console.log(audios);
+
+  const AudioList = () => {
+    const renderedAudios = audios.map((audio , index)=> {
+      return <audio src= {mediaBlobUrl} controls></audio>
+    });
+    return <div>{renderedAudios}</div>
+  }
+
   return (
     <div>
         <h4>
           {status}
         </h4>
- 
-        {" "}
-        <audio src={mediaBlobUrl} controls loop />
-
+        {/* <audio src={mediaBlobUrl} controls loop /> */}
+        <AudioList />
       <div>
         <Button onClick={stopTimer}>
           Clear
         </Button>
-        <div>
+
         <h3>
           <span className="minute">{minute}</span>
           <span>:</span>
           <span className="second">{second}</span>
         </h3>
-        </div>
+
 
         <div>
             <h3>
@@ -85,7 +96,7 @@ const RecordView = (props) => {
               <Button onClick={() => { if (!isActive) { startRecording(); } else { pauseRecording(); } setIsActive(!isActive); }} >
                 {isActive ? "Pause" : "Start"}
               </Button>
-              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive);}}>
+              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive); setAudios();}}>
                 Stop
               </Button>
 
