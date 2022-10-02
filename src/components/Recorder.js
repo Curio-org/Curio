@@ -41,6 +41,7 @@ const RecordView = (props) => {
     setCounter(0);
     setSecond("00");
     setMinute("00");
+    setAudios([]);
   }
 
   const {
@@ -56,14 +57,27 @@ const RecordView = (props) => {
   });
   // console.log("Audio", mediaBlobUrl);
 
-  setAudios = () => {
-    audios.push(mediaBlobUrl);
+  const updateAudios = () => {
+    setAudios(audios => [...audios , mediaBlobUrl]);
+    console.log(audios);
   }
+
+  /////////////////////////////////////////////////////
+
+  // const setMyAudios = () => {
+  //   let myAudios = [];
+  //   myAudios.push(mediaBlobUrl);
+  //   console.log(myAudios);
+  //   setAudios([mediaBlobUrl]);
+  //   // audios.push(mediaBlobUrl);
+  // }
   // console.log(audios);
+
+  ////////////////////////////////////////////////////
 
   const AudioList = () => {
     const renderedAudios = audios.map((audio , index)=> {
-      return <audio src= {mediaBlobUrl} controls></audio>
+      return <audio src= {audios[index]} controls></audio>
     });
     return <div>{renderedAudios}</div>
   }
@@ -96,7 +110,7 @@ const RecordView = (props) => {
               <Button onClick={() => { if (!isActive) { startRecording(); } else { pauseRecording(); } setIsActive(!isActive); }} >
                 {isActive ? "Pause" : "Start"}
               </Button>
-              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive); setAudios();}}>
+              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive); updateAudios();}}>
                 Stop
               </Button>
 
