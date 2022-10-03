@@ -11,6 +11,7 @@
     "audiobuffer-to-wav": "^1.0.0",
     "axios": "^0.27.2",
     "concatenateblobs": "^1.0.2",
+    "crunker": "^2.0.0",
     "file-saver": "^2.0.5",
     "mic-recorder-to-mp3": "^2.2.2",
     "os": "^0.1.2",

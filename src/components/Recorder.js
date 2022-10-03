@@ -73,9 +73,75 @@ const RecordView = (props) => {
     return <div>{renderedAudios}</div>
   }
 
-  const mergeAudio = () => {
-    ConcatenateBlobs(audios, "audio/wav", showonscreen);
+  const merge = () => {
+    ConcatenateBlobs(audios,'audio/wav',showonscreen())
   }
+
+
+  function ConcatenateBlobs (blobs, type, callback) {
+    var buffers = [];
+
+    var index = 0;
+
+    function readAsArrayBuffer() {
+        if (!blobs[index]) {
+            return concatenateBuffers();
+        }
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            buffers.push(event.target.result);
+            index++;
+            readAsArrayBuffer();
+        };
+        reader.readAsArrayBuffer(blobs[index]);
+    }
+
+    readAsArrayBuffer();
+
+    function concatenateBuffers() {
+        var byteLength = 0;
+        buffers.forEach(function(buffer) {
+            byteLength += buffer.byteLength;
+        });
+        
+        var tmp = new Uint16Array(byteLength);
+        var lastOffset = 0;
+        buffers.forEach(function(buffer) {
+            // BYTES_PER_ELEMENT == 2 for Uint16Array
+            var reusableByteLength = buffer.byteLength;
+            if (reusableByteLength % 2 !== 0) {
+                buffer = buffer.slice(0, reusableByteLength - 1)
+            }
+            tmp.set(new Uint16Array(buffer), lastOffset);
+            lastOffset += reusableByteLength;
+        });
+
+        var blob = new Blob([tmp.buffer], {
+            type: type
+        });
+
+        callback(blob);
+    }
+}
+
+if(typeof modules !== 'undefined') {
+    module.export = ConcatenateBlobs;
+}
+
+if(typeof window !== 'undefined') {
+    window.ConcatenateBlobs = ConcatenateBlobs;
+}
+
+  ///////////////////////////////////////////////////////////////
+  // var ConcatenateBlobs = require('concatenateblobs');
+
+  // ConcatenateBlobs = (audios , 'audio/wav' , showonscreen(result)) => {
+
+  // }
+
+  // const mergeAudio = () => {
+  //   ConcatenateBlobs(audios, "audio/wav", showonscreen);
+  // }
 
 
   function showonscreen(bb) {
@@ -85,62 +151,62 @@ const RecordView = (props) => {
     // par.src = myurl;
   }
 
-  function ConcatenateBlobs(blobs, type, callback) {
-    var buffers = [];
+  // function ConcatenateBlobs(blobs, type, callback) {
+  //   var buffers = [];
   
-    var index = 0;
+  //   var index = 2;
   
-    function readAsArrayBuffer() {
-      if (!blobs[index]) {
-        return concatenateBuffers();
-      }
-      var reader = new FileReader();
-      reader.onload = function(event) {
-        buffers.push(event.target.result);
-        index++;
-        readAsArrayBuffer();
-      };
-      reader.readAsArrayBuffer(blobs[index]);
-    }
+  //   function readAsArrayBuffer() {
+  //     if (!blobs[index]) {
+  //       return concatenateBuffers();
+  //     }
+  //     var reader = new FileReader();
+  //     reader.onload = function(event) {
+  //       buffers.push(event.target.result);
+  //       index++;
+  //       readAsArrayBuffer();
+  //     };
+  //     reader.readAsArrayBuffer(blobs[index]);
+  //   }
   
-    readAsArrayBuffer();
+  //   readAsArrayBuffer();
   
   
-    function audioLengthTo32Bit(n) {
-      n = Math.floor(n);
-      var b1 = n & 255;
-      var b2 = (n >> 8) & 255;
-      var b3 = (n >> 16) & 255;
-      var b4 = (n >> 24) & 255;
+  //   function audioLengthTo32Bit(n) {
+  //     n = Math.floor(n);
+  //     var b1 = n & 255;
+  //     var b2 = (n >> 8) & 255;
+  //     var b3 = (n >> 16) & 255;
+  //     var b4 = (n >> 24) & 255;
      
-      return [b1, b2, b3, b4];
-    }
-    function concatenateBuffers() {
-      var byteLength = 0;
-      buffers.forEach(function(buffer) {
-        byteLength += buffer.byteLength;
-      });
+  //     return [b1, b2, b3, b4];
+  //   }
+  //   function concatenateBuffers() {
+  //     var byteLength = 0;
+  //     buffers.forEach(function(buffer) {
+  //       byteLength += buffer.byteLength;
+  //     });
   
-      var tmp = new Uint8Array(byteLength);
-      var lastOffset = 0;
-      var newData;
-      buffers.forEach(function(buffer) {
-        if (type==='audio/wav' && lastOffset >  0) newData = new Uint8Array(buffer, 44);
-        else newData = new Uint8Array(buffer);
-        tmp.set(newData, lastOffset);
-        lastOffset += newData.length;
-      });
-      if (type==='audio/wav') {
-        tmp.set(audioLengthTo32Bit(lastOffset - 8), 4);
-        tmp.set(audioLengthTo32Bit(lastOffset - 44), 40); // update audio length in the header
-      }
-      var blob = new Blob([tmp.buffer], {
-        type: type
-      });
-      callback(blob);        
+  //     var tmp = new Uint8Array(byteLength);
+  //     var lastOffset = 0;
+  //     var newData;
+  //     buffers.forEach(function(buffer) {
+  //       if (type==='audio/wav' && lastOffset >  0) newData = new Uint8Array(buffer, 44);
+  //       else newData = new Uint8Array(buffer);
+  //       tmp.set(newData, lastOffset);
+  //       lastOffset += newData.length;
+  //     });
+  //     if (type==='audio/wav') {
+  //       tmp.set(audioLengthTo32Bit(lastOffset - 8), 4);
+  //       tmp.set(audioLengthTo32Bit(lastOffset - 44), 40); // update audio length in the header
+  //     }
+  //     var blob = new Blob([tmp.buffer], {
+  //       type: type
+  //     });
+  //     callback(blob);        
       
-    }
-  }
+  //   }
+  // }
 
   return (
     <div>
@@ -174,7 +240,8 @@ const RecordView = (props) => {
                 Stop
               </Button>
               <br />
-              <Button onClick={() => {mergeAudio()}}>Merge</Button>
+              <Button onClick={() => {merge()}}>Merge</Button>
+              {/* <Button onClick={() => {mergeAudio()}}>Merge</Button> */}
         </div>
         <b></b>
       </div>
