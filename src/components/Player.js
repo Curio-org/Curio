@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { useParams } from 'react-router-dom';
-
+import { Comments } from './comments/Comments';
 
 const Player = () => {
   const {vidId} = useParams();
@@ -17,7 +17,7 @@ const Player = () => {
       event.target.pauseVideo();
   }
 
-      return <YouTube videoId={vidId} opts={opts} onReady={_onReady} />;
+      return <><YouTube videoId={vidId} opts={opts} onReady={_onReady} /> <Comments/></>
 
 
 }
