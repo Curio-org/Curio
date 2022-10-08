@@ -50,7 +50,7 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/record/:vidId">
-                        {/* <Player/> */}
+                        <Player/>
                         <RecordView />
                         <h2>This is the Recorder Page</h2>
                     </Route>

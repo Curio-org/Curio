@@ -1,24 +1,24 @@
 import { ReactMediaRecorder } from "react-media-recorder";
-import React, { useEffect, useState } from "react";
-import { Button } from 'rsuite';
+import React, { useState } from "react";
+// import { Button } from 'rsuite';
 
 const RecordView = (props) => {
-    const [second, setSecond] = useState("00");
-    const [minute, setMinute] = useState("00");
-    const [isActive, setIsActive] = useState(false);
-    const [counter, setCounter] = useState(0);
+    // const [second, setSecond] = useState("00");
+    // const [minute, setMinute] = useState("00");
+    // const [isActive, setIsActive] = useState(false);
+    // const [counter, setCounter] = useState(0);
     var [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
 
-    const AudioList = () => {
-        return <div></div>
-    }
+    // const AudioList = () => {
+    //     return <div></div>
+    // }
 
-    function stopTimer() {
-    }
+    // function stopTimer() {
+    // }
 
-    const updateAudios = () => {
-    }
+    // const updateAudios = () => {
+    // }
 
     const merge = (audios) => {
         var buffers = [];
