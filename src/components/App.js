@@ -13,8 +13,27 @@ class App extends React.Component {
     state = {
         videos: [],
         vidId : "",
+        audioProps: {
+            playback: 1,
+            playing: false,
+            time: 0,
+            maxTime: 0,
+        }
         // selectedVideo: null
     }
+
+    getAudio = () => {
+        return this.state.audioProps
+    }
+
+    setAudio = (prop) => {
+        this.setState(
+            {
+                audioProps: prop
+            }
+        )
+    }
+
     handleSubmit = async (termFromSearchBar) => {
         const response = await youtube.get('/search', {
             params: {
@@ -36,6 +55,8 @@ class App extends React.Component {
         this.setState({vidId : vidId})
         window.location.href = `/record/${vidId}`
     }
+
+
     render() {
         return (
             <>
@@ -50,8 +71,8 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/record/:vidId">
-                        <Player/>
-                        <RecordView />
+                        <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
+                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
                         <h2>This is the Recorder Page</h2>
                     </Route>
 

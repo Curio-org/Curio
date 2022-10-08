@@ -3,22 +3,9 @@ import React, { useState } from "react";
 // import { Button } from 'rsuite';
 
 const RecordView = (props) => {
-    // const [second, setSecond] = useState("00");
-    // const [minute, setMinute] = useState("00");
-    // const [isActive, setIsActive] = useState(false);
-    // const [counter, setCounter] = useState(0);
+
     var [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
-
-    // const AudioList = () => {
-    //     return <div></div>
-    // }
-
-    // function stopTimer() {
-    // }
-
-    // const updateAudios = () => {
-    // }
 
     const merge = (audios) => {
         var buffers = [];
@@ -108,7 +95,7 @@ const RecordView = (props) => {
                     )
                 })}
                 {merged && audios.length > 1 && <h2>Merged Audios</h2>}
-                {merged && audios.length > 1 && <audio src={URL.createObjectURL(merged)} controls></audio>}
+                {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio>}
             </div>
         </div>
     )
