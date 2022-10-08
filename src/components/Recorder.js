@@ -20,7 +20,7 @@ const RecordView = (props) => {
     const updateAudios = () => {
     }
 
-    const merge = () => {
+    const merge = (audios) => {
         var buffers = [];
 
         var index = 0;
@@ -73,10 +73,13 @@ const RecordView = (props) => {
 
     const stopRec = (url, blob) => {
         console.log('audio stopped')
-        setAudios([...audios, {
+        let audios1 = audios
+        audios1.push({
             src: url,
             blob,
-        }])
+        })
+        setAudios(audios1)
+        merge(audios1)
     }
 
     return (
@@ -104,8 +107,8 @@ const RecordView = (props) => {
                         </div>
                     )
                 })}
-                <button type='button' onClick={merge}>Merge Audios</button>
-                {merged && <audio src={URL.createObjectURL(merged)} controls></audio>}
+                {merged && audios.length > 1 && <h2>Merged Audios</h2>}
+                {merged && audios.length > 1 && <audio src={URL.createObjectURL(merged)} controls></audio>}
             </div>
         </div>
     )
