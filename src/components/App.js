@@ -6,7 +6,7 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import RecordView from './Recorder';
 import Player from './Player';
-import UploadAudio from './UploadAudioloadAudio';
+import UploadAudio from './UploadAudio';
 // import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';

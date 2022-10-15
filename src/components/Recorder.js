@@ -1,6 +1,6 @@
 import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
-// import { Button } from 'rsuite';
+import { Button } from 'rsuite';
 
 const RecordView = (props) => {
 
@@ -79,9 +79,9 @@ const RecordView = (props) => {
                 onStop={stopRec}
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
-                        <p>{status}</p>
-                        <button onClick={startRecording}>Start Recording</button>
-                        <button onClick={stopRecording}>Stop Recording</button>
+                        <p><h3>Status : {status}</h3></p>
+                        <Button onClick={startRecording}>Start Recording</Button>
+                        <Button onClick={stopRecording}>Stop Recording</Button>
                     </div>
                 )}
             />
