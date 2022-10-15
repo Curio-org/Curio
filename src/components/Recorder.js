@@ -1,12 +1,13 @@
 import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
 import { Button } from 'rsuite';
+import UploadAudio from './UploadAudio';
 
-const RecordView = (props) => {
+const RecordView = () => {
 
     var [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
-
+    // console.log(merged);
     const merge = (audios) => {
         var buffers = [];
 
@@ -50,7 +51,7 @@ const RecordView = (props) => {
             });
 
             setMerged(blob);
-            console.log(blob)
+            console.log(blob);
         }
     }
 
@@ -96,6 +97,7 @@ const RecordView = (props) => {
                 })}
                 {merged && audios.length > 1 && <h2>Merged Audios</h2>}
                 {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio>}
+                {merged && audios.length > 1 && <UploadAudio audio={merged}/>}
             </div>
         </div>
     )
