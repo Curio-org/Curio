@@ -17,7 +17,8 @@ const myBucket = new AWS.S3({
 })
 
 const UploadAudio = (props) => {
-    console.log(props.audio);
+    let smth = props.audio.size.toString();
+    console.log(smth);
     const [progress , setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
 
@@ -31,7 +32,7 @@ const UploadAudio = (props) => {
             ACL: 'public-read',
             Body: file,
             Bucket: S3_BUCKET,
-            Key: file.size.toString()
+            Key: smth
         };
 
         myBucket.putObject(params)
