@@ -16,13 +16,13 @@ const myBucket = new AWS.S3({
     region: REGION,
 })
 
-const UploadAudio = () => {
-
+const UploadAudio = (props) => {
+    console.log(props.audio);
     const [progress , setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
 
-    const handleFileInput = (e) => {
-        setSelectedFile(e.target.files[0]);
+    const handleFileInput = () => {
+        setSelectedFile(props.audio);
     }
 
     const uploadFile = (file) => {
@@ -31,7 +31,7 @@ const UploadAudio = () => {
             ACL: 'public-read',
             Body: file,
             Bucket: S3_BUCKET,
-            Key: file.name
+            Key: file.size.toString()
         };
 
         myBucket.putObject(params)
@@ -46,8 +46,8 @@ const UploadAudio = () => {
 
     return <div>
         <div><h2>Your File Upload Progress is {progress}%</h2></div>
-        <input type="file" onChange={handleFileInput}/>
-        <Button onClick={() => uploadFile(selectedFile)}> Upload to S3</Button>
+        {/* <input type="file" onChange={handleFileInput}/> */}
+        <Button onClick={() => {uploadFile(selectedFile); handleFileInput()} }>Upload The Recorded Audio</Button>
     </div>
 }
 

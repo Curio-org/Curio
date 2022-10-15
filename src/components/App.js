@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
-import HeaderCurio from './Header';
+// import HeaderCurio from './Header';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import RecordView from './Recorder';
 import Player from './Player';
-import UploadAudio from './UploadAudio';
+// import UploadAudio from './UploadAudio';
 // import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';
@@ -61,7 +61,7 @@ class App extends React.Component {
     render() {
         return (
             <>
-            <HeaderCurio/>
+            {/* <HeaderCurio/> */}
             {/* <Mynavbar /> */}
             <Router>
                 <Switch>
@@ -72,9 +72,9 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/record/:vidId">
-                        <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
+                        {/* <Player getAudio={this.getAudio} setAudio={this.setAudio}/> */}
                         <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <UploadAudio />
+                        {/* <UploadAudio /> */}
                         {/* <h2>This is the Recorder Page</h2> */}
                     </Route>
 
