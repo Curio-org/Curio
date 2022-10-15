@@ -6,7 +6,7 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import RecordView from './Recorder';
 import Player from './Player';
-import UploadImageToS3WithNativeSdk from './S3';
+import UploadAudio from './UploadAudioloadAudio';
 // import Mynavbar from './Navbar';
 import '../style/styles.css';
 // import YouTube from 'react-youtube';
@@ -74,8 +74,8 @@ class App extends React.Component {
                     <Route path="/record/:vidId">
                         <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
                         <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <h2>This is the Recorder Page</h2>
-                        <UploadImageToS3WithNativeSdk />
+                        <UploadAudio />
+                        {/* <h2>This is the Recorder Page</h2> */}
                     </Route>
 
                     <Route path="/">
