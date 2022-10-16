@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
-import HeaderCurio from './Header/Header';
-import SearchBar from './Header/Searchbar';
-import youtube from '../apis/youtube';
-import VideoList from './Video/VideoList';
-import RecordView from './Recorder/Recorder';
-import Player from './Video/Player';
-import '../style/styles.css';
+import HeaderCurio from './components/Header/Header';
+import SearchBar from './components/Header/Searchbar';
+import youtube from './apis/youtube';
+import VideoList from './components/Video/VideoList';
+import RecordView from './components/Recorder/Recorder';
+import Player from './components/Video/Player';
+import './style/styles.css';
+import './App.css'
 class App extends React.Component {
     state = {
         videos: [],
@@ -56,6 +57,7 @@ class App extends React.Component {
     render() {
         return (
             <>
+            <div className='gradient__bg'>
             <HeaderCurio/>
 
             <Router>
@@ -81,6 +83,7 @@ class App extends React.Component {
                     
                 </Switch>
             </Router>
+            </div>
             </>
         )
     }
