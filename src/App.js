@@ -63,12 +63,6 @@ class App extends React.Component {
             <Router>
                 <Switch>
 
-                    <Route path="/">
-                        <div style={{marginTop: '1em'}}>
-                            <SearchBar handleFormSubmit={this.handleSubmit}/>
-                            <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
-                        </div>
-                    </Route>
 
                     <Route path="/play/:vidId">
                         <Player/>
@@ -80,6 +74,12 @@ class App extends React.Component {
                         <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
                     </Route>
 
+                    <Route path="/">
+                        <div style={{marginTop: '1em'}}>
+                            <SearchBar handleFormSubmit={this.handleSubmit}/>
+                            <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
+                        </div>
+                    </Route>
                     
                 </Switch>
             </Router>

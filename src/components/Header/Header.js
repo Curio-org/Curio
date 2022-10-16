@@ -11,7 +11,14 @@ const HeaderCurio = () => (
         <img src={language} alt='Curio' className='curio__icon'/>
         <t/> CURIO
       </h1>
-        <p className='curio__tag'>Your Video Translator :)</p>
+        <p className='curio__tag'><b>Your Video Translator :)</b></p>
+      </div>
+
+      <div className='curio__sign'>
+        <p>About</p>
+        <p>Sign In</p>
+        <button type='button'>Sign Up</button>
+
       </div>
     </div>   
   </>
