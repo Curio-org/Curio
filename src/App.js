@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
 import HeaderCurio from './components/Header/Header';
-import SearchBar from './components/Header/Searchbar';
+import SearchBar from './components/UnderHeader/Searchbar';
 import youtube from './apis/youtube';
 import VideoList from './components/Video/VideoList';
 import RecordView from './components/Recorder/Recorder';

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Input , InputGroup} from 'rsuite';
+import { Input} from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
+import './SearchBar.css'
 
-const styles = {
-    width: 400,
-    marginBottom: 10
-};
+// const styles = {
+//     width: 400,
+//     marginBottom: 10
+// };
 class Searchbar extends React.Component {
     handleChange = (event) => {
         this.setState({
@@ -26,13 +27,13 @@ class Searchbar extends React.Component {
             <>
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <InputGroup style={styles}>
-                            <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search Youtube Video With KeyWord"/>
-                            <InputGroup.Button onClick={this.handleSubmit} size="sm" id='searchButton'>
+                    <div className='curio__search'>
+                        <div className='curio__search__input'>
+                            <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search Video..."/>
+                            <button onClick={this.handleSubmit} size="sm" id='searchButton'>
                                 <SearchIcon />
-                            </InputGroup.Button>
-                        </InputGroup>
+                            </button>
+                        </div>
                     </div>
                 </form>
                 
