@@ -1,15 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
-// import HeaderCurio from './Header';
+import HeaderCurio from './Header';
 import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import RecordView from './Recorder';
 import Player from './Player';
-// import UploadAudio from './UploadAudio';
-// import Mynavbar from './Navbar';
+import UploadAudio from './UploadAudio';
 import '../style/styles.css';
-// import YouTube from 'react-youtube';
 class App extends React.Component {
     state = {
         videos: [],
@@ -20,7 +18,6 @@ class App extends React.Component {
             time: 0,
             maxTime: 0,
         }
-        // selectedVideo: null
     }
 
     getAudio = () => {
@@ -48,7 +45,6 @@ class App extends React.Component {
         console.log("this is resp",response);
     };
     setVidId = (vidId) => {
-        // this.setState({selectedVideo: vidId})
         this.setState({vidId : vidId})
         window.location.href = `/play/${vidId}`
     }
@@ -61,10 +57,17 @@ class App extends React.Component {
     render() {
         return (
             <>
-            {/* <HeaderCurio/> */}
-            {/* <Mynavbar /> */}
+            <HeaderCurio/>
+
             <Router>
                 <Switch>
+
+                    <Route path="/">
+                        <div style={{marginTop: '1em'}}>
+                            <SearchBar handleFormSubmit={this.handleSubmit}/>
+                            <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
+                        </div>
+                    </Route>
 
                     <Route path="/play/:vidId">
                         <Player/>
@@ -72,22 +75,11 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/record/:vidId">
-                        {/* <Player getAudio={this.getAudio} setAudio={this.setAudio}/> */}
+                        <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
                         <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        {/* <UploadAudio /> */}
-                        {/* <h2>This is the Recorder Page</h2> */}
+                        <UploadAudio />
                     </Route>
 
-                    <Route path="/">
-                        <div style={{marginTop: '1em'}}>
-                            <SearchBar handleFormSubmit={this.handleSubmit}/>
-                                    {/* <Player video={this.state.selectedVideo}/> */}
-                                    
-                                    {/* {console.log(this.state.vidId)} */}
-                                    {/* <YouTube videoId={this.state.selectedVideo} /> */}
-                                    <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
-                        </div>
-                    </Route>
                     
                 </Switch>
             </Router>
