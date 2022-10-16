@@ -4,12 +4,12 @@ import './video.css';
 
 const VideoItem = ({video , setVidId , setRecId }) => {
     return (
-        <div>
+        <div className='video_item'>
             <img  src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
             <div>
-                <div><b><h3>{video.snippet.title}</h3></b></div>
-                <Button onClick={() => {setVidId(video.id.videoId)}}>Watch Video</Button>
-                <Button onClick={() => {setRecId(video.id.videoId)}}>Translate Video</Button>
+                <div className='title'><h4>{video.snippet.title}</h4></div>
+                <span className='watch'><Button onClick={() => {setVidId(video.id.videoId)}}>Watch</Button></span>
+                <span className='translate'><Button onClick={() => {setRecId(video.id.videoId)}}>Translate</Button></span>
             </div>
         </div>
     )
