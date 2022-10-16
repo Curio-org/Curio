@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'rsuite';
-import '../style/video.css';
+import './video.css';
 
 const VideoItem = ({video , setVidId , setRecId }) => {
     return (

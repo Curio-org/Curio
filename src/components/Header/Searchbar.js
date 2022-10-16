@@ -3,7 +3,7 @@ import { Input , InputGroup} from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 
 const styles = {
-    width: 300,
+    width: 400,
     marginBottom: 10
 };
 class Searchbar extends React.Component {
@@ -27,9 +27,8 @@ class Searchbar extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label htmlFor="video-search"><h3>Video Search</h3></label>
                         <InputGroup style={styles}>
-                            <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search.."/>
+                            <Input onChange={this.handleChange} name='video-search' type="text" id='searchBar' placeholder="Search Youtube Video With KeyWord"/>
                             <InputGroup.Button onClick={this.handleSubmit} size="sm" id='searchButton'>
                                 <SearchIcon />
                             </InputGroup.Button>

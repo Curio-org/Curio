@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
-import HeaderCurio from './Header';
-import SearchBar from './Searchbar';
+import HeaderCurio from './Header/Header';
+import SearchBar from './Header/Searchbar';
 import youtube from '../apis/youtube';
-import VideoList from './VideoList';
-import RecordView from './Recorder';
-import Player from './Player';
-import UploadAudio from './UploadAudio';
+import VideoList from './Video/VideoList';
+import RecordView from './Recorder/Recorder';
+import Player from './Video/Player';
 import '../style/styles.css';
 class App extends React.Component {
     state = {
@@ -77,7 +76,6 @@ class App extends React.Component {
                     <Route path="/record/:vidId">
                         <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
                         <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <UploadAudio />
                     </Route>
 
                     

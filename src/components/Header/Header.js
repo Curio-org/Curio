@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Header, Image } from 'semantic-ui-react'
 // import curio from './images/curio.png'
-import '../style/header.css';
+import './header.css';
 
 const HeaderCurio = () => (
   <>

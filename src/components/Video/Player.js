@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { useParams } from 'react-router-dom';
-import { Comments } from './comments/Comments';
+import { Comments } from '.././comments/Comments';
 
 const Player = (props) => {
   const { vidId } = useParams();
