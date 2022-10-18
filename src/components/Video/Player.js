@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { useParams } from 'react-router-dom';
-import { Comments } from '.././comments/Comments';
+// import { Comments } from '.././comments/Comments';
 
 const Player = (props) => {
   const { vidId } = useParams();
@@ -51,7 +51,10 @@ const Player = (props) => {
     mAudio.playbackRate = yt.getPlaybackRate()
   }
 
-  return <><YouTube onPlaybackRateChange={playbackchange} videoId={vidId} onPlay={playvid} onPause={stopvid} onEnd={stopvid} opts={opts} onStateChange={stateChange} onReady={_onReady} /> <Comments /></>
+  return <>
+          <YouTube onPlaybackRateChange={playbackchange} videoId={vidId} onPlay={playvid} onPause={stopvid} onEnd={stopvid} opts={opts} onStateChange={stateChange} onReady={_onReady} /> 
+          {/* <Comments /> */}
+        </>
 
 
 }
