@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Awsup extends Component {
     state = {
@@ -18,9 +19,11 @@ class Awsup extends Component {
             this.state.selectedFile.name
         )
         // will have to call API here
-        console.log(formData);
-        this.setState({selectedFile : null})
-        this.setState({fileUploadedSuccessfully: true})
+        axios.post("https://vcor7lap28.execute-api.ap-south-1.amazonaws.com/prod/audio-upload", formData).then(()=>{
+            this.setState({selectedFile : null})
+            this.setState({fileUploadedSuccessfully: true})
+        })
+
     }
 
     fileData = () => {
