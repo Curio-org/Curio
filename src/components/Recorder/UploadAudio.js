@@ -2,6 +2,7 @@ import React ,{useState} from 'react';
 import AWS from 'aws-sdk'
 import { Button } from 'rsuite';
 
+
 const S3_BUCKET ='be-bucket-public';
 const REGION ='ap-south-1';
 
@@ -46,7 +47,7 @@ const UploadAudio = (props) => {
 
 
     return <div>
-        <div><h2>Your File Upload Progress is {progress}%</h2></div>
+        <div><h2>Your Audio Upload Progress is {progress}%</h2></div>
         {/* <input type="file" onChange={handleFileInput}/> */}
         <Button onClick={() => {uploadFile(selectedFile); handleFileInput()} }>Upload The Recorded Audio</Button>
     </div>

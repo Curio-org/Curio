@@ -2,6 +2,7 @@ import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
 import { Button } from 'rsuite';
 import UploadAudio from './UploadAudio';
+import DropUpload from './Dropzone';
 
 const RecordView = () => {
 
@@ -80,6 +81,7 @@ const RecordView = () => {
                 onStop={stopRec}
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
+                    <DropUpload />
                     {merged && audios.length > 1 && <h2>Merged Audio</h2>}
                     {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio>}
                     {merged && audios.length > 1 && <UploadAudio audio={merged}/>}
