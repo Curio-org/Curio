@@ -8,7 +8,7 @@ import RecordView from './components/Recorder/Recorder';
 import Player from './components/Video/Player';
 import './style/styles.css';
 import './App.css'
-import Awsup from './Awsup'
+// import Awsup from './Awsup'
 class App extends React.Component {
     state = {
         videos: [],
@@ -60,7 +60,7 @@ class App extends React.Component {
             <>
             <div className='gradient__bg'>
             <HeaderCurio/>
-            <Awsup />
+            {/* <Awsup /> */}
             <Router>
                 <Switch>
 
