@@ -81,13 +81,13 @@ const RecordView = () => {
                 onStop={stopRec}
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
-                    <DropUpload />
                     {merged && audios.length > 1 && <h2>Merged Audio</h2>}
                     {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio>}
                     {merged && audios.length > 1 && <UploadAudio audio={merged}/>}
                         <p><h3>Status : {status}</h3></p>
                         <Button onClick={startRecording}>Start Recording</Button>
-                        <Button onClick={stopRecording}>Stop Recording</Button>
+                        <Button onClick={stopRecording}>Stop Recording</Button> <br />
+                    <DropUpload audio={merged}/>
                     </div>
                 )}
             />
