@@ -2,30 +2,33 @@ import 'react-dropzone-uploader/dist/styles.css'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Button } from 'rsuite'
+import { useParams } from 'react-router-dom';
 
 const UploadAudio = (props) => {
+  const { vidId } = useParams();
 
-  const [tub, setTub] = useState();
-  const stub = () => {
-    setTub(props.audio)
+  const [file, setFile] = useState();
+
+  const sFile = () => {
+    setFile(props.audio)
   }
-  console.log(tub)
-  const API_ENDPOINT = "https://chfxvqkfj7.execute-api.ap-south-1.amazonaws.com/default/"
+  console.log(file)
+  const API_ENDPOINT = `https://chfxvqkfj7.execute-api.ap-south-1.amazonaws.com/translated?vidId=${vidId}`
   
-  const handleSubmit = async (tub) => {
-    console.log(tub);
+  const handleSubmit = async (file) => {
+    console.log(file);
 
     // * GET request: presigned URL
     const response = await axios({
       method: 'GET',
-      url: API_ENDPOINT
+      url: API_ENDPOINT,
     })
     console.log('Response: ', response)
 
     // * PUT request: upload file to S3
     const result = await fetch(response.data.uploadURL, {
       method: 'PUT',
-      body:tub
+      body:file
     })
     console.log('Result: ', result)
 
@@ -33,7 +36,7 @@ const UploadAudio = (props) => {
 
   return (
     <>
-      <Button onClick={() => {stub(); handleSubmit(tub) }}>STUB</Button>
+      <Button onClick={() => {sFile(); handleSubmit(file)}}>Upload Audio</Button>
     </>
   )
 }

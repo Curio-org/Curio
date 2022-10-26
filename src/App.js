@@ -72,7 +72,7 @@ class App extends React.Component {
 
                     <Route path="/record/:vidId">
                         <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio}/>
+                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio} vidId={this.vidId}/>
                     </Route>
 
                     <Route path="/">
