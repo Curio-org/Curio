@@ -16,7 +16,7 @@ const Player = (props) => {
 
   const _onReady = (event) => {
     event.target.pauseVideo();
-    event.target.player.mute()
+    // event.target.player.mute()
 
   }
 
