@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import { useParams } from 'react-router-dom';
+import TranslatedAudio from './translatedAudio';
 // import { Comments } from '.././comments/Comments';
 
 const Player = (props) => {
@@ -52,7 +53,8 @@ const Player = (props) => {
   }
 
   return <>
-          <YouTube onPlaybackRateChange={playbackchange} videoId={vidId} onPlay={playvid} onPause={stopvid} onEnd={stopvid} opts={opts} onStateChange={stateChange} onReady={_onReady} /> 
+          <YouTube onPlaybackRateChange={playbackchange} videoId={vidId} onPlay={playvid} onPause={stopvid} onEnd={stopvid} opts={opts} onStateChange={stateChange} onReady={_onReady} />
+          <TranslatedAudio /> 
           {/* <Comments /> */}
         </>
 
