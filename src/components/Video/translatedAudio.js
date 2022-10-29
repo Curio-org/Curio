@@ -31,23 +31,15 @@ const TranslatedAudio = () => {
         })
         console.log('Response: ', response)
         const myAudio = dataURIToBlob(response.data);
-        setAudio(myAudio);
+        var blobUrl = URL.createObjectURL(myAudio);
+        setAudio(blobUrl);
         console.log(audio);
     }
-
-
-    // function sA () {
-    //     console.log();
-    // }
-
-
-
-    // let response = axios.get(`https://mn80j9wred.execute-api.ap-south-1.amazonaws.com/v2/be-curio?file=avc`)
 
   return (
     <>
       <Button onClick={gts}>Set Audio</Button>
-      <audio src={audio} controls></audio>
+      <audio controls src={audio} >gjhg</audio>
     </>
   )
 }
