@@ -7,21 +7,20 @@ const TranslatedAudio = () => {
     const [audio , setAudio] = useState();
     const { vidId } = useParams();
 
-    function dataURIToBlob(dataURI) {
-        dataURI = dataURI.replace(/^data:/, '');
+    // function convertURIToBinary(dataURI) {
+    //   let BASE64_MARKER = ';base64,';
+    //   let base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+    //   let base64 = dataURI.substring(base64Index);
+    //   let raw = window.atob(base64);
+    //   let rawLength = raw.length;
+    //   let arr = new Uint8Array(new ArrayBuffer(rawLength));
     
-        // const type = dataURI.match(/audio\/[^;]+/);
-        const type = "audio/wav";
-        const base64 = dataURI.replace(/^[^,]+,/, '');
-        const arrayBuffer = new ArrayBuffer(base64.length);
-        const typedArray = new Uint8Array(arrayBuffer);
-    
-        for (let i = 0; i < base64.length; i++) {
-            typedArray[i] = base64.charCodeAt(i);
-        }
-    
-        return new Blob([arrayBuffer], {type});
-    }
+    //   for (let i = 0; i < rawLength; i++) {
+    //     arr[i] = raw.charCodeAt(i);
+    //   }
+    //   return arr;
+    // }
+
 
 
     const gts = async () => {
@@ -31,16 +30,26 @@ const TranslatedAudio = () => {
             url: API_ENDPOINT,
         })
         console.log('Response: ', response)
-        const myAudio = dataURIToBlob(response.data);
-        var blobUrl = URL.createObjectURL(myAudio);
+
+        // const myAudio = dataURIToBlob(response.data);
+        // var blobUrl = URL.createObjectURL(myAudio);
+
+        // let binary = convertURIToBinary(response.data);
+        // let blob = new Blob([binary], {
+        //   type: 'audio/wav'
+        // });
+        // let blobUrl = URL.createObjectURL(blob);
+
+        let blobUrl = URL.createObjectURL(new Blob([response.data] , {type:'audio/wav'}));
+
         setAudio(blobUrl);
         console.log(audio);
     }
 
   return (
     <>
-      <Button onClick={gts}>Set Audio</Button>
-      <audio controls src={audio} >gjhg</audio>
+      <Button onClick={gts}>Get Translated Audio</Button>
+      <audio controls src={audio} />
     </>
   )
 }
