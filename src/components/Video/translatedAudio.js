@@ -28,6 +28,7 @@ const TranslatedAudio = () => {
         const response = await axios({
             method: 'GET',
             url: API_ENDPOINT,
+            responseType: 'blob'
         })
         console.log('Response: ', response)
 
@@ -40,7 +41,7 @@ const TranslatedAudio = () => {
         // });
         // let blobUrl = URL.createObjectURL(blob);
 
-        let blobUrl = URL.createObjectURL(new Blob([response.data] , {type:'audio/wav'}));
+        let blobUrl = URL.createObjectURL(response.data);
 
         setAudio(blobUrl);
         console.log(audio);
