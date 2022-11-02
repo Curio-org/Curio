@@ -55,4 +55,31 @@
     border-bottom-right-radius: 5px;
 }
 
+.youtube {
+    display:flex;
+    margin-left: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.youtube Button {
+
+   margin: 1rem;
+    /* flex: 0.6; */
+    /* width: 100%; */
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #31b425;
+    border: 2px solid #31b425;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
