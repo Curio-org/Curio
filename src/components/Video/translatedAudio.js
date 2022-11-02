@@ -25,7 +25,7 @@ const TranslatedAudio = () => {
   return (
     <>
       <Button onClick={gts}>Get Translated Audio</Button>
-      <audio controls src={audio} />
+      <audio id='translatedAudio' controls src={audio} />
     </>
   )
 }

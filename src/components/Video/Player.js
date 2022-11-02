@@ -22,7 +22,7 @@ const Player = (props) => {
 
   const stateChange = (e) => {
     let yt = e.target
-    let mAudio = document.getElementById('mergedAudio')
+    let mAudio = document.getElementById('translatedAudio')
     if (mAudio) {
       mAudio.currentTime = yt.getCurrentTime()
     }
@@ -30,7 +30,7 @@ const Player = (props) => {
 
   const playvid = (e) => {
     let yt = e.target
-    let mAudio = document.getElementById('mergedAudio')
+    let mAudio = document.getElementById('translatedAudio')
     if (mAudio) {
       mAudio.load()
       mAudio.currentTime = yt.getCurrentTime()
@@ -39,7 +39,7 @@ const Player = (props) => {
   }
 
   const stopvid = () => {
-    let mAudio = document.getElementById('mergedAudio')
+    let mAudio = document.getElementById('translatedAudio')
     if (mAudio) {
       mAudio.pause()
     }
@@ -47,7 +47,7 @@ const Player = (props) => {
 
   const playbackchange = (e) => {
     let yt = e.target
-    let mAudio = document.getElementById('mergedAudio')
+    let mAudio = document.getElementById('translatedAudio')
     if(mAudio)
     mAudio.playbackRate = yt.getPlaybackRate()
   }
