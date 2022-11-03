@@ -12,8 +12,11 @@ const UploadAudio = (props) => {
   const sFile = () => {
     setFile(props.audio)
   }
+
+  const UPKEY = process.env.REACT_APP_UP;
+
   console.log(file)
-  const API_ENDPOINT = `https://chfxvqkfj7.execute-api.ap-south-1.amazonaws.com/translated?vidId=${vidId}`
+  const API_ENDPOINT = `${UPKEY}${vidId}`
   
   const handleSubmit = async (file) => {
     console.log(file);

@@ -9,6 +9,7 @@ import Player from './components/Video/Player';
 import './style/styles.css';
 import './App.css'
 // import Awsup from './Awsup'
+
 class App extends React.Component {
     state = {
         videos: [],
