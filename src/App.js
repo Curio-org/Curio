@@ -6,6 +6,7 @@ import youtube from './apis/youtube';
 import VideoList from './components/Video/VideoList';
 import RecordView from './components/Recorder/Recorder';
 import Player from './components/Video/Player';
+import Footer from './components/Footer/Footer';
 import './style/styles.css';
 import './App.css'
 // import Awsup from './Awsup'
@@ -84,6 +85,7 @@ class App extends React.Component {
                     
                 </Switch>
             </Router>
+            <Footer />
             </div>
             </>
         )

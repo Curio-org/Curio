@@ -2,6 +2,7 @@ import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
 import { Button } from 'rsuite';
 // import UploadAudio from './UploadAudio_old';
+import './Recorder.css'
 import UploadAudio from './UploadAudio';
 
 const RecordView = (props) => {
@@ -91,12 +92,12 @@ const RecordView = (props) => {
                     </div>
                 )}
             />
-            <div>
+            <div className='recordedAudios'>
                 <h2>Recorded Audios</h2>
                 {audios.map(audio => {
                     return (
                         <div>
-                            <audio controls src={audio.src}></audio>
+                            <audio className='aa' controls src={audio.src}></audio>
                         </div>
                     )
                 })}
