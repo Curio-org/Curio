@@ -7,8 +7,10 @@ const TranslatedAudio = () => {
     const [audio , setAudio] = useState();
     const { vidId } = useParams();
 
+    const GETKEY = process.env.REACT_APP_DOWN;
+
     const gts = async () => {
-        const API_ENDPOINT = `https://mn80j9wred.execute-api.ap-south-1.amazonaws.com/v1/be-curio?file=${vidId}`;
+        const API_ENDPOINT = `${GETKEY}${vidId}`;
         const response = await axios({
             method: 'GET',
             url: API_ENDPOINT,
