@@ -18,10 +18,10 @@
     color: #fff;
     cursor: pointer;
     outline: none;
-    border-radius: 0%;
+    /* border-radius: 0%; */
 
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .record_stop button {
     width: 50%;
@@ -36,8 +36,31 @@
     color: #fff;
     cursor: pointer;
     outline: none;
-    border-radius: 0%;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.upload_button{
+    display: flex;
+    justify-content: center;
+}
+
+.upload_button button {
+    width: 50%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #31b425;
+    border: 2px solid #31b425;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    /* border-radius: 0%;
 
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px; */
 }

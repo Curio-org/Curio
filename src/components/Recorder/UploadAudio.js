@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Button } from 'rsuite'
 import { useParams } from 'react-router-dom';
+import './Recorder.css'
 
 const UploadAudio = (props) => {
   const { vidId } = useParams();
@@ -39,7 +40,7 @@ const UploadAudio = (props) => {
 
   return (
     <>
-      <Button onClick={() => {sFile(); handleSubmit(file)}}>Upload Audio</Button>
+      <span className='upload_button'><Button onClick={() => {sFile(); handleSubmit(file)}}>Upload Audio</Button></span>
     </>
   )
 }

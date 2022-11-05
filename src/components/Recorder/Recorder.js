@@ -85,7 +85,7 @@ const RecordView = (props) => {
                     {merged && audios.length > 1 && <h2>Merged Audio</h2>}
                     {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} style={{width:'100%'}} controls></audio>}
                     {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}
-                        <p><h3>Status : {status}</h3></p>
+                        <p><h3>The recorder is Currently {status}</h3></p>
                         <div>
                             <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
