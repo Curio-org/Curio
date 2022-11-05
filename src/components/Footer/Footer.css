@@ -1,0 +1,116 @@
+.curio_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-footer);
+}
+
+.curio_footer-heading {
+    width: 100%;
+    text-align: center;
+
+    margin-bottom: 3rem;
+}
+
+.curio_footer-heading h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 75px;
+}
+
+.curio_footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    border: 1px solid #fff;
+    text-align: center;
+
+    margin-bottom: 10rem;
+    cursor: pointer;
+}
+
+.curio_footer-btn p {
+    font-size: 18px;
+    font-family: var(--font-family);
+    line-height: 21px;
+    color: #fff;
+    word-spacing: 2px;
+}
+
+.curio_footer_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    text-align: left;
+}
+
+.curio_footer_links div {
+    width: 250px;
+    margin: 1rem;
+}
+
+.curio_footer_links_logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.curio_footer_links_logo img {
+    width: 118px;
+    height: 118px;
+
+    margin-bottom: 1rem;
+}
+
+.curio_footer_links_logo p {
+    font-family: var(--font-family);
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+}
+
+.curio_footer_links_div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.curio_footer_links_div h4 {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: var(--font-family);
+    color: #fff;
+
+    margin-bottom: 0.9rem;
+}
+
+.curio_footer_links_div p {
+    font-size: 12px;
+    line-height: 15px;
+    font-family: var(--font-family);
+    color: #fff;
+
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.curio_footer_copyright {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.curio_footer_copyright p {
+    font-size: 12px;
+    font-family: var(--font-family);
+    line-height: 15px;
+    color: #fff;
+}
