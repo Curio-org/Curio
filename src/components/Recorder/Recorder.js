@@ -88,7 +88,7 @@ const RecordView = (props) => {
                 onStop={stopRec}
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
-                        <p className='recorder_status' ><h3>The recorder is Currently {status}</h3></p>
+                        <p className='recorder_status' ><h1 className="gradient__text">The recorder is Currently {status}</h1></p>
                         <div>
                             <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
@@ -97,7 +97,7 @@ const RecordView = (props) => {
                     </div>
                 )}
             />
-            <h2>Recorded Audios</h2>
+            <p className='recorder_status' style={{padding:20}}><h2 className="recorded_audios">Recorded Audios</h2></p>
             <div className='recordedAudios'>
                 {audios.map(audio => {
                     return (

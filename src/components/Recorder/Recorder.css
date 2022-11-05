@@ -66,6 +66,8 @@
 }
 
 .record_grad {
+    margin: 10px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
 
@@ -88,4 +90,14 @@
     background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.recorder_status{
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family);
+}
+
+.recorded_audios{
+    color : #FF8A71;
 }
