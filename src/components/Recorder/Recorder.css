@@ -1,7 +1,43 @@
 .recordedAudios{
     justify-content: space-around;
     display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
-.aa{
-    display: inline;
+
+.record_start button {
+    width: 50%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #31b425;
+    border: 2px solid #31b425;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0%;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.record_stop button {
+    width: 50%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #FF4820;
+    border: 2px solid #FF4820;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0%;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

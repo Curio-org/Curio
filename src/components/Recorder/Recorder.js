@@ -83,17 +83,19 @@ const RecordView = (props) => {
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
                     {merged && audios.length > 1 && <h2>Merged Audio</h2>}
-                    {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio>}
+                    {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} style={{width:'100%'}} controls></audio>}
                     {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}
                         <p><h3>Status : {status}</h3></p>
-                        <Button onClick={startRecording}>Start Recording</Button>
-                        <Button onClick={stopRecording}>Stop Recording</Button> <br />
+                        <div>
+                            <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
+                            <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
+                        </div>
                     
                     </div>
                 )}
             />
+            <h2>Recorded Audios</h2>
             <div className='recordedAudios'>
-                <h2>Recorded Audios</h2>
                 {audios.map(audio => {
                     return (
                         <div>
