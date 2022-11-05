@@ -73,8 +73,14 @@ const RecordView = (props) => {
     }
 
     return (
-        <div>
+    <>
+        <div className="merged">
+            {merged && audios.length > 1 && <h2>Merged Audio</h2>}
+            {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} style={{width:'100%'}} controls></audio>}
+            {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}
+        </div>
 
+        <div className='record_grad'>
             <ReactMediaRecorder
                 audio
                 askPermissionOnMount
@@ -82,10 +88,7 @@ const RecordView = (props) => {
                 onStop={stopRec}
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
-                    {merged && audios.length > 1 && <h2>Merged Audio</h2>}
-                    {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} style={{width:'100%'}} controls></audio>}
-                    {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}
-                        <p><h3>The recorder is Currently {status}</h3></p>
+                        <p className='recorder_status' ><h3>The recorder is Currently {status}</h3></p>
                         <div>
                             <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
@@ -105,6 +108,7 @@ const RecordView = (props) => {
                 })}
             </div>
         </div>
+    </>
     )
 }
 
