@@ -1,7 +1,6 @@
 import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
 import { Button } from 'rsuite';
-// import UploadAudio from './UploadAudio_old';
 import './Recorder.css'
 import UploadAudio from './UploadAudio';
 
@@ -9,7 +8,6 @@ const RecordView = (props) => {
 
     var [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
-    // console.log(merged);
     const merge = (audios) => {
         var buffers = [];
 
@@ -74,10 +72,10 @@ const RecordView = (props) => {
 
     return (
     <>
-        <div className="merged">
-            {merged && audios.length > 1 && <h2>Merged Audio</h2>}
-            {merged && audios.length > 1 && <audio id='mergedAudio' src={URL.createObjectURL(merged)} style={{width:'100%'}} controls></audio>}
-            {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}
+        <div>
+            {merged && audios.length > 1 && <span className="merged"><h2 className='gradient__text'>Merged Audio</h2></span>}
+            {merged && audios.length > 1 && <span className="merged_audio"><audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio></span>}<br/>
+            {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}<br />
         </div>
 
         <div className='record_grad'>

@@ -101,3 +101,16 @@
 .recorded_audios{
     color : #FF8A71;
 }
+
+.merged {
+    display: flex;
+    justify-content: center;
+    color: var(--color-footer);
+}
+.merged_audio {
+    display: flex;
+    justify-content: center;
+}
+.merged_audio audio{
+    width: 90%;
+}
