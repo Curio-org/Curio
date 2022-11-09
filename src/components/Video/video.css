@@ -2,6 +2,7 @@
     display: flex !important;
     align-items: center !important;
     cursor: pointer;
+    margin-left: 33px;
 }
 
 .video_item img {
@@ -13,6 +14,11 @@
 
 .title{
     color: #fff;
+    margin-left: 16px;
+}
+.channel_name{
+    color: darkgray;
+    margin: 16px;
 }
 
 .watch Button {
