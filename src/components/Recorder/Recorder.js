@@ -90,14 +90,18 @@ const RecordView = (props) => {
                         <p className='recorder_status' ><h1 className="gradient__text">The recorder is Currently {status}</h1></p>
                         
                         <div className="duration">
-                            <div className='duration_input' >
-                                <Input type='number' id="duration" />
-                                <span size="sm" id='searchButton'>
+                            <div className='duration_input'>
+                                <button style={{backgroundColor:'#31b425', border:'none'}}>
+                                    From
+                                </button>
+                                <Input type='number' id="duration_from" style={{borderRadius:0}} />
+                                <button>
                                     To
-                                </span>
+                                </button>
+                                <Input type='number' id="duration_to" style={{borderRadius:0}} />
                             </div>
                         </div>
-                        
+
                         <div>
                             <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
