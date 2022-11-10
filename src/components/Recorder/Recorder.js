@@ -63,8 +63,7 @@ const RecordView = (props) => {
         setDuration(document.getElementById('duration_to').value - document.getElementById('duration_from').value);
         setFrom(document.getElementById('duration_to').value);
     }
-    console.log(duration);
-
+    
     const stopRec = (url, blob) => {
         console.log('audio stopped')
         let audios1 = audios
@@ -74,6 +73,10 @@ const RecordView = (props) => {
         })
         setAudios(audios1)
         merge(audios1)
+    }
+    if(duration !== 0){
+        console.log(duration);
+        setTimeout(stopRec, duration * 1000)
     }
 
     return (
@@ -99,11 +102,11 @@ const RecordView = (props) => {
                                 <button style={{backgroundColor:'#31b425', border:'none'}}>
                                     From
                                 </button>
-                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={from} />
+                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={from} max={from} />
                                 <button>
                                     To
                                 </button>
-                                <Input type='number' id="duration_to" style={{borderRadius:0}} />
+                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={from} />
                             </div>
                         </div>
 
