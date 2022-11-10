@@ -1,6 +1,7 @@
 import { ReactMediaRecorder } from "react-media-recorder";
 import React, { useState } from "react";
 import { Button } from 'rsuite';
+import { Input} from 'rsuite';
 import './Recorder.css'
 import UploadAudio from './UploadAudio';
 
@@ -87,6 +88,16 @@ const RecordView = (props) => {
                 render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
                         <p className='recorder_status' ><h1 className="gradient__text">The recorder is Currently {status}</h1></p>
+                        
+                        <div className="duration">
+                            <div className='duration_input' >
+                                <Input type='number' id="duration" />
+                                <span size="sm" id='searchButton'>
+                                    To
+                                </span>
+                            </div>
+                        </div>
+                        
                         <div>
                             <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
