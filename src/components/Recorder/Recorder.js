@@ -7,8 +7,10 @@ import UploadAudio from './UploadAudio';
 
 const RecordView = (props) => {
 
-    var [audios, setAudios] = useState([]);
+    const [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
+    const [duration, setDuration] = useState(0);
+    const [from, setFrom] = useState(0);
     const merge = (audios) => {
         var buffers = [];
 
@@ -58,7 +60,10 @@ const RecordView = (props) => {
 
     const startRec = () => {
         console.log('audio started')
+        setDuration(document.getElementById('duration_to').value - document.getElementById('duration_from').value);
+        setFrom(document.getElementById('duration_to').value);
     }
+    console.log(duration);
 
     const stopRec = (url, blob) => {
         console.log('audio stopped')
@@ -94,7 +99,7 @@ const RecordView = (props) => {
                                 <button style={{backgroundColor:'#31b425', border:'none'}}>
                                     From
                                 </button>
-                                <Input type='number' id="duration_from" style={{borderRadius:0}} />
+                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={from} />
                                 <button>
                                     To
                                 </button>
