@@ -69,7 +69,6 @@ class App extends React.Component {
 
                     <Route path="/play/:vidId">
                         <Player/>
-                        <h2>Video Will Play here.</h2>
                     </Route>
 
                     <Route path="/record/:vidId">
