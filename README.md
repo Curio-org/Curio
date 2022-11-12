@@ -1,6 +1,38 @@
-# Getting Started with Create React App
+# Team Name Curio
+## Working on theme : Audio Dubbing for youtube Videos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Team Members
+
+- Abhishek Bhardwaj
+- Deepanshu Mishra
+- Arjun Verma
+
+
+## How will we solve the problem?
+We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners.
+
+
+## What will be our final demo?
+Our final demo will be a live/recorded demonstration of our website where we will record the translation of a video upload it on a global server and then play it in sync with the desired YouTube video.
+
+## Tech stack we are using
+- Frontend
+For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it  and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
+
+- API
+We are taking use of Youtube V3 api to get the video data & search results based on the query & along with that we have also made a couple of APIs in order to connect the frontend to the backend usin AXIOS.
+
+- Backend
+We have powered our backend with AWS thus we are using Amazon S3 buckets to store the recorded audios and to further retrieve them according to the respective video.
+
+## Innovation & one prespective to use it
+The idea is to link the students who are studying different languages to provide a platform where they can come and test their language skills by audio dubbing videos in the languages they are learning. The dub made by them will have to pass through a VALIDATION where they will get a review of their dub and can access their skills by the same.
+
+## How will we validate things?
+We will compare the transcript of the dubbed audio and the converted transcript of the original audio in the dubbed language using google translator. If the matching percentage of the dub satisfies the minimum percentage criteria (we will decide the criteria using some algorithm) then we will accept it, otherwise the dubbing will be rejected.
+
+
+# Getting Started with Curio
 
 ## Available Scripts
 
@@ -11,60 +43,13 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### See Live Demo Here
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the website [Curio](https://curiocic.netlify.app/) 
 
-### `npm run build`
+### See Video Demo Here
+See the Video [Curio](https://drive.google.com/file/d/1_QZNT6NSO3dyy-Nv3BFoj5kl8zvfxL9l/view?usp=share_link)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
