@@ -48,5 +48,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 See the website [Curio](https://curiocic.netlify.app/) 
 
+### See Video Demo Here
+See the Video [Curio](https://drive.google.com/file/d/1_QZNT6NSO3dyy-Nv3BFoj5kl8zvfxL9l/view?usp=share_link)
+
 
 
