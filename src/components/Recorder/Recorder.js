@@ -10,7 +10,7 @@ const RecordView = (props) => {
     const [audios, setAudios] = useState([]);
     const [merged, setMerged] = useState()
     const [duration, setDuration] = useState(0);
-    const [from, setFrom] = useState(0);
+    const [recFrom, setFrom] = useState(0);
     const merge = (audios) => {
         var buffers = [];
 
@@ -26,6 +26,7 @@ const RecordView = (props) => {
                 index++;
                 readAsArrayBuffer();
             };
+            console.log(audios);
             reader.readAsArrayBuffer(audios[index].blob);
         }
 
@@ -71,12 +72,9 @@ const RecordView = (props) => {
             src: url,
             blob,
         })
+        console.log(audios1);
         setAudios(audios1)
         merge(audios1)
-    }
-    if(duration !== 0){
-        console.log(duration);
-        setTimeout(stopRec, duration * 1000)
     }
 
     return (
@@ -102,16 +100,24 @@ const RecordView = (props) => {
                                 <button style={{backgroundColor:'#31b425', border:'none'}}>
                                     From
                                 </button>
-                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={from} max={from} />
+                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={recFrom} max={recFrom} />
                                 <button>
                                     To
                                 </button>
-                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={from} />
+                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={recFrom} />
                             </div>
                         </div>
 
                         <div>
-                            <span className="record_start"><Button  onClick={startRecording}>Start Recording</Button></span>
+                            <span className="record_start"><Button  onClick={()=>{ if(duration !== 0){
+                                                                                          startRecording();  
+                                                                                        console.log(duration);
+                                                                                        setTimeout(stopRecording, duration * 1000)
+                                                                                    }
+                                                                                    startRecording();
+                                                                                }}>
+                            Start Recording
+                            </Button></span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
                         </div>
                     
@@ -133,4 +139,4 @@ const RecordView = (props) => {
     )
 }
 
-export default RecordView
+export default RecordView;
