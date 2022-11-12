@@ -26,7 +26,7 @@ const RecordView = (props) => {
                 index++;
                 readAsArrayBuffer();
             };
-            console.log(audios);
+            // console.log(audios);
             reader.readAsArrayBuffer(audios[index].blob);
         }
 
@@ -61,8 +61,6 @@ const RecordView = (props) => {
 
     const startRec = () => {
         console.log('audio started')
-        setDuration(document.getElementById('duration_to').value - document.getElementById('duration_from').value);
-        setFrom(document.getElementById('duration_to').value);
     }
     
     const stopRec = (url, blob) => {
@@ -104,17 +102,18 @@ const RecordView = (props) => {
                                 <button>
                                     To
                                 </button>
-                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={recFrom} />
+                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={recFrom}  onChange={()=>{setDuration(document.getElementById('duration_to').value - document.getElementById('duration_from').value);
+                                                                                                                            setFrom(document.getElementById('duration_to').value);}}/>
                             </div>
                         </div>
 
                         <div>
-                            <span className="record_start"><Button  onClick={()=>{ if(duration !== 0){
-                                                                                          startRecording();  
+                            <span className="record_start"><Button  onClick={()=>{  startRecording();
+                                                                                    if(duration !== 0){
+                                                                                        
                                                                                         console.log(duration);
                                                                                         setTimeout(stopRecording, duration * 1000)
                                                                                     }
-                                                                                    startRecording();
                                                                                 }}>
                             Start Recording
                             </Button></span>
