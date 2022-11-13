@@ -49,7 +49,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 See the website [Curio](https://curiocic.netlify.app/) 
 
 ### See Video Demo Here
-See the Video [Curio](https://drive.google.com/file/d/1_QZNT6NSO3dyy-Nv3BFoj5kl8zvfxL9l/view?usp=share_link)
+See the [Video Demo](https://youtu.be/7BrTDM-Y_oU)
+
+### See a Sample Translated Video Here 
+Watch [Translated Video](https://curiocic.netlify.app/play/r0G86-0-4O4)
+
+`Steps to play translated Video:`
+
+- `Go on our watch page and click on the 'Get Translated Audio' button.` 
+- `Then play the youtube video with the translated audio.`
+
+
+
+
+# Answers for MVP & Mid Stage remarks
+
+- Yes multiple people can translate, we will further take language name as user input to differentiate between those translated audios.
+- We were working on that button at the time of mid MVP submission. Now all the buttons are working and explained in the demo.
+- We are not checking at the time of recording that whether the video was previously recorded or not. We will be manually selecting the audio to save with the video.
+
+# Future work after the hackathon
+
+- We will save multiple audios for a single video and give option to the user to decide which audio he/she wants to play.
+- For re recording we will generate a mail using `Twilio API` which will be directed towards us. Then we will decide maually whether to re-record that audio or not.
 
 
 
