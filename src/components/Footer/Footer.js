@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 import Twilio from './Twilio'
 import curio from'../assets/images/curio.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
         <div className="curio_footer-btn">
           <p>Request Translation</p>
         </div>
-        
+
         <div>
           <Twilio />
         </div>
