@@ -30,15 +30,15 @@ const Twilio = () => {
   return (
     <div className="twilio">
     <Container>
-    <h2>Send SMS</h2>
+    <h2 style={{color:'white'}}>Send us the Video</h2>
     <Form onSubmit={onSubmit}>
       <Form.Group>
-        <Form.Label htmlFor="to">To</Form.Label>
+        <Form.Label htmlFor="to"  style={{color:'white'}}>Language</Form.Label>
         <Form.Control value={number} onChange={(e) => setNumber(e.target.value)} />
       </Form.Group>
 
       <Form.Group>
-        <Form.Label htmlFor="message">Body</Form.Label>
+        <Form.Label htmlFor="message" style={{color:'white'}}>Link to the Video</Form.Label>
         <Form.Control
             as="textarea"
             rows="3"
