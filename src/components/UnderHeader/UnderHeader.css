@@ -1,7 +1,7 @@
 .curio_whatcurio {
     display: flex;
     flex-direction: column;
-
+    border-radius: 20px;
     padding: 2rem;
     background: var(--color-footer);
 

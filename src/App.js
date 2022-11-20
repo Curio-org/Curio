@@ -9,6 +9,7 @@ import Player from './components/Video/Player';
 import Footer from './components/Footer/Footer';
 import './style/styles.css';
 import './App.css'
+import UnderHeader from './components/UnderHeader/UnderHeader';
 // import Awsup from './Awsup'
 
 class App extends React.Component {
@@ -79,6 +80,7 @@ class App extends React.Component {
                     <Route path="/">
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
+                            <UnderHeader />
                             <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
                         </div>
                     </Route>
