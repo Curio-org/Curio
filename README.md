@@ -4,8 +4,8 @@
 ## Team Members
 
 - Abhishek Bhardwaj
-- Deepanshu Mishra
 - Arjun Verma
+- Deepanshu Mishra
 
 
 ## How will we solve the problem?
