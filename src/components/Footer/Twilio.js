@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import  { Container, Form, Button } from "react-bootstrap";
 
 const Twilio = () => {
     const [number, setNumber] = useState("");
@@ -29,29 +28,27 @@ const Twilio = () => {
 
   return (
     <div className="twilio">
-    <Container>
     <h2 style={{color:'white'}}>Send us the Video</h2>
-    <Form onSubmit={onSubmit}>
-      <Form.Group>
-        <Form.Label htmlFor="to"  style={{color:'white'}}>Language</Form.Label>
-        <Form.Control value={number} onChange={(e) => setNumber(e.target.value)} />
-      </Form.Group>
+    <form onSubmit={onSubmit}>
+      <group>
+        <label htmlFor="to"  style={{color:'white'}}>Language</label>
+        <input value={number} onChange={(e) => setNumber(e.target.value)} />
+      </group>
 
-      <Form.Group>
-        <Form.Label htmlFor="message" style={{color:'white'}}>Link to the Video</Form.Label>
-        <Form.Control
+      <group>
+        <label htmlFor="message" style={{color:'white'}}>Link to the Video</label>
+        <input
             as="textarea"
             rows="3"
             value={body}
             onChange={(e) => setBody(e.target.value)}
         />
-      </Form.Group>
+      </group>
       {console.log(`Number is ${number} and the Message is ${body}`)}
-      <Button variant="primary" type="submit">
+      <button variant="primary" type="submit">
         Send
-      </Button>
-    </Form>
-  </Container>
+      </button>
+    </form>
   </div>
   )
 }
