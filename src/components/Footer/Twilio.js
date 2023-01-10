@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Twilio.css'
 
 const Twilio = () => {
     const [number, setNumber] = useState("");
@@ -28,8 +29,8 @@ const Twilio = () => {
 
   return (
 
-  <div className="twilio">
-    <h2 style={{color:'white'}}>Send us the Video</h2>
+  <div className="request">
+    <h2 className="gradient__text">Send us the Video</h2>
     <div className="request_form">
       <form onSubmit={onSubmit}>
           <input value={number} placeholder="Enter The Language" onChange={(e) => setNumber(e.target.value)} />
