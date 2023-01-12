@@ -19,13 +19,14 @@
     flex: 2;
     width: 100%;
     min-height: 50px;
+    margin: 2px;
     font-family: var(--font-family);
     background: #fff;
     border: 2px solid #fff;
     padding: 0 1rem;
     outline: none;
     color: #fff;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -37,6 +38,7 @@
     flex: 0.6;
     width: 100%;
     min-height: 50px;
+    margin: 2px;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 20px;
@@ -47,7 +49,7 @@
     color: #fff;
     cursor: pointer;
     outline: none;
-
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
+    /* border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; */
 }
