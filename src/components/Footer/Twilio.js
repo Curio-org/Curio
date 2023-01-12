@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Twilio.css'
 
 const Twilio = () => {
     const [number, setNumber] = useState("");
@@ -27,28 +28,17 @@ const Twilio = () => {
       };
 
   return (
-    <div className="twilio">
-    <h2 style={{color:'white'}}>Send us the Video</h2>
-    <form onSubmit={onSubmit}>
-      <group>
-        <label htmlFor="to"  style={{color:'white'}}>Language</label>
-        <input value={number} onChange={(e) => setNumber(e.target.value)} />
-      </group>
 
-      <group>
-        <label htmlFor="message" style={{color:'white'}}>Link to the Video</label>
-        <input
-            as="textarea"
-            rows="3"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-        />
-      </group>
-      {console.log(`Number is ${number} and the Message is ${body}`)}
-      <button variant="primary" type="submit">
-        Send
-      </button>
-    </form>
+  <div className="request">
+    <h2 className="gradient__text">Send us the Video</h2>
+    <div className="request_form">
+      <form onSubmit={onSubmit}>
+          <input value={number} placeholder="Enter The Language" onChange={(e) => setNumber(e.target.value)} />
+          <input as="textarea" rows="3" placeholder="Enter the URL of Video" value={body} onChange={(e) => setBody(e.target.value)} />
+          {/* {console.log(`Number is ${number} and the Message is ${body}`)} */}
+          <button variant="primary" type="submit">Send</button>
+      </form>
+    </div>
   </div>
   )
 }
