@@ -4,7 +4,7 @@
 ## Team Members
 
 - Abhishek Bhardwaj
-- Deepanshu Mishra
+- [Deepanshu Mishra](https://github.com/DeepMiniature)
 - Arjun Verma
 
 
