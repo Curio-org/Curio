@@ -5,10 +5,11 @@
 ## Team Members
 
 - Abhishek Bhardwaj
-- Deepanshu Mishra
+- [Deepanshu Mishra](https://github.com/DeepMiniature)
 - Arjun Verma
 
 ## How will we solve the problem?
+We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners. The website in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
 
 We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners.
 
