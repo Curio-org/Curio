@@ -63,6 +63,10 @@ It will automatically open up the application in the browser locally at [http://
 
 Congratulations, you've now successfully installed **Curio** locally.
 
+**Note:** Replace your Youtube V3 API Key with `process.env.REACT_APP_YT;` [here](https://github.com/arjxn-py/Curio/blob/84743a39d782d09414932e15a76d8c81646a9101/src/apis/youtube.js#L2)
+
+[How to generate a Youtube API Key?](https://medium.com/swlh/how-to-get-youtubes-api-key-7c28b59b1154)
+
 ## Available Scripts
 
 In the project directory, you can run:
