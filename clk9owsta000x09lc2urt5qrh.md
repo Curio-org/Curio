@@ -3,6 +3,7 @@ title: "GSoC'23 Improving CI & Simplifying PyBaMM Installation (Week 5 &6)"
 datePublished: Wed Jul 19 2023 12:18:49 GMT+0000 (Coordinated Universal Time)
 cuid: clk9owsta000x09lc2urt5qrh
 slug: gsoc23-pybamm-week-5-6
+canonical: https://arjxnpy.hashnode.dev/gsoc23-pybamm-week-5-6
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1689765803897/6a5ff273-30cd-4254-810f-4b74d086b016.png
 
 ---
@@ -104,3 +105,21 @@ In the initial phase, a decision was made to designate only casadi, numpy, panda
     
 
 Old Dependency Tree of PyBaMM with only required dependencies :
+
+```bash
+pybamm==23.5
+├── casadi [required: >=3.6.0, installed: 3.6.3]
+│   └── numpy [required: Any, installed: 1.25.1]
+├── numpy [required: >=1.16, installed: 1.25.1]
+├── scipy [required: >=1.3, installed: 1.11.1]
+│   └── numpy [required: >=1.21.6,<1.28.0, installed: 1.25.1]
+└── xarray [required: Any, installed: 2023.7.0]
+    ├── numpy [required: >=1.21, installed: 1.25.1]
+    ├── packaging [required: >=21.3, installed: 21.3]
+    └── pandas [required: >=1.4, installed: 2.0.3]
+        ├── numpy [required: >=1.21.0, installed: 1.25.1]
+        ├── python-dateutil [required: >=2.8.2, installed: 2.8.2]
+        │   └── six [required: >=1.5, installed: 1.16.0]
+        ├── pytz [required: >=2020.1, installed: 2023.3]
+        └── tzdata [required: >=2022.1, installed: 2023.3]
+```
