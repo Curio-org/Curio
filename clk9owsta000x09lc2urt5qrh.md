@@ -104,7 +104,7 @@ In the initial phase, a decision was made to designate only casadi, numpy, panda
 9. \[all\]
     
 
-Old Dependency Tree of PyBaMM with only required dependencies :
+New Dependency Tree of PyBaMM with only required dependencies :
 
 ```bash
 pybamm==23.5
