@@ -93,15 +93,15 @@ In the initial phase, a decision was made to designate only casadi, numpy, panda
     
 4. \[cite\]: for citing the project i.e. pybtex
     
-5. \[latexify\]
+5. \[latexify\]: For symbolic mathematics.
     
-6. \[bpx\]
+6. \[bpx\]: Battery Parameter eXchange
     
-7. \[tqdm\]
+7. \[tqdm\]: For logging loops.
     
-8. \[dev\]
+8. \[dev\]: Code formatting
     
-9. \[all\]
+9. \[all\]: Has all the dependencies
     
 
 New Dependency Tree of PyBaMM with only required dependencies :
