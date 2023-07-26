@@ -123,3 +123,13 @@ pybamm==23.5
         ├── pytz [required: >=2020.1, installed: 2023.3]
         └── tzdata [required: >=2022.1, installed: 2023.3]
 ```
+
+# Week 6
+
+## Improving Nox CI
+
+During Week 6, the primary focus was on enhancing the Nox CI infrastructure. This involved significant improvements, such as incorporating default Nox sessions to streamline and standardize testing procedures. Additionally, a pre-commit session was introduced to automate code formatting, ensuring consistent adherence to style guidelines.
+
+Alongside improving the Nox CI infrastructure, I dedicated efforts to documentation enhancements. I documented additional useful Nox commands, providing developers with a comprehensive reference for various Nox functionalities to boost their productivity. Additionally, I modified the documentation for optional dependencies, creating informative tables for each optional dependency section. These tables offer clear details about the dependencies, their purpose, and installation instructions.
+
+After completing the tasks related to Nox CI and documentation, I recognized the need for refactoring environment variables and Python installations across multiple Nox sessions. These repetitive occurrences prompted me to consolidate them into a single function to improve code readability and maintainability. By creating this function, I could easily call it within each Nox session, effectively reducing code duplication and streamlining the configuration process.
