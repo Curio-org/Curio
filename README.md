@@ -1,3 +1,5 @@
+![image](https://github.com/arjxn-py/Curio/assets/104268427/13dce347-dcc6-452a-bfd7-f9f0f831c375)
+
 # Curio
 
 ## How Curio solves the problem?
