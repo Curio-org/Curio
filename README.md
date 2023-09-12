@@ -1,6 +1,6 @@
 # Curio
 
-## How will Curio solve the problem?
+## How Curio solves the problem?
 
 Curio is a web application which serves as an open platform where people can come and translate their favourite YouTube videos in their desired languages to help bridge the gap of language and communication between mentors & learners. The web application in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
 
@@ -10,7 +10,7 @@ We aim to build a website which will serve as an open platform where people can 
 
 Our final demo will be a live/recorded demonstration of our website where we will record the translation of a video upload it on a global server and then play it in sync with the desired YouTube video.
 
-## Tech stack we are using
+## Tech stack Curio is using
 
 - Frontend
   For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it  and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
@@ -19,7 +19,7 @@ Our final demo will be a live/recorded demonstration of our website where we wil
 - Backend
   We have powered our backend with AWS thus we are using Amazon S3 buckets to store the recorded audios and to further retrieve them according to the respective video.
 
-## Innovation & one prespective to use it
+## Innovation & one perspective to use it
 
 The idea is to link the students who are studying different languages to provide a platform where they can come and test their language skills by audio dubbing videos in the languages they are learning. The dub made by them will have to pass through a VALIDATION where they will get a review of their dub and can access their skills by the same.
 
@@ -56,7 +56,7 @@ It should show something like this :
   npm i
 ```
 
-- One the above command runs successfully, run:
+- One installation command runs successfully, run:
 
 ```bash
   npm start
