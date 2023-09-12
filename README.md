@@ -1,7 +1,8 @@
 # Curio
 
 ## How will Curio solve the problem?
-We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners. The website in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
+
+Curio is a web application which serves as an open platform where people can come and translate their favourite YouTube videos in their desired languages to help bridge the gap of language and communication between mentors & learners. The web application in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
 
 We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners.
 
@@ -29,28 +30,38 @@ We will compare the transcript of the dubbed audio and the converted transcript 
 # Getting Started with Curio
 
 ## Pre-Requisites
+
 - Make Sure You have `nodeJs` installed on your system & if not installed install it from [here](https://nodejs.org/en/download)
-- Check the version of `npm` on your system by running : 
+- Check the version of `npm` on your system by running :
+
 ```bash
 npm --version
 ```
-It should show something like this :  
-![image](https://user-images.githubusercontent.com/104268427/230011750-3e6271bf-c5f0-4359-be90-878f60b745db.png)  
+
+It should show something like this :
+![image](https://user-images.githubusercontent.com/104268427/230011750-3e6271bf-c5f0-4359-be90-878f60b745db.png)
 & you are good to go.
 
 ## Set up Locally
+
 - Clone the repository locally using:
+
 ```bash
   git clone https://github.com/arjxn-py/Curio.git
 ```
+
 - Now Go to the project directory & run:
+
 ```bash
   npm i
 ```
-- One the above command runs successfully, run: 
+
+- One the above command runs successfully, run:
+
 ```bash
   npm start
-``` 
+```
+
 It will automatically open up the application in the browser locally at [http://localhost:3000](http://localhost:3000)
 
 Congratulations, you've now successfully installed **Curio** locally.
