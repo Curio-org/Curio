@@ -1,17 +1,8 @@
 ![image](https://github.com/arjxn-py/Curio/blob/develop/src/components/assets/images/curiolight.png)
 
-
-# Curio
-
 ## How Curio solves the problem?
 
-Curio is a web application which serves as an open platform where people can come and translate their favourite YouTube videos in their desired languages to help bridge the gap of language and communication between mentors & learners. The web application in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
-
-We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners.
-
-## What will be our final demo?
-
-Our final demo will be a live/recorded demonstration of our website where we will record the translation of a video upload it on a global server and then play it in sync with the desired YouTube video.
+Curio, a web application which is serving as an open platform where anyone can come and translate their favourite YouTube videos in their desired languages to help bridge the gap of language and communication between mentors & learners. The web application in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
 
 ## Tech stack Curio is using
 
@@ -40,6 +31,7 @@ We will compare the transcript of the dubbed audio and the converted transcript 
 ```bash
 node --version
 ```
+
 - Check the version of `npm` on your system by running :
 
 ```bash
