@@ -1,14 +1,6 @@
-# Team Name Curio
+# Curio
 
-## Working on theme : Audio Dubbing for youtube Videos
-
-## Team Members
-
-- Abhishek Bhardwaj
-- [Deepanshu Mishra](https://github.com/DeepMiniature)
-- Arjun Verma
-
-## How will we solve the problem?
+## How will Curio solve the problem?
 We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners. The website in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
 
 We aim to build a website which will serve as an open platform where people can come and translate their favourite YouTube videos in their respective languages to help bridge the gap of language and communication between learners.
@@ -30,7 +22,7 @@ Our final demo will be a live/recorded demonstration of our website where we wil
 
 The idea is to link the students who are studying different languages to provide a platform where they can come and test their language skills by audio dubbing videos in the languages they are learning. The dub made by them will have to pass through a VALIDATION where they will get a review of their dub and can access their skills by the same.
 
-## How will we validate things?
+## How will Curio validate things?
 
 We will compare the transcript of the dubbed audio and the converted transcript of the original audio in the dubbed language using google translator. If the matching percentage of the dub satisfies the minimum percentage criteria (we will decide the criteria using some algorithm) then we will accept it, otherwise the dubbing will be rejected.
 
