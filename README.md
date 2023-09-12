@@ -34,16 +34,19 @@ We will compare the transcript of the dubbed audio and the converted transcript 
 
 ## Pre-Requisites
 
-- Make Sure You have `nodeJs` installed on your system & if not installed install it from [here](https://nodejs.org/en/download)
+- Make Sure You have `nodeJs` installed on your system & if not install it from [here](https://nodejs.org/en/download)
+- Check the version of `node` on your system by running :
+
+```bash
+node --version
+```
 - Check the version of `npm` on your system by running :
 
 ```bash
 npm --version
 ```
 
-It should show something like this :
-![image](https://user-images.githubusercontent.com/104268427/230011750-3e6271bf-c5f0-4359-be90-878f60b745db.png)
-& you are good to go.
+It should log the version of npm installed on your machine which means you're good to go.
 
 ## Set up Locally
 
