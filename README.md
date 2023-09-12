@@ -1,4 +1,4 @@
-![image](https://github.com/arjxn-py/Curio/assets/104268427/ec47033a-22d3-43e8-a732-84b712934a79)
+![image](https://github.com/arjxn-py/Curio/blob/develop/src/components/assets/images/curiolight.png)
 
 
 # Curio
