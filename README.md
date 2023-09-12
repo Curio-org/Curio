@@ -89,10 +89,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 See the website [Curio](https://curiocic.netlify.app/)
 
-### See Video Demo Here
-
-See the [Video Demo](https://youtu.be/7BrTDM-Y_oU)
-
 ### See a Sample Translated Video Here
 
 Watch [Translated Video](https://curiocic.netlify.app/play/r0G86-0-4O4)
