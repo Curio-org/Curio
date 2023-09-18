@@ -1,12 +1,95 @@
+
 .curio__header{
   font-family: Manrope;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
 
   padding: 2rem 4rem;
 }
+.gradient__text-m{
+  display: flex;
+  flex-direction: column;
 
+}
+.display-none{
+  display: none;
+}
+.hamburger-m{
+display: flex;
+flex-direction: column;
+height: 5vw;
+width: 8vw;
+gap: 1vw;
+background-color: rgba(0, 0, 0, 0);
+transition-duration: .2s;
+
+
+}
+.lines-rotated-left-m{
+  height: 1.2vw;
+  width: 8vw;
+  position: absolute;
+  transform: rotate(50deg);
+  background-image: linear-gradient(to right,purple, pink);
+}
+.lines-rotated-right-m{
+  height: 1.2vw;
+  width: 8vw;
+  position: absolute;
+  transform: rotate(-50deg);
+  background-image: linear-gradient(to right,purple, pink);
+}
+.hamburger-m:active{
+  opacity: .6;
+}
+.hamburger-m:hover{
+  opacity: .6;
+}
+.hamburger-lines-m{
+  height: 2vw;
+  width: 8vw;
+
+  background-image: linear-gradient(to right,purple, pink);
+}
+.curio__header-m{
+  font-family: Manrope;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+  height: 35vw;
+  width: 80vw;
+  align-items: center;
+  margin-left: 10vw;
+
+}
+.hamburger-menu-context{
+  color: white;
+  transition-duration: .2s;
+}
+.hamburger-menu-active{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  z-index: 100;
+  background-color: #040c18;
+  height: 60vw;
+  width: 96vw;
+  transition-duration: 1s;
+  font-size: 1.1rem;
+  font-family: Manrope;
+}
+.hamburger-menu-context:active{
+  opacity: .2;
+
+}
+.hamburger-menu-context:hover{
+  opacity: .2;
+
+}
 .gradient__text{
   background: var(--gradient-text);
   background-clip: text;
@@ -22,7 +105,10 @@
 .curio__tag{
   padding: 0rem 4.5rem;
 }
-
+.curio_tag-m{
+  display: flex;
+  flex-direction: column;
+}
 .curio__sign{
   display: flex;
   justify-content: flex-end;
@@ -55,4 +141,21 @@
 
   background: #FF4820;
   border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For mobile phones: */
+  [class="curio__header"] {
+    display: flex;
+  }
+  [class="curio__header-m"] {
+    display: none;
+  }
+  [class="hamburger-m"] {
+    display: none;
+  }
+  [class="hamburger-menu-active"] {
+    display: none;
+  }
+  
 }
