@@ -39,7 +39,7 @@
 
 .curio_whatcurio-heading {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     
@@ -47,7 +47,7 @@
 }
 
 .curio_whatcurio-heading h1 {
-    font-size: 34px;
+    font-size: 2.2rem;
     line-height: 45px;
     font-weight: 800;
     font-family: var(--font-family);
@@ -57,7 +57,7 @@
 .curio_whatcurio-heading p {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 30px;
     color: var(--color-subtext);
     cursor: pointer;
@@ -83,4 +83,10 @@
 /* Customizing feature component as per needs */
 .curio_whatcurio-container .gpt3__features-container_feature-text {
     margin-top: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    [class="curio_whatcurio-heading"] {
+        flex-direction: row;
+      }
 }
