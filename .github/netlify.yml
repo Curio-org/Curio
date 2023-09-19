@@ -3,7 +3,7 @@ name: Netlify Deploy Preview
 on:
   pull_request:
     branches:
-      - main
+      - '*'
 
 jobs:
   build:
