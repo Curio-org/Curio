@@ -16,7 +16,7 @@
     border-radius: 5px 0px 0px 5px;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 1.1rem;
     line-height: 27px;
     color: #3D6184;
 }
@@ -42,7 +42,13 @@
 .curio__search__input {
     width: 100%;
     margin: 2rem 0 1rem;
-
+    
     display: flex;
     flex-direction: row;
+}
+@media only screen and (min-width: 768px) {
+.curio__search Input{
+    font-size: 1.4rem;
+}
+
 }

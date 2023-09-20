@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-direction: row;
+    flex-direction: column;
 
     margin: 1rem;
 }
@@ -17,7 +17,7 @@
 .curio_feature-title h1 {
     font-family: var(--font-family);
     font-weight: 800;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 24px;
     letter-spacing: -0.04em;
     color: #fff;
@@ -40,7 +40,18 @@
 .curiofeature-text p {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 14px;
+    font-size: .97rem;
     line-height: 24px;
     color: var(--color-text);
 }
+
+@media only screen and (min-width: 768px) {
+    /* For mobile phones: */
+    [class="curio_feature"] {
+        flex-direction: row;
+    }
+    [class="curio_feature-title h1"]{
+        
+        font-size: 18px;
+    }
+  }
