@@ -47,12 +47,12 @@ const HeaderCurio = () => {
           First one is when it's off
           Second one is when it's on
           */}
-          <div className={triggerMenu == false ?'hamburger-m' : 'display-none'}>
+          <div className={triggerMenu === false ?'hamburger-m' : 'display-none'}>
           <div className='hamburger-lines-m'></div>
           <div className='hamburger-lines-m'></div>
           <div className='hamburger-lines-m'></div>            
           </div>
-          <div className={triggerMenu == true ?'hamburger-m' : 'display-none'}>
+          <div className={triggerMenu === true ?'hamburger-m' : 'display-none'}>
           <div className='lines-rotated-left-m'></div>
 
           <div className='lines-rotated-right-m'></div>            
@@ -64,7 +64,7 @@ const HeaderCurio = () => {
       {/*
     The menu of the hamburger 
     If trigger is true, display it, if not don't*/}
-      <div className={triggerMenu == true ? 'hamburger-menu-active' : 'display-none'}>
+      <div className={triggerMenu === true ? 'hamburger-menu-active' : 'display-none'}>
         <div className='hamburger-menu-context'>
           <b>Sign Up</b>
         </div>
