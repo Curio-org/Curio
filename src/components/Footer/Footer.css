@@ -8,6 +8,8 @@
 }
 
 .curio_footer-heading {
+    display: flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
 
@@ -17,7 +19,7 @@
 .curio_footer-heading h1 {
     font-family: var(--font-family);
     font-weight: 800;
-    font-size: 64px;
+    font-size: 3.7rem;
     line-height: 75px;
 }
 
@@ -35,7 +37,7 @@
 }
 
 .curio_footer-btn p {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-family: var(--font-family);
     line-height: 21px;
     color: #fff;
@@ -64,15 +66,15 @@
 }
 
 .curio_footer_links_logo img {
-    width: 118px;
-    height: 118px;
+    width: 20vw;
+    height: 20vw;
 
     margin-bottom: 1rem;
 }
 
 .curio_footer_links_logo p {
     font-family: var(--font-family);
-    font-size: 12px;
+    font-size: .85rem;
     line-height: 15px;
     color: #fff;
 }
@@ -84,7 +86,7 @@
 }
 
 .curio_footer_links_div h4 {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 17px;
     font-family: var(--font-family);
     color: #fff;
@@ -93,7 +95,7 @@
 }
 
 .curio_footer_links_div p {
-    font-size: 12px;
+    font-size: .7rem;
     line-height: 15px;
     font-family: var(--font-family);
     color: #fff;
@@ -113,4 +115,11 @@
     font-family: var(--font-family);
     line-height: 15px;
     color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+    .curio_footer_links_logo img{
+        width: 7vw;
+        height: 7vw;
+    }
 }
