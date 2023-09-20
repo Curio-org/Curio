@@ -11,12 +11,15 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
+      
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+      
       - name: Build and Test
         run: |
           npm install
           npm run build
-          npx netlify deploy --dir=build --site=SITE_ID --auth=NETLIFY_AUTH_TOKEN --prod=false
+          npx netlify deploy --dir=build --site=${{ secrets.SITE_ID }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }}
         env:
           CI: true
           NODE_ENV: production
