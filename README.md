@@ -1,4 +1,4 @@
-![image](https://github.com/arjxn-py/Curio/blob/develop/src/components/assets/images/curiolight.png)
+![image](https://github.com/Curio-org/Curio/blob/main/src/components/assets/images/curiolight.png)
 
 ## How Curio solves the problem?
 
