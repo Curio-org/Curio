@@ -1,17 +1,30 @@
 import React from 'react';
-import {CommentsHeader} from "./CommentsHeader";
+import { CommentsHeader } from './CommentsHeader';
 import { AddComment } from './AddComment';
 import { Comment } from './Comment';
 
-export class Comments extends React.Component {
+// Define a type for your comment objects
+interface CommentObject {
+  userName: string;
+  commentText: string;
+}
+
+interface CommentsProps {
+  amountComments: number;
+  comments: CommentObject[];
+}
+
+export class Comments extends React.Component<CommentsProps> {
   render() {
-    return(
+    const commentComponents = this.props.comments.map((comment, index) => (
+      <Comment key={index} userName={comment.userName} commentText={comment.commentText} />
+    ));
+
+    return (
       <div>
-        <CommentsHeader amountComments={this.props.amountComments}/>
+        <CommentsHeader amountComments={this.props.amountComments} />
         <AddComment />
-        <Comment />
-        <Comment />
-        <Comment />
+        {commentComponents}
       </div>
     );
   }
