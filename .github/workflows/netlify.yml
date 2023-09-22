@@ -12,9 +12,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-      
       - name: Build and Test
         run: |
           npm install
