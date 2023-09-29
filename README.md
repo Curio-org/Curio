@@ -51,7 +51,7 @@ It should log the version of npm installed on your machine which means you're go
 - Now Go to the project directory & run:
 
 ```bash
-  npm i
+  npm i --legacy-peer-deps
 ```
 
 - One installation command runs successfully, run:
