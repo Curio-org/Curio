@@ -129,15 +129,17 @@ const RecordView = (props: any) => {
                         </div>
 
                         <div>
-                            <span className="record_start"><Button  
-                            onClick={()=>{  startRecording();
-                            if(duration !== 0){
-                                    console.log(duration);
-                                    setTimeout(stopRecording, duration * 1000)
-                                }
-                            }}>
-                            Start Recording
-                            </Button></span>
+                            <span className="record_start">
+                                <Button  
+                                    onClick={()=>{  startRecording();
+                                        if(duration !== 0){
+                                            console.log(duration);
+                                            setTimeout(stopRecording, duration * 1000)
+                                            }
+                                        }}>
+                                    Start Recording
+                                </Button>
+                            </span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
                         </div>
                     
