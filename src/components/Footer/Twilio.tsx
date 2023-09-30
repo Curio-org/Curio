@@ -34,7 +34,7 @@ const Twilio = () => {
     <div className="request_form">
       <form onSubmit={onSubmit}>
           <input value={number} placeholder="Enter The Language" onChange={(e) => setNumber(e.target.value)} />
-          <textarea rows={3} placeholder="Enter the URL of Video" value={body} onChange={(e) => setBody(e.target.value)} />
+          <textarea rows={6} placeholder="Enter the URL of Video" value={body} onChange={(e) => setBody(e.target.value)} />
           {/* {console.log(`Number is ${number} and the Message is ${body}`)} */}
           <button type="submit">Send</button>
       </form>
