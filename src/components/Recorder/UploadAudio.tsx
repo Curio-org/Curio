@@ -5,13 +5,17 @@ import { Button } from 'rsuite'
 import { useParams } from 'react-router-dom';
 import './Recorder.css'
 
-const UploadAudio = (props) => {
-  const { vidId } = useParams();
+interface UploadAudioProps {
+  audio: Blob;
+}
 
-  const [file, setFile] = useState();
+const UploadAudio: React.FC<UploadAudioProps> = ({ audio }) => {
+  const { vidId } = useParams<{ vidId: string }>();
+
+  const [file, setFile] = useState<Blob | null>(null);
 
   const sFile = () => {
-    setFile(props.audio)
+    setFile(audio);
   }
 
   const UPKEY = process.env.REACT_APP_UP;
@@ -19,7 +23,7 @@ const UploadAudio = (props) => {
   console.log(file)
   const API_ENDPOINT = `${UPKEY}${vidId}`
   
-  const handleSubmit = async (file) => {
+  const handleSubmit = async () => {
     console.log(file);
 
     // * GET request: presigned URL
@@ -32,17 +36,16 @@ const UploadAudio = (props) => {
     // * PUT request: upload file to S3
     const result = await fetch(response.data.uploadURL, {
       method: 'PUT',
-      body:file
+      body: file,
     })
     console.log('Result: ', result)
-
   }
 
   return (
     <>
-      <span className='upload_button'><Button onClick={() => {sFile(); handleSubmit(file)}}>Upload Audio</Button></span>
+      <span className='upload_button'><Button onClick={() => { sFile(); handleSubmit(); }}>Upload Audio</Button></span>
     </>
   )
 }
 
-  export default UploadAudio;
+export default UploadAudio;

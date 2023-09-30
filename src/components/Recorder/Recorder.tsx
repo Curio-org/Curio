@@ -85,7 +85,7 @@ const RecordView = (props: any) => {
         <div>
             {merged && audios.length > 1 && <span className="merged"><h2 className='gradient__text'>Merged Audio</h2></span>}
             {merged && audios.length > 1 && <span className="merged_audio"><audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio></span>}<br/>
-            {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}<br />
+            {merged && audios.length > 1 && <UploadAudio audio={merged} />}<br />
         </div>
 
         <div className='record_grad'>
