@@ -1,35 +1,36 @@
-import React, {useState} from 'react'
-import axios from 'axios'
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Button } from 'rsuite';
 import { useParams } from 'react-router-dom';
 
 const TranslatedAudio = () => {
-    const [audio , setAudio] = useState();
-    const { vidId } = useParams();
+  const [audio, setAudio] = useState<string | undefined>(undefined); // Specify the type of audio state
+  const { vidId } = useParams<{ vidId: string }>(); // Define the type for vidId
 
-    const GETKEY = process.env.REACT_APP_DOWN;
+  const GETKEY = process.env.REACT_APP_DOWN;
 
-    const gts = async () => {
-        const API_ENDPOINT = `${GETKEY}${vidId}`;
-        const response = await axios({
-            method: 'GET',
-            url: API_ENDPOINT,
-            responseType: 'blob'
-        })
-        console.log('Response: ', response)
+  const gts = async () => {
+    const API_ENDPOINT = `${GETKEY}/${vidId}`; // Correct the URL format
+    try {
+      const response = await axios.get(API_ENDPOINT, {
+        responseType: 'blob',
+      });
+      console.log('Response: ', response);
 
-        let blobUrl = URL.createObjectURL(response.data);
+      const blobUrl = URL.createObjectURL(response.data);
 
-        setAudio(blobUrl);
-        console.log(audio);
+      setAudio(blobUrl);
+    } catch (error) {
+      console.error('Error: ', error);
     }
+  };
 
   return (
     <>
       <Button onClick={gts}>Get Translated Audio</Button>
-      <audio id='translatedAudio' src={audio} />
+      {audio && <audio id='translatedAudio' src={audio} controls />}
     </>
-  )
-}
+  );
+};
 
-export default TranslatedAudio
+export default TranslatedAudio;
