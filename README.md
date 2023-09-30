@@ -1,5 +1,7 @@
 ![image](https://github.com/Curio-org/Curio/blob/main/src/components/assets/images/curiolight.png)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae6ec098-3afe-409d-8301-60dacd6a9dc6/deploy-status)](https://app.netlify.com/sites/curiocic/deploys)
+
 ## How Curio solves the problem?
 
 Curio, a web application which is serving as an open platform where anyone can come and translate their favourite YouTube videos in their desired languages to help bridge the gap of language and communication between mentors & learners. The web application in its initial stage of development contains the function of translation and view which will further be extended to machine dub as a future development.
