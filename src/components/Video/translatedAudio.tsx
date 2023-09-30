@@ -4,17 +4,19 @@ import { Button } from 'rsuite';
 import { useParams } from 'react-router-dom';
 
 const TranslatedAudio = () => {
-  const [audio, setAudio] = useState<string | undefined>(undefined); // Specify the type of audio state
-  const { vidId } = useParams<{ vidId: string }>(); // Define the type for vidId
+  const [audio, setAudio] = useState<string | undefined>(undefined);
+  const { vidId } = useParams<{ vidId: string }>(); 
 
   const GETKEY = process.env.REACT_APP_DOWN;
 
   const gts = async () => {
-    const API_ENDPOINT = `${GETKEY}/${vidId}`; // Correct the URL format
+    const API_ENDPOINT = `${GETKEY}${vidId}`;
     try {
-      const response = await axios.get(API_ENDPOINT, {
-        responseType: 'blob',
-      });
+      const response = await axios({
+        method: 'GET',
+        url: API_ENDPOINT,
+        responseType: 'blob'
+    })
       console.log('Response: ', response);
 
       const blobUrl = URL.createObjectURL(response.data);
