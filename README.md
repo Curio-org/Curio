@@ -1,4 +1,4 @@
-![image](https://github.com/arjxn-py/Curio/blob/develop/src/components/assets/images/curiolight.png)
+![image](https://github.com/Curio-org/Curio/blob/main/src/components/assets/images/curiolight.png)
 
 ## How Curio solves the problem?
 
@@ -51,7 +51,7 @@ It should log the version of npm installed on your machine which means you're go
 - Now Go to the project directory & run:
 
 ```bash
-  npm i
+  npm i --legacy-peer-deps
 ```
 
 - One installation command runs successfully, run:
