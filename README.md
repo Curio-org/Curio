@@ -1,6 +1,6 @@
 ![image](https://github.com/Curio-org/Curio/blob/main/src/components/assets/images/curiolight.png)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ae6ec098-3afe-409d-8301-60dacd6a9dc6/deploy-status)](https://app.netlify.com/sites/curiocic/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae6ec098-3afe-409d-8301-60dacd6a9dc6/deploy-status)](https://curiocic.netlify.app/)
 
 ## How Curio solves the problem?
 
