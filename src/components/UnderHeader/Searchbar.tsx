@@ -1,5 +1,5 @@
-import React, { ChangeEvent, FormEvent } from 'react';
-import { Input } from 'rsuite';
+import React, { FormEvent } from 'react';
+import { Input, Button } from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 import './SearchBar.css';
 
@@ -19,9 +19,9 @@ class Searchbar extends React.Component<SearchbarProps, SearchbarState> {
     };
   }
 
-  handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  handleChange = (value: string) => {
     this.setState({
-      term: event.target.value,
+      term: value,
     });
   };
 
@@ -44,9 +44,15 @@ class Searchbar extends React.Component<SearchbarProps, SearchbarState> {
                 id="searchBar"
                 placeholder="Search Video..."
               />
-              <button onClick={this.handleSubmit} type="submit" size="sm" id="searchButton">
+              <Button
+                onClick={() => this.handleSubmit}
+                type="submit"
+                appearance="primary"
+                size="sm"
+                id="searchButton"
+              >
                 <SearchIcon />
-              </button>
+              </Button>
             </div>
           </div>
         </form>
