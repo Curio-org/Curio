@@ -28,7 +28,7 @@ class App extends React.Component {
         return this.state.audioProps
     }
 
-    setAudio = (prop) => {
+    setAudio = (prop: any) => {
         this.setState(
             {
                 audioProps: prop
@@ -36,7 +36,7 @@ class App extends React.Component {
         )
     }
 
-    handleSubmit = async (termFromSearchBar) => {
+    handleSubmit = async (termFromSearchBar: string) => {
         const response = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
@@ -48,11 +48,11 @@ class App extends React.Component {
         })
         console.log("this is resp",response);
     };
-    setVidId = (vidId) => {
+    setVidId = (vidId: string) => {
         this.setState({vidId : vidId})
         window.location.href = `/play/${vidId}`
     }
-    setRecId = (vidId) => {
+    setRecId = (vidId: string) => {
         this.setState({vidId : vidId})
         window.location.href = `/record/${vidId}`
     }
@@ -74,7 +74,7 @@ class App extends React.Component {
 
                     <Route path="/record/:vidId">
                         <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio} vidId={this.vidId}/>
+                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio} vidId={this.state.vidId}/>
                     </Route>
 
                     <Route path="/">

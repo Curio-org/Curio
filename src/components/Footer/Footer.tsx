@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import Twilio from './Twilio'
-import curio from'../assets/images/curio.png'
+import curio from './curio.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {

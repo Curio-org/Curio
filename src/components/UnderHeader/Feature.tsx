@@ -1,7 +1,12 @@
 import React from 'react';
 import './Feature.css';
 
-const Feature = ({ title, text }) => (
+interface FeatureProps {
+  title: string;
+  text: string;
+}
+
+const Feature: React.FC<FeatureProps> = ({ title, text }) => (
   <div className="curio_feature">
     <div className="curio_feature-title">
       <div />
