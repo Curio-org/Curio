@@ -14,7 +14,7 @@ jobs:
       
       - name: Build and Test
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
           npx netlify deploy --dir=build --site=${{ secrets.SITE_ID }} --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}"
         env:
