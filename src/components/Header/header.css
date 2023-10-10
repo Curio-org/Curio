@@ -98,12 +98,11 @@ transition-duration: .2s;
 }
 
 .curio__icon{
-  width: 15mm;
   height: 15mm;
 }
 
 .curio__tag{
-  padding: 0rem 4.5rem;
+  padding: 0rem 0rem;
 }
 .curio_tag-m{
   display: flex;
