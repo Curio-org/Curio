@@ -102,7 +102,7 @@ transition-duration: .2s;
 }
 
 .curio__tag{
-  padding: 0rem 0rem;
+  padding-right: 4.5rem;
 }
 .curio_tag-m{
   display: flex;
