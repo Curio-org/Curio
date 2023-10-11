@@ -21,7 +21,8 @@ class App extends React.Component {
             playing: false,
             time: 0,
             maxTime: 0,
-        }
+        },
+        showUnderHeader: true
     }
 
     getAudio = () => {
@@ -42,6 +43,13 @@ class App extends React.Component {
                 q: termFromSearchBar
             }
         })
+
+        if (response.data.items.length === 0) {
+            this.setState({showUnderHeader: true})
+        }
+        else {
+            this.setState({showUnderHeader: false})
+        }
 
         this.setState({
             videos: response.data.items
@@ -80,7 +88,7 @@ class App extends React.Component {
                     <Route path="/">
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
-                            <UnderHeader />
+                            {this.state.showUnderHeader ? <UnderHeader /> : null}
                             <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
                         </div>
                     </Route>
