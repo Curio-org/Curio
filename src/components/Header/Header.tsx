@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { Header, Image } from 'semantic-ui-react'
-import Curiologo from '../assets/images/Curiologo.png'
+import Curiologo from '../assets/images/Csmall.png'
 import './header.css';
 
 const HeaderCurio = () => {
@@ -14,6 +14,7 @@ const HeaderCurio = () => {
         <div className='gradient__text'>
           <h1>
             <img src={Curiologo} alt='Curio' className='curio__icon' />
+            <span>URIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
         </div>
@@ -34,6 +35,7 @@ const HeaderCurio = () => {
         <div className=' gradient__text  gradient__text-m'>
           <h1>
             <img src={Curiologo} alt='Curio' className='curio__icon' />
+            <span>URIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
 
