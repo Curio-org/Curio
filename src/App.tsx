@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
+import { AxiosError } from 'axios';
 import HeaderCurio from './components/Header/Header';
 import SearchBar from './components/UnderHeader/Searchbar';
 import youtube from './apis/youtube';
@@ -38,23 +39,22 @@ class App extends React.Component {
     }
 
     handleSubmit = async (termFromSearchBar: string) => {
-        const response = await youtube.get('/search', {
-            params: {
-                q: termFromSearchBar
+        try {
+            const response = await youtube.get('/search', {
+                params: {
+                    q: termFromSearchBar
+                }
+            })
+
+            this.setState({
+                videos: response.data.items
+            })
+            console.log("this is resp",response);
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                console.log(error?.response?.data.error.message);
             }
-        })
-
-        if (response.data.items.length === 0) {
-            this.setState({showUnderHeader: true})
         }
-        else {
-            this.setState({showUnderHeader: false})
-        }
-
-        this.setState({
-            videos: response.data.items
-        })
-        console.log("this is resp",response);
     };
     setVidId = (vidId: string) => {
         this.setState({vidId : vidId})
