@@ -1,4 +1,6 @@
-![image](https://github.com/Curio-org/Curio/blob/main/src/components/assets/images/curiolight.png)
+![image](src/components/assets/images/Curiologo.png)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae6ec098-3afe-409d-8301-60dacd6a9dc6/deploy-status)](https://curiocic.netlify.app/)
 
 ## How Curio solves the problem?
 
@@ -51,7 +53,7 @@ It should log the version of npm installed on your machine which means you're go
 - Now Go to the project directory & run:
 
 ```bash
-  npm i
+  npm i --legacy-peer-deps
 ```
 
 - One installation command runs successfully, run:

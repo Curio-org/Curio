@@ -14,7 +14,7 @@ const HeaderCurio = () => {
         <div className='gradient__text'>
           <h1>
             <img src={language} alt='Curio' className='curio__icon' />
-            <t /> CURIO
+            <span>CURIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
         </div>
@@ -35,13 +35,13 @@ const HeaderCurio = () => {
         <div className=' gradient__text  gradient__text-m'>
           <h1>
             <img src={language} alt='Curio' className='curio__icon' />
-            <t /> CURIO
+            <span>CURIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
 
         </div>
 
-        <button onClick={() => { setTriggerMenu(!triggerMenu) }} className='hamburger-m' type="">
+        <button onClick={() => { setTriggerMenu(!triggerMenu) }} className='hamburger-m' type="button">
           {/*
           This is the hamburger line icon
           First one is when it's off
