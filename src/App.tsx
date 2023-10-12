@@ -21,14 +21,15 @@ class App extends React.Component {
             playing: false,
             time: 0,
             maxTime: 0,
-        }
+        },
+        showUnderHeader: true
     }
 
     getAudio = () => {
         return this.state.audioProps
     }
 
-    setAudio = (prop) => {
+    setAudio = (prop: any) => {
         this.setState(
             {
                 audioProps: prop
@@ -36,23 +37,30 @@ class App extends React.Component {
         )
     }
 
-    handleSubmit = async (termFromSearchBar) => {
+    handleSubmit = async (termFromSearchBar: string) => {
         const response = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
             }
         })
 
+        if (response.data.items.length === 0) {
+            this.setState({showUnderHeader: true})
+        }
+        else {
+            this.setState({showUnderHeader: false})
+        }
+
         this.setState({
             videos: response.data.items
         })
         console.log("this is resp",response);
     };
-    setVidId = (vidId) => {
+    setVidId = (vidId: string) => {
         this.setState({vidId : vidId})
         window.location.href = `/play/${vidId}`
     }
-    setRecId = (vidId) => {
+    setRecId = (vidId: string) => {
         this.setState({vidId : vidId})
         window.location.href = `/record/${vidId}`
     }
@@ -74,13 +82,13 @@ class App extends React.Component {
 
                     <Route path="/record/:vidId">
                         <Player getAudio={this.getAudio} setAudio={this.setAudio}/>
-                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio} vidId={this.vidId}/>
+                        <RecordView getAudio={this.getAudio} setAudio={this.setAudio} vidId={this.state.vidId}/>
                     </Route>
 
                     <Route path="/">
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
-                            <UnderHeader />
+                            {this.state.showUnderHeader ? <UnderHeader /> : null}
                             <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
                         </div>
                     </Route>

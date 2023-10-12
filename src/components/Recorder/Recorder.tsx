@@ -5,14 +5,14 @@ import { Input} from 'rsuite';
 import './Recorder.css'
 import UploadAudio from './UploadAudio';
 
-const RecordView = (props) => {
+const RecordView = (props: any) => {
 
-    const [audios, setAudios] = useState([]);
-    const [merged, setMerged] = useState()
+    const [audios, setAudios] = useState<Array<{ src: string; blob: Blob }>>([]);
+    const [merged, setMerged] = useState<Blob | undefined>(undefined);
     const [duration, setDuration] = useState(0);
     const [recFrom, setFrom] = useState(0);
-    const merge = (audios) => {
-        var buffers = [];
+    const merge = (audios: Array<{ src: string; blob: Blob }>) => {
+        var buffers: Array<ArrayBuffer> = [];
 
         var index = 0;
 
@@ -22,7 +22,12 @@ const RecordView = (props) => {
             }
             var reader = new FileReader();
             reader.onload = function (event) {
-                buffers.push(event.target.result);
+                if (event.target) {
+                    const result = event.target.result;
+                    if (result instanceof ArrayBuffer) {
+                        buffers.push(result);
+                    }
+                }
                 index++;
                 readAsArrayBuffer();
             };
@@ -63,7 +68,7 @@ const RecordView = (props) => {
         console.log('audio started')
     }
     
-    const stopRec = (url, blob) => {
+    const stopRec = (url: string, blob: Blob) => {
         console.log('audio stopped')
         let audios1 = audios
         audios1.push({
@@ -80,7 +85,7 @@ const RecordView = (props) => {
         <div>
             {merged && audios.length > 1 && <span className="merged"><h2 className='gradient__text'>Merged Audio</h2></span>}
             {merged && audios.length > 1 && <span className="merged_audio"><audio id='mergedAudio' src={URL.createObjectURL(merged)} controls></audio></span>}<br/>
-            {merged && audios.length > 1 && <UploadAudio audio={merged} vidId={props.vidId}/>}<br />
+            {merged && audios.length > 1 && <UploadAudio audio={merged} />}<br />
         </div>
 
         <div className='record_grad'>
@@ -98,25 +103,43 @@ const RecordView = (props) => {
                                 <button style={{backgroundColor:'#31b425', border:'none'}}>
                                     From
                                 </button>
-                                <Input type='number' id="duration_from" style={{borderRadius:0}} min={recFrom} max={recFrom} />
+                                <Input 
+                                    type='number' 
+                                    id="duration_from" 
+                                    style={{borderRadius:0}} 
+                                    min={recFrom} 
+                                    max={recFrom} 
+                                />
                                 <button>
                                     To
                                 </button>
-                                <Input type='number' id="duration_to" style={{borderRadius:0}} min={recFrom}  onChange={()=>{setDuration(document.getElementById('duration_to').value - document.getElementById('duration_from').value);
-                                                                                                                            setFrom(document.getElementById('duration_to').value);}}/>
+                                <Input 
+                                    type='number'
+                                    id="duration_to"
+                                    style={{borderRadius:0}} 
+                                    min={recFrom} 
+                                    onChange={()=>{
+                                        const durationToInput = document.getElementById('duration_to') as HTMLInputElement;
+                                        const durationFromInput = document.getElementById('duration_from') as HTMLInputElement;
+                                        setDuration(Number(durationToInput.value) - Number(durationFromInput.value));
+                                        setFrom(Number(durationToInput.value));
+                                    }}
+                                />
                             </div>
                         </div>
 
                         <div>
-                            <span className="record_start"><Button  onClick={()=>{  startRecording();
-                                                                                    if(duration !== 0){
-                                                                                        
-                                                                                        console.log(duration);
-                                                                                        setTimeout(stopRecording, duration * 1000)
-                                                                                    }
-                                                                                }}>
-                            Start Recording
-                            </Button></span>
+                            <span className="record_start">
+                                <Button  
+                                    onClick={()=>{  startRecording();
+                                        if(duration !== 0){
+                                            console.log(duration);
+                                            setTimeout(stopRecording, duration * 1000)
+                                            }
+                                        }}>
+                                    Start Recording
+                                </Button>
+                            </span>
                             <span className="record_stop"><Button  onClick={stopRecording}>Stop Recording</Button></span>
                         </div>
                     
