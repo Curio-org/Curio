@@ -12,22 +12,21 @@
   align-items: left;
   flex-direction: column;
   border-radius: 0.28rem;
-  padding: 0rem 1rem;
+  padding: 0.5rem 1rem;
   max-width: 1000px;
   background-color: #fff6f6;
-  color: #9f3a38;
 }
 
 .apiErrorMessage__header {
   color: #912d2b;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 800;
 }
 
 .apiErrorMessage__div p {
   color: #912d2b;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: .97rem;
   font-weight: 500;
 }
