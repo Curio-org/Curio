@@ -1,0 +1,33 @@
+.apiErrorMessage_mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0rem;
+  padding: 0 3rem;
+  width: 100%;
+}
+
+.apiErrorMessage__div {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  border-radius: 0.28rem;
+  padding: 0rem 1rem;
+  max-width: 1000px;
+  background-color: #fff6f6;
+  color: #9f3a38;
+}
+
+.apiErrorMessage__header {
+  color: #912d2b;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.apiErrorMessage__div p {
+  color: #912d2b;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+}
