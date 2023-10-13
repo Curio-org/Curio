@@ -1,7 +1,7 @@
-import React, { FormEvent } from 'react';
-import { Input, Button } from 'rsuite';
-import SearchIcon from '@rsuite/icons/Search';
-import './SearchBar.css';
+import React, { FormEvent } from "react";
+import { Input, Button } from "rsuite";
+import SearchIcon from "@rsuite/icons/Search";
+import "./SearchBar.css";
 
 interface SearchbarProps {
   handleFormSubmit: (termFromSearchBar: string) => void;
@@ -15,7 +15,7 @@ class Searchbar extends React.Component<SearchbarProps, SearchbarState> {
   constructor(props: SearchbarProps) {
     super(props);
     this.state = {
-      term: '',
+      term: "",
     };
   }
 
