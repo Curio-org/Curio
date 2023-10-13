@@ -37,8 +37,7 @@ const Twilio = () => {
             placeholder="Enter The Language"
             onChange={(e) => setNumber(e.target.value)}
           />
-          <textarea
-            rows={6}
+          <input
             placeholder="Enter the URL of Video"
             value={body}
             onChange={(e) => setBody(e.target.value)}
