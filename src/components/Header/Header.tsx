@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 // import { Header, Image } from 'semantic-ui-react'
 import Curiologo from '../assets/images/Csmall.png'
 import './header.css';
+import { Link ,BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const HeaderCurio = () => {
   //Used to toggle the hamburger menu
@@ -9,15 +10,19 @@ const HeaderCurio = () => {
 
   return (
     <>
-
       <div className='curio__header'>
+        {/* Wrapping the Link components within the Router component */}
+      <Router>
+        {/* Logo linking to the homepage */}
+        <Link to='/'>
         <div className='gradient__text'>
           <h1>
-            <img src={Curiologo} alt='Curio' className='curio__icon' />
+              <img src={Curiologo} alt='Curio' className='curio__icon' />
             <span>URIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
         </div>
+        </Link>
 
         <div className='curio__sign'>
           <p>About</p>
@@ -25,22 +30,26 @@ const HeaderCurio = () => {
           <button type='button'>Sign Up</button>
 
         </div>
+        </Router>
       </div>
       {/*Added a mobile version
      Screen width is < 768px above is disabled and below is triggered
      Added hamburger menu and generic options for the menu
      */}
-      { }
       <div className='curio__header-m'>
+        {/* Wrapping the Link components within the Router component */}
+      <Router>
+         {/* Logo linking to the homepage */}
+      <Link to='/'>
         <div className=' gradient__text  gradient__text-m'>
           <h1>
-            <img src={Curiologo} alt='Curio' className='curio__icon' />
+              <img src={Curiologo} alt='Curio' className='curio__icon' />
             <span>URIO</span>
           </h1>
           <p className='curio__tag'><b>Your Video Translator :)</b></p>
 
         </div>
-
+        </Link>
         <button onClick={() => { setTriggerMenu(!triggerMenu) }} className='hamburger-m' type="button">
           {/*
           This is the hamburger line icon
@@ -59,7 +68,7 @@ const HeaderCurio = () => {
           </div>
 
         </button>
-
+        </Router>
       </div>
       {/*
     The menu of the hamburger 
