@@ -1,15 +1,17 @@
-import React from 'react'
-import './Footer.css'
-import Twilio from './Twilio'
-import curio from './curio.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "./Footer.css";
+import Twilio from "./Twilio";
+import curio from "./curio.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
     <>
       <div className="curio_footer">
         <div className="curio_footer-heading">
-          <h1 className="gradient__text">Do you want a video to be Translated?</h1>
+          <h1 className="gradient__text">
+            Do you want a video to be Translated?
+          </h1>
         </div>
 
         <div className="curio_footer-btn">
@@ -23,7 +25,10 @@ const Footer = () => {
         <div className="curio_footer_links">
           <div className="curio_footer_links_logo">
             <img src={curio} alt="gpt3_logo" />
-            <p>Cluster Innovation Centre, <br/>University Of Delhi. <br/> All Rights Reserved</p>
+            <p>
+              Cluster Innovation Centre, <br />
+              University Of Delhi. <br /> All Rights Reserved
+            </p>
           </div>
           <div className="curio_footer_links_div">
             <h4>Links</h4>
@@ -51,7 +56,7 @@ const Footer = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Footer;

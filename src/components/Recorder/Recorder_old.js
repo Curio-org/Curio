@@ -1,14 +1,13 @@
 import { useReactMediaRecorder } from "react-media-recorder";
 import React, { useEffect, useState } from "react";
-import { Button } from 'rsuite';
-
+import { Button } from "rsuite";
 
 const RecordView = (props) => {
   const [second, setSecond] = useState("00");
   const [minute, setMinute] = useState("00");
   const [isActive, setIsActive] = useState(false);
   const [counter, setCounter] = useState(0);
-  var [audios , setAudios] = useState([]);
+  var [audios, setAudios] = useState([]);
 
   useEffect(() => {
     let intervalId;
@@ -54,82 +53,80 @@ const RecordView = (props) => {
   } = useReactMediaRecorder({
     video: false,
     audio: true,
-    echoCancellation: true
+    echoCancellation: true,
   });
   // console.log("Audio", mediaBlobUrl);
 
   const updateAudios = () => {
-    if(mediaBlobUrl === undefined) return
+    if (mediaBlobUrl === undefined) return;
 
-    setAudios(audios => [...audios , mediaBlobUrl]);
+    setAudios((audios) => [...audios, mediaBlobUrl]);
     console.log(audios);
-  }
-
+  };
 
   const AudioList = () => {
-    const renderedAudios = audios.map((audio , index)=> {
-      return <audio src= {audios[index]} controls></audio>
+    const renderedAudios = audios.map((audio, index) => {
+      return <audio src={audios[index]} controls></audio>;
     });
-    return <div>{renderedAudios}</div>
-  }
+    return <div>{renderedAudios}</div>;
+  };
 
   const merge = () => {
-    ConcatenateBlobs(audios,'audio/wav',showonscreen())
-  }
+    ConcatenateBlobs(audios, "audio/wav", showonscreen());
+  };
 
-
-  function ConcatenateBlobs (blobs, type, callback) {
+  function ConcatenateBlobs(blobs, type, callback) {
     var buffers = [];
 
     var index = 0;
 
     function readAsArrayBuffer() {
-        if (!blobs[index]) {
-            return concatenateBuffers();
-        }
-        var reader = new FileReader();
-        reader.onload = function(event) {
-            buffers.push(event.target.result);
-            index++;
-            readAsArrayBuffer();
-        };
-        reader.readAsArrayBuffer(blobs[index]);
+      if (!blobs[index]) {
+        return concatenateBuffers();
+      }
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        buffers.push(event.target.result);
+        index++;
+        readAsArrayBuffer();
+      };
+      reader.readAsArrayBuffer(blobs[index]);
     }
 
     readAsArrayBuffer();
 
     function concatenateBuffers() {
-        var byteLength = 0;
-        buffers.forEach(function(buffer) {
-            byteLength += buffer.byteLength;
-        });
-        
-        var tmp = new Uint16Array(byteLength);
-        var lastOffset = 0;
-        buffers.forEach(function(buffer) {
-            // BYTES_PER_ELEMENT == 2 for Uint16Array
-            var reusableByteLength = buffer.byteLength;
-            if (reusableByteLength % 2 !== 0) {
-                buffer = buffer.slice(0, reusableByteLength - 1)
-            }
-            tmp.set(new Uint16Array(buffer), lastOffset);
-            lastOffset += reusableByteLength;
-        });
+      var byteLength = 0;
+      buffers.forEach(function (buffer) {
+        byteLength += buffer.byteLength;
+      });
 
-        var blob = new Blob([tmp.buffer], {
-            type: type
-        });
+      var tmp = new Uint16Array(byteLength);
+      var lastOffset = 0;
+      buffers.forEach(function (buffer) {
+        // BYTES_PER_ELEMENT == 2 for Uint16Array
+        var reusableByteLength = buffer.byteLength;
+        if (reusableByteLength % 2 !== 0) {
+          buffer = buffer.slice(0, reusableByteLength - 1);
+        }
+        tmp.set(new Uint16Array(buffer), lastOffset);
+        lastOffset += reusableByteLength;
+      });
 
-        callback(blob);
+      var blob = new Blob([tmp.buffer], {
+        type: type,
+      });
+
+      callback(blob);
     }
   }
 
-  if(typeof modules !== 'undefined') {
-      module.export = ConcatenateBlobs;
+  if (typeof modules !== "undefined") {
+    module.export = ConcatenateBlobs;
   }
 
-  if(typeof window !== 'undefined') {
-      window.ConcatenateBlobs = ConcatenateBlobs;
+  if (typeof window !== "undefined") {
+    window.ConcatenateBlobs = ConcatenateBlobs;
   }
 
   function showonscreen(bb) {
@@ -137,15 +134,11 @@ const RecordView = (props) => {
   }
   return (
     <div>
-        <h4>
-          {status}
-        </h4>
-        {/* <audio src={mediaBlobUrl} controls loop /> */}
-        <AudioList />
+      <h4>{status}</h4>
+      {/* <audio src={mediaBlobUrl} controls loop /> */}
+      <AudioList />
       <div>
-        <Button onClick={stopTimer}>
-          Clear
-        </Button>
+        <Button onClick={stopTimer}>Clear</Button>
 
         <h3>
           <span className="minute">{minute}</span>
@@ -153,22 +146,41 @@ const RecordView = (props) => {
           <span className="second">{second}</span>
         </h3>
 
-
         <div>
-            <h3>
-              Press the Start to record
-            </h3>
-            <br />
+          <h3>Press the Start to record</h3>
+          <br />
 
-              <Button onClick={() => { if (!isActive) { startRecording(); } else { pauseRecording(); } setIsActive(!isActive); }} >
-                {isActive ? "Pause" : "Start"}
-              </Button>
-              <Button onClick={() => { pauseRecording(); stopRecording(); setIsActive(!isActive); updateAudios();}}>
-                Stop
-              </Button>
-              <br />
-              <Button onClick={() => {merge()}}>Merge</Button>
-              {/* <Button onClick={() => {mergeAudio()}}>Merge</Button> */}
+          <Button
+            onClick={() => {
+              if (!isActive) {
+                startRecording();
+              } else {
+                pauseRecording();
+              }
+              setIsActive(!isActive);
+            }}
+          >
+            {isActive ? "Pause" : "Start"}
+          </Button>
+          <Button
+            onClick={() => {
+              pauseRecording();
+              stopRecording();
+              setIsActive(!isActive);
+              updateAudios();
+            }}
+          >
+            Stop
+          </Button>
+          <br />
+          <Button
+            onClick={() => {
+              merge();
+            }}
+          >
+            Merge
+          </Button>
+          {/* <Button onClick={() => {mergeAudio()}}>Merge</Button> */}
         </div>
         <b></b>
       </div>

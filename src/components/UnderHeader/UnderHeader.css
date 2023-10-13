@@ -1,92 +1,117 @@
 .curio_whatcurio {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    padding: 2rem;
-    background: var(--color-footer);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 2rem;
+  background: var(--color-footer);
 
-    /* ff 3.6+ */
-    background:-moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    rgba(4, 44, 84, 1) 85%,
+    rgba(27, 120, 222, 1) 100%
+  );
 
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    rgba(4, 44, 84, 1) 85%,
+    rgba(27, 120, 222, 1) 100%
+  );
 
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    rgba(4, 44, 84, 1) 85%,
+    rgba(27, 120, 222, 1) 100%
+  );
 
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    rgba(4, 44, 84, 1) 85%,
+    rgba(27, 120, 222, 1) 100%
+  );
 
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    rgba(4, 44, 84, 1) 85%,
+    rgba(27, 120, 222, 1) 100%
+  );
 
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .curio_whatcurio-feature {
-    display: flex;
+  display: flex;
 }
 
 /* Customizing feature component as per needs */
 .curio_whatcurio-feature .gpt3__features-container__feature {
-    margin: 0;
+  margin: 0;
 }
 
 /* Customizing feature component as per needs */
 .curio_whatcurio-feature .gpt3__features-container_feature-text {
-    max-width: 700px;
+  max-width: 700px;
 }
 
 .curio_whatcurio-heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    
-    margin: 4rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 4rem 0 2rem;
 }
 
 .curio_whatcurio-heading h1 {
-    font-size: 2.2rem;
-    line-height: 45px;
-    font-weight: 800;
-    font-family: var(--font-family);
-    max-width: 510px;
+  font-size: 2.2rem;
+  line-height: 45px;
+  font-weight: 800;
+  font-family: var(--font-family);
+  max-width: 510px;
 }
 
 .curio_whatcurio-heading p {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 1.2rem;
-    line-height: 30px;
-    color: var(--color-subtext);
-    cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: var(--color-subtext);
+  cursor: pointer;
 }
 
 .curio_whatcurio-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 /* Customizing feature component as per needs */
 .curio_whatcurio-container .gpt3__features-container__feature {
-    flex: 1;
-    margin: 1rem;
-    min-width: 210px;
-    display: unset;
-    flex-direction: column;
+  flex: 1;
+  margin: 1rem;
+  min-width: 210px;
+  display: unset;
+  flex-direction: column;
 }
 
 /* Customizing feature component as per needs */
 .curio_whatcurio-container .gpt3__features-container_feature-text {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 @media only screen and (min-width: 768px) {
-    [class="curio_whatcurio-heading"] {
-        flex-direction: row;
-      }
+  [class="curio_whatcurio-heading"] {
+    flex-direction: row;
+  }
 }
