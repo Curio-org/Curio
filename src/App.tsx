@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
+import { AxiosError } from 'axios';
 import HeaderCurio from './components/Header/Header';
 import SearchBar from './components/UnderHeader/Searchbar';
+import APIError from './components/UnderHeader/APIError';
 import youtube from './apis/youtube';
 import VideoList from './components/Video/VideoList';
 import RecordView from './components/Recorder/Recorder';
@@ -22,7 +24,8 @@ class App extends React.Component {
             time: 0,
             maxTime: 0,
         },
-        showUnderHeader: true
+        showUnderHeader: true,
+        apiResponse: ''
     }
 
     getAudio = () => {
@@ -38,23 +41,26 @@ class App extends React.Component {
     }
 
     handleSubmit = async (termFromSearchBar: string) => {
-        const response = await youtube.get('/search', {
-            params: {
-                q: termFromSearchBar
+        try {
+            const response = await youtube.get('/search', {
+                params: {
+                    q: termFromSearchBar
+                }
+            })
+
+            this.setState({
+              videos: response.data.items,
+              apiResponse: ''
+            });
+            console.log("this is resp",response);
+        } catch (error) {
+            if (error && error instanceof AxiosError) {
+                this.setState({
+                    apiResponse: error?.response?.data.error.message
+                })
+                console.log(error?.response?.data.error.message);
             }
-        })
-
-        if (response.data.items.length === 0) {
-            this.setState({showUnderHeader: true})
         }
-        else {
-            this.setState({showUnderHeader: false})
-        }
-
-        this.setState({
-            videos: response.data.items
-        })
-        console.log("this is resp",response);
     };
     setVidId = (vidId: string) => {
         this.setState({vidId : vidId})
@@ -88,6 +94,8 @@ class App extends React.Component {
                     <Route path="/">
                         <div style={{marginTop: '1em'}}>
                             <SearchBar handleFormSubmit={this.handleSubmit}/>
+                            {this.state.apiResponse !== '' ? (
+                            <APIError apiResponse={this.state.apiResponse} />) : null}
                             {this.state.showUnderHeader ? <UnderHeader /> : null}
                             <VideoList setVidId={this.setVidId} setRecId={this.setRecId} videos={this.state.videos}/>
                         </div>
