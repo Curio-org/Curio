@@ -6,8 +6,8 @@ const S3_BUCKET = "be-bucket-public";
 const REGION = "ap-south-1";
 
 AWS.config.update({
-  accessKeyId: "AKIA27OR2MLKGPC5F2GN",
-  secretAccessKey: "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",
+  accessKeyId: "...",
+  secretAccessKey: "...",
 });
 
 const myBucket = new AWS.S3({
