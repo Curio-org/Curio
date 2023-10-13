@@ -27,6 +27,6 @@
 .apiErrorMessage__div p {
   color: #912d2b;
   font-family: var(--font-family);
-  font-size: .97rem;
+  font-size: 0.97rem;
   font-weight: 500;
 }
