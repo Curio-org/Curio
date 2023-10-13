@@ -14,9 +14,9 @@ const Footer = () => {
           </h1>
         </div>
 
-        <div className="curio_footer-btn">
+        {/* <div className="curio_footer-btn">
           <p>Request Translation</p>
-        </div>
+        </div> */}
 
         <div>
           <Twilio />
