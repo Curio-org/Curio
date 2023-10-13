@@ -46,6 +46,12 @@ class App extends React.Component {
         },
       });
 
+      if (response.data.items.length === 0) {
+        this.setState({ showUnderHeader: true });
+      } else {
+        this.setState({ showUnderHeader: false });
+      }
+
       this.setState({
         videos: response.data.items,
         apiResponse: "",
