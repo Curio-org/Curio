@@ -9,7 +9,7 @@ Curio, a web application which is serving as an open platform where anyone can c
 ## Tech stack Curio is using
 
 - Frontend
-  For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it  and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
+  For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
 - API
   We are taking use of Youtube V3 api to get the video data & search results based on the query & along with that we have also made a couple of APIs in order to connect the frontend to the backend usin AXIOS.
 - Backend

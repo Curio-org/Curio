@@ -1,5 +1,5 @@
-import React from 'react';
-import VideoItem from './VideoItem';
+import React from "react";
+import VideoItem from "./VideoItem";
 
 interface VideoListProps {
   videos: Array<any>;
@@ -7,7 +7,11 @@ interface VideoListProps {
   setRecId: (videoId: string) => void;
 }
 
-const VideoList: React.FC<VideoListProps> = ({ videos, setVidId, setRecId }) => {
+const VideoList: React.FC<VideoListProps> = ({
+  videos,
+  setVidId,
+  setRecId,
+}) => {
   const renderedVideos = videos.map((video, index) => {
     return (
       <div key={index}>
