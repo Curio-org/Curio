@@ -70,33 +70,50 @@ Congratulations, you've now successfully installed **Curio** locally.
 
 [How to generate a Youtube API Key?](https://medium.com/swlh/how-to-get-youtubes-api-key-7c28b59b1154)
 
-<details>
-<summary>Component tree for contributors</summary>
-<br>
+<table ><tbody ><tr></tr><tr><td><details ><summary><sub><b>Component tree for contributors:</b></sub>
 
 ```node
 .
 ├── App
 └── components/
     ├── assets/
-    ├── comments/
-    │   ├── AddComment
-    │   ├── Comment
-    │   ├── Comments
-    │   └── CommentsHeader
-    ├── Footer/
-    │   ├── Footer
-    │   └── Twilio
-    ├── Header/
-    │   └── Header
-    ├── Recorder/
-    │   ├── Recorder
-    │   └── UploadAudio
-    ├── UnderHeader/
-    │   ├── APIError
-    │   ├── Feature
-    │   ├── SearchBar
-    │   └── UnderHeader
+```
+</summary>
+
+```node
+    └── comments/
+        ├── AddComment
+        ├── Comment
+        ├── Comments
+        └── CommentsHeader
+```
+
+```node
+    └── Footer/
+        ├── Footer
+        └── Twilio
+```
+
+```node
+    └── Header/
+        └── Header
+```
+
+```node
+    └── Recorder/
+        ├── Recorder
+        └── UploadAudio
+```
+
+```node
+    └── UnderHeader/
+        ├── APIError
+        ├── Feature
+        ├── SearchBar
+        └── UnderHeader
+```
+
+```node
     └── Video/
         ├── Player
         ├── VideoItem
@@ -104,7 +121,8 @@ Congratulations, you've now successfully installed **Curio** locally.
         └── translatedAudio
 ```
 
-</details>
+</details></td></tr></tbody>
+</table>
 
 ### See Live Demo Here
 
