@@ -3,7 +3,6 @@ import CommentsHeader from "./CommentsHeader";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
 
-// Define a type for your comment objects
 interface CommentObject {
   userName: string;
   commentText: string;
@@ -14,22 +13,22 @@ interface CommentsProps {
   comments: CommentObject[];
 }
 
-export class Comments extends React.Component<CommentsProps> {
-  render() {
-    const commentComponents = this.props.comments.map((comment, index) => (
-      <Comment
-        key={index}
-        userName={comment.userName}
-        commentText={comment.commentText}
-      />
-    ));
+const Comments: React.FC<CommentsProps> = ({ amountComments, comments }) => {
+  const commentComponents = comments.map((comment, index) => (
+    <Comment
+      key={index}
+      userName={comment.userName}
+      commentText={comment.commentText}
+    />
+  ));
 
-    return (
-      <div>
-        <CommentsHeader amountComments={this.props.amountComments} />
-        <AddComment />
-        {commentComponents}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <CommentsHeader amountComments={amountComments} />
+      <AddComment />
+      {commentComponents}
+    </div>
+  );
+};
+
+export default Comments;
