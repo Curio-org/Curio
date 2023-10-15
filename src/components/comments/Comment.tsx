@@ -7,7 +7,7 @@ interface CommentProps {
   commentText: string;
 }
 
-export function Comment(props: CommentProps) {
+const Comment = (props: CommentProps) => {
   return (
     <div className="comment">
       <Image
@@ -22,4 +22,6 @@ export function Comment(props: CommentProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Comment;

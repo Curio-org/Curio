@@ -1,7 +1,7 @@
 import React from "react";
 import CommentsHeader from "./CommentsHeader";
 import AddComment from "./AddComment";
-import { Comment } from "./Comment";
+import Comment from "./Comment";
 
 // Define a type for your comment objects
 interface CommentObject {
