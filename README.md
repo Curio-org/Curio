@@ -76,7 +76,6 @@ Congratulations, you've now successfully installed **Curio** locally.
 .
 ├── App
 └── components/
-    ├── assets/
 ```
 </summary>
 
