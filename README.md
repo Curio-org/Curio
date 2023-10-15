@@ -70,14 +70,35 @@ Congratulations, you've now successfully installed **Curio** locally.
 
 [How to generate a Youtube API Key?](https://medium.com/swlh/how-to-get-youtubes-api-key-7c28b59b1154)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+.
+├── App
+└── components/
+    ├── assets/
+    ├── comments/
+    │   ├── AddComment
+    │   ├── Comment
+    │   ├── Comments
+    │   └── CommentsHeader
+    ├── Footer/
+    │   ├── Footer
+    │   └── Twilio
+    ├── Header/
+    │   └── Header
+    ├── Recorder/
+    │   ├── Recorder
+    │   └── UploadAudio
+    ├── UnderHeader/
+    │   ├── APIError
+    │   ├── Feature
+    │   ├── SearchBar
+    │   └── UnderHeader
+    └── Video/
+        ├── Player
+        ├── VideoItem
+        ├── VideoList
+        └── translatedAudio
+```
 
 ### See Live Demo Here
 
