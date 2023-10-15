@@ -1,5 +1,5 @@
 import React from "react";
-import { CommentsHeader } from "./CommentsHeader";
+import CommentsHeader from "./CommentsHeader";
 import AddComment from "./AddComment";
 import { Comment } from "./Comment";
 
