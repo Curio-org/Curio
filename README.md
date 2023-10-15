@@ -70,7 +70,11 @@ Congratulations, you've now successfully installed **Curio** locally.
 
 [How to generate a Youtube API Key?](https://medium.com/swlh/how-to-get-youtubes-api-key-7c28b59b1154)
 
-```
+<details>
+<summary>Component tree for contributors</summary>
+<br>
+
+```node
 .
 ├── App
 └── components/
@@ -99,6 +103,8 @@ Congratulations, you've now successfully installed **Curio** locally.
         ├── VideoList
         └── translatedAudio
 ```
+
+</details>
 
 ### See Live Demo Here
 
