@@ -1,55 +1,67 @@
 .request {
-    align-items: center;
+  align-items: center;
 }
 
 .request h2 {
-    font-size: 2.1rem;
-    line-height: 45px;
-    font-weight: 800;
-    font-family: var(--font-family);
-    max-width: 510px;
+  font-size: 2.1rem;
+  line-height: 45px;
+  font-weight: 800;
+  font-family: var(--font-family);
+  max-width: 510px;
 }
 
 .request_form {
-    justify-content: center;
+  justify-content: center;
 }
 
 .request_form input {
-    display: flex;
-    flex: 2;
-    width: 100%;
-    min-height: 50px;
-    margin: 2px;
-    font-family: var(--font-family);
-    background: #fff;
-    border: 2px solid #fff;
-    padding: 0 1rem;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.2rem;
-    line-height: 27px;
-    color: #3D6184;
+  display: flex;
+  flex: 2;
+  width: 100%;
+  min-height: 50px;
+  margin: 2px;
+  font-family: var(--font-family);
+  background: #fff;
+  border: 2px solid #fff;
+  padding: 0 1rem;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 27px;
+  color: #3d6184;
+  transition: ease 0.2s;
+  margin-top: 5px;
+  overflow: scroll;
+}
+
+.request_form input:focus{
+  box-shadow: 0 0 3px #ff4820;
 }
 
 .request_form button {
-    flex: 0.6;
-    width: 100%;
-    min-height: 50px;
-    margin: 2px;
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    background: #FF4820;
-    border: 2px solid #FF4820;
-    padding: 0 1rem;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
-    /* border-top-right-radius: 5px;
+  flex: 0.6;
+  width: 100%;
+  min-height: 50px;
+  margin: 2px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: #ff4820;
+  border: 2px solid #ff4820;
+  padding: 0 1rem;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  transition: ease 0.2s;
+  /* border-top-right-radius: 5px;
     border-bottom-right-radius: 5px; */
+}
+
+.request_form button:hover{
+  background: #ce3a19 ;
 }

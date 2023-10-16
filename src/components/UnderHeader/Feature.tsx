@@ -1,5 +1,5 @@
-import React from 'react';
-import './Feature.css';
+import React from "react";
+import "./Feature.css";
 
 interface FeatureProps {
   title: string;

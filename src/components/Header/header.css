@@ -1,5 +1,4 @@
-
-.curio__header{
+.curio__header {
   font-family: Manrope;
   display: none;
   justify-content: space-between;
@@ -7,52 +6,49 @@
 
   padding: 2rem 4rem;
 }
-.gradient__text-m{
+.gradient__text-m {
   display: flex;
   flex-direction: column;
-
 }
-.display-none{
+.display-none {
   display: none;
 }
-.hamburger-m{
-display: flex;
-flex-direction: column;
-height: 5vw;
-width: 8vw;
-gap: 1vw;
-background-color: rgba(0, 0, 0, 0);
-transition-duration: .2s;
-
-
+.hamburger-m {
+  display: flex;
+  flex-direction: column;
+  height: 5vw;
+  width: 8vw;
+  gap: 1vw;
+  background-color: rgba(0, 0, 0, 0);
+  transition-duration: 0.2s;
 }
-.lines-rotated-left-m{
+.lines-rotated-left-m {
   height: 1.2vw;
   width: 8vw;
   position: absolute;
   transform: rotate(50deg);
-  background-image: linear-gradient(to right,purple, pink);
+  background-image: linear-gradient(to right, purple, pink);
 }
-.lines-rotated-right-m{
+.lines-rotated-right-m {
   height: 1.2vw;
   width: 8vw;
   position: absolute;
   transform: rotate(-50deg);
-  background-image: linear-gradient(to right,purple, pink);
+  background-image: linear-gradient(to right, purple, pink);
 }
-.hamburger-m:active{
-  opacity: .6;
+.hamburger-m:active {
+  opacity: 0.6;
 }
-.hamburger-m:hover{
-  opacity: .6;
+.hamburger-m:hover {
+  opacity: 0.6;
 }
-.hamburger-lines-m{
+.hamburger-lines-m {
   height: 2vw;
   width: 8vw;
 
-  background-image: linear-gradient(to right,purple, pink);
+  background-image: linear-gradient(to right, purple, pink);
 }
-.curio__header-m{
+.curio__header-m {
   font-family: Manrope;
   display: flex;
   flex-direction: row;
@@ -62,13 +58,12 @@ transition-duration: .2s;
   width: 80vw;
   align-items: center;
   margin-left: 10vw;
-
 }
-.hamburger-menu-context{
+.hamburger-menu-context {
   color: white;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
-.hamburger-menu-active{
+.hamburger-menu-active {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -82,41 +77,39 @@ transition-duration: .2s;
   font-size: 1.1rem;
   font-family: Manrope;
 }
-.hamburger-menu-context:active{
-  opacity: .2;
-
+.hamburger-menu-context:active {
+  opacity: 0.2;
 }
-.hamburger-menu-context:hover{
-  opacity: .2;
-
+.hamburger-menu-context:hover {
+  opacity: 0.2;
 }
-.gradient__text{
+.gradient__text {
   background: var(--gradient-text);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.curio__icon{
+.curio__icon {
   height: 12.5mm;
   margin-bottom: 0.6rem;
 }
 
-.curio__tag{
+.curio__tag {
   padding-right: 4.5rem;
 }
-.curio_tag-m{
+.curio_tag-m {
   display: flex;
   flex-direction: column;
 }
-.curio__sign{
+.curio__sign {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.curio__sign p{
-  color: #FFF;
+.curio__sign p {
+  color: #fff;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
@@ -127,9 +120,9 @@ transition-duration: .2s;
   cursor: pointer;
 }
 
-.curio__sign button{
+.curio__sign button {
   padding: 0.5rem 1rem;
-  color: #FFF;
+  color: #fff;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
@@ -139,7 +132,7 @@ transition-duration: .2s;
   left: 1153px;
   top: 55px;
 
-  background: #FF4820;
+  background: #ff4820;
   border-radius: 5px;
 }
 
@@ -157,5 +150,4 @@ transition-duration: .2s;
   [class="hamburger-menu-active"] {
     display: none;
   }
-  
 }

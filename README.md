@@ -9,7 +9,7 @@ Curio, a web application which is serving as an open platform where anyone can c
 ## Tech stack Curio is using
 
 - Frontend
-  For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it  and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
+  For the Frontend we are using ReactJs & NodeJs in order to bring functionality to it and for styling purposes we have used CSS3 along with some SASS. We are also making use of a number of react compatible modules to optimise things i.e. React Router DOM, RSuite, Semantic UI React etc.
 - API
   We are taking use of Youtube V3 api to get the video data & search results based on the query & along with that we have also made a couple of APIs in order to connect the frontend to the backend usin AXIOS.
 - Backend
@@ -70,14 +70,58 @@ Congratulations, you've now successfully installed **Curio** locally.
 
 [How to generate a Youtube API Key?](https://medium.com/swlh/how-to-get-youtubes-api-key-7c28b59b1154)
 
-## Available Scripts
+<table ><tbody ><tr></tr><tr><td><details ><summary><sub><b>Component tree for contributors:</b></sub>
 
-In the project directory, you can run:
+```node
+.
+├── App
+└── components/
+```
+</summary>
 
-### `npm start`
+```node
+    └── comments/
+        ├── AddComment
+        ├── Comment
+        ├── Comments
+        └── CommentsHeader
+```
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```node
+    └── Footer/
+        ├── Footer
+        └── Twilio
+```
+
+```node
+    └── Header/
+        └── Header
+```
+
+```node
+    └── Recorder/
+        ├── Recorder
+        └── UploadAudio
+```
+
+```node
+    └── UnderHeader/
+        ├── APIError
+        ├── Feature
+        ├── SearchBar
+        └── UnderHeader
+```
+
+```node
+    └── Video/
+        ├── Player
+        ├── VideoItem
+        ├── VideoList
+        └── translatedAudio
+```
+
+</details></td></tr></tbody>
+</table>
 
 ### See Live Demo Here
 
@@ -91,14 +135,3 @@ Watch [Translated Video](https://curiocic.netlify.app/play/r0G86-0-4O4)
 
 - `Go on our watch page and click on the 'Get Translated Audio' button.`
 - `Then play the youtube video with the translated audio.`
-
-# Answers for MVP & Mid Stage remarks
-
-- Yes multiple people can translate, we will further take language name as user input to differentiate between those translated audios.
-- We were working on that button at the time of mid MVP submission. Now all the buttons are working and explained in the demo.
-- We are not checking at the time of recording that whether the video was previously recorded or not. We will be manually selecting the audio to save with the video.
-
-# Future work after the hackathon
-
-- We will save multiple audios for a single video and give option to the user to decide which audio he/she wants to play.
-- For re recording we will generate a mail using `Twilio API` which will be directed towards us. Then we will decide maually whether to re-record that audio or not.
