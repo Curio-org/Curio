@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AxiosError } from "axios";
 import HeaderCurio from "./components/Header/Header";
@@ -12,33 +12,28 @@ import Footer from "./components/Footer/Footer";
 import "./style/styles.css";
 import "./App.css";
 import UnderHeader from "./components/UnderHeader/UnderHeader";
-// import Awsup from './Awsup'
 
-class App extends React.Component {
-  state = {
-    videos: [],
-    vidId: "",
-    audioProps: {
-      playback: 1,
-      playing: false,
-      time: 0,
-      maxTime: 0,
-    },
-    showUnderHeader: true,
-    apiResponse: "",
+const App: React.FC = () => {
+  const [videos, setVideos] = useState<any[]>([]);
+  const [vidId, setVidId] = useState<string>("");
+  const [showUnderHeader, setShowUnderHeader] = useState<boolean>(true);
+  const [apiResponse, setApiResponse] = useState<string>("");
+  const [audioProps, setAudioProps] = useState<any>({
+    playback: 1,
+    playing: false,
+    time: 0,
+    maxTime: 0,
+  });
+
+  const getAudio = () => {
+    return audioProps;
   };
 
-  getAudio = () => {
-    return this.state.audioProps;
+  const setAudio = (prop: any) => {
+    setAudioProps(prop);
   };
 
-  setAudio = (prop: any) => {
-    this.setState({
-      audioProps: prop,
-    });
-  };
-
-  handleSubmit = async (termFromSearchBar: string) => {
+  const handleSubmit = async (termFromSearchBar: string) => {
     try {
       const response = await youtube.get("/search", {
         params: {
@@ -47,76 +42,59 @@ class App extends React.Component {
       });
 
       if (response.data.items.length === 0) {
-        this.setState({ showUnderHeader: true });
+        setShowUnderHeader(true);
       } else {
-        this.setState({ showUnderHeader: false });
+        setShowUnderHeader(false);
       }
 
-      this.setState({
-        videos: response.data.items,
-        apiResponse: "",
-      });
-      console.log("this is resp", response);
-    } catch (error) {
+      setVideos(response.data.items);
+      setApiResponse("");
+    } catch (error: any) {
       if (error && error instanceof AxiosError) {
-        this.setState({
-          apiResponse: error?.response?.data.error.message,
-        });
+        setApiResponse(error?.response?.data.error.message);
         console.log(error?.response?.data.error.message);
       }
     }
   };
-  setVidId = (vidId: string) => {
-    this.setState({ vidId: vidId });
-    window.location.href = `/play/${vidId}`;
-  };
-  setRecId = (vidId: string) => {
-    this.setState({ vidId: vidId });
+
+  const setRecId = (vidId: string) => {
+    setVidId(vidId);
     window.location.href = `/record/${vidId}`;
   };
 
-  render() {
-    return (
-      <>
-        <div className="gradient__bg">
-          <HeaderCurio />
-          {/* <Awsup /> */}
-          <Router>
-            <Switch>
-              <Route path="/play/:vidId">
-                <Player />
-              </Route>
+  return (
+    <div className="gradient__bg">
+      <HeaderCurio />
+      <Router>
+        <Switch>
+          <Route path="/play/:vidId">
+            <Player />
+          </Route>
 
-              <Route path="/record/:vidId">
-                <Player getAudio={this.getAudio} setAudio={this.setAudio} />
-                <RecordView
-                  getAudio={this.getAudio}
-                  setAudio={this.setAudio}
-                  vidId={this.state.vidId}
-                />
-              </Route>
+          <Route path="/record/:vidId">
+            <Player getAudio={getAudio} setAudio={setAudio} />
+            <RecordView getAudio={getAudio} setAudio={setAudio} vidId={vidId} />
+          </Route>
 
-              <Route path="/">
-                <div style={{ marginTop: "1em" }}>
-                  <SearchBar handleFormSubmit={this.handleSubmit} />
-                  {this.state.apiResponse !== "" ? (
-                    <APIError apiResponse={this.state.apiResponse} />
-                  ) : null}
-                  {this.state.showUnderHeader ? <UnderHeader /> : null}
-                  <VideoList
-                    setVidId={this.setVidId}
-                    setRecId={this.setRecId}
-                    videos={this.state.videos}
-                  />
-                </div>
-              </Route>
-            </Switch>
-          </Router>
-          <Footer />
-        </div>
-      </>
-    );
-  }
-}
+          <Route path="/">
+            <div style={{ marginTop: "1em" }}>
+              <SearchBar handleFormSubmit={handleSubmit} />
+              {apiResponse !== "" ? (
+                <APIError apiResponse={apiResponse} />
+              ) : null}
+              {showUnderHeader ? <UnderHeader /> : null}
+              <VideoList
+                setVidId={setVidId}
+                setRecId={setRecId}
+                videos={videos}
+              />
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

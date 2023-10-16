@@ -6,19 +6,17 @@ interface APIErrorProps {
   apiResponse: string;
 }
 
-class APIError extends React.Component<APIErrorProps> {
-  render() {
-    return (
-      <div className="apiErrorMessage_mainDiv">
-        {this.props.apiResponse !== "" && (
-          <Message className="apiErrorMessage__div">
-            <Message className="apiErrorMessage__header">API Error</Message>
-            <p>{this.props.apiResponse}</p>
-          </Message>
-        )}
-      </div>
-    );
-  }
-}
+const APIError: React.FC<APIErrorProps> = ({ apiResponse }) => {
+  return (
+    <div className="apiErrorMessage_mainDiv">
+      {apiResponse !== "" && (
+        <Message className="apiErrorMessage__div">
+          <Message className="apiErrorMessage__header">API Error</Message>
+          <p>{apiResponse}</p>
+        </Message>
+      )}
+    </div>
+  );
+};
 
 export default APIError;

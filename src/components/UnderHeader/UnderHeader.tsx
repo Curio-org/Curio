@@ -2,7 +2,7 @@ import React from "react";
 import "./UnderHeader.css";
 import Feature from "./Feature";
 
-function UnderHeader() {
+const UnderHeader = () => {
   return (
     <div className="curio_whatcurio section__margin" id="curio">
       <div className="curio_whatcurio-feature">
@@ -33,6 +33,6 @@ function UnderHeader() {
       </div>
     </div>
   );
-}
+};
 
 export default UnderHeader;
