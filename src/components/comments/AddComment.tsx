@@ -2,7 +2,7 @@ import React from "react";
 import "./AddComment.scss";
 import { Form, Image, TextArea } from "semantic-ui-react";
 
-export function AddComment() {
+const AddComment = () => {
   return (
     <div className="add-comment">
       <Image
@@ -19,4 +19,6 @@ export function AddComment() {
       </Form>
     </div>
   );
-}
+};
+
+export default AddComment;

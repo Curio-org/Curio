@@ -6,7 +6,7 @@ interface CommentsHeaderProps {
   amountComments: number;
 }
 
-export function CommentsHeader(props: CommentsHeaderProps) {
+const CommentsHeader = (props: CommentsHeaderProps) => {
   return (
     <div className="comments-header">
       <h4>{props.amountComments} Comments</h4>
@@ -16,4 +16,6 @@ export function CommentsHeader(props: CommentsHeaderProps) {
       </Button>
     </div>
   );
-}
+};
+
+export default CommentsHeader;
