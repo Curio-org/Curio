@@ -65,7 +65,6 @@ const Player = (props: any) => {
   };
 
   return (
-    <>
       <div className="youtube">
         <YouTube
           onPlaybackRateChange={playbackchange}
@@ -79,7 +78,6 @@ const Player = (props: any) => {
         />
         <TranslatedAudio />
       </div>
-    </>
   );
 };
 
