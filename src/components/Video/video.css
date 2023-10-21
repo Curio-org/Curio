@@ -88,3 +88,8 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+	
+.youtube iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
