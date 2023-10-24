@@ -102,10 +102,16 @@
   display: flex;
   flex-direction: column;
 }
-.curio__sign {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.curio__sign svg {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.curio__sign svg:hover {
+  color: #1da1f2; 
 }
 
 .curio__sign p {
