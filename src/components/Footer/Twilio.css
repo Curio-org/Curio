@@ -3,11 +3,13 @@
 }
 
 .request h2 {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   line-height: 45px;
   font-weight: 800;
   font-family: var(--font-family);
   max-width: 510px;
+  margin-bottom: 1.5rem;
+  margin-left: 0.2rem;
 }
 
 .request_form {

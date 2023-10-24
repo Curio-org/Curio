@@ -28,10 +28,10 @@ const TranslatedAudio = () => {
   };
 
   return (
-    <>
+    <div className="youtube">
       <Button onClick={gts}>Get Translated Audio</Button>
       {audio && <audio id="translatedAudio" src={audio} controls />}
-    </>
+    </div>
   );
 };
 
