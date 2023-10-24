@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Curiologo from '../assets/images/Csmall.png'
 import './header.css';
 import { Link ,BrowserRouter as Router } from 'react-router-dom';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const HeaderCurio = () => {
   //Used to toggle the hamburger menu
@@ -28,10 +29,11 @@ const HeaderCurio = () => {
         </Link>
 
         <div className="curio__sign">
-          <p>About</p>
-          <p>Sign In</p>
-          <button type="button">Sign Up</button>
-        </div>
+            {/* Social icons */}
+            <FaGithub />
+            <FaLinkedin /> 
+            <FaTwitter />
+          </div>
         </Router>
       </div>
       {/*Added a mobile version
