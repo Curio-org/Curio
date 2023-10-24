@@ -19,8 +19,9 @@
 .curio_footer-heading h1 {
   font-family: var(--font-family);
   font-weight: 800;
-  font-size: 3.7rem;
-  line-height: 75px;
+  font-size: 2.1rem;
+  line-height: 35px;
+  margin-top: 3rem;
 }
 
 .curio_footer-btn {
