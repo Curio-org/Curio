@@ -62,13 +62,18 @@ const App: React.FC = () => {
     window.location.href = `/record/${vidId}`;
   };
 
+  const setPlayId = (vidId: string) => {
+    setVidId(vidId);
+    window.location.href = `/play/${vidId}`;
+  };
+
   return (
     <div className="gradient__bg">
       <HeaderCurio />
       <Router>
         <Switch>
           <Route path="/play/:vidId">
-            <Player />
+            <Player getAudio={getAudio} setAudio={setAudio} />
           </Route>
 
           <Route path="/record/:vidId">
@@ -84,7 +89,7 @@ const App: React.FC = () => {
               ) : null}
               {showUnderHeader ? <UnderHeader /> : null}
               <VideoList
-                setVidId={setVidId}
+                setPlayId={setPlayId}
                 setRecId={setRecId}
                 videos={videos}
               />

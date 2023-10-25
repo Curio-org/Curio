@@ -18,11 +18,15 @@ interface VideoItemProps {
       description: string;
     };
   };
-  setVidId: (videoId: string) => void;
+  setPlayId: (videoId: string) => void;
   setRecId: (videoId: string) => void;
 }
 
-const VideoItem: React.FC<VideoItemProps> = ({ video, setVidId, setRecId }) => {
+const VideoItem: React.FC<VideoItemProps> = ({
+  video,
+  setPlayId,
+  setRecId,
+}) => {
   return (
     <div className="video_item">
       <img
@@ -37,7 +41,7 @@ const VideoItem: React.FC<VideoItemProps> = ({ video, setVidId, setRecId }) => {
           <p>{video.snippet.channelTitle}</p>
         </div>
         <span className="watch">
-          <Button onClick={() => setVidId(video.id.videoId)}>Watch</Button>
+          <Button onClick={() => setPlayId(video.id.videoId)}>Watch</Button>
         </span>
         <span className="translate">
           <Button onClick={() => setRecId(video.id.videoId)}>Translate</Button>
