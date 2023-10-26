@@ -90,13 +90,13 @@ const HeaderCurio = () => {
         }
       >
         <div className="hamburger-menu-context">
-          <b>Sign Up</b>
+          <FaGithub />
         </div>
         <div className="hamburger-menu-context">
-          <b>Sign In</b>
+          <FaLinkedin />
         </div>
         <div className="hamburger-menu-context">
-          <b>About</b>
+          <FaTwitter />
         </div>
       </div>
     </>
