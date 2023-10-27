@@ -83,6 +83,10 @@
 .hamburger-menu-context:hover {
   opacity: 0.2;
 }
+.hamburger-menu-context svg {
+  margin-right: 10px; 
+  font-size: 25px;
+}
 .gradient__text {
   background: var(--gradient-text);
   background-clip: text;
@@ -104,8 +108,20 @@
 }
 .curio__sign {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
+}
+
+.curio__sign svg {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  color: #d4d4d4;
+  transition: color 0.3s;
+}
+
+.curio__sign svg:hover {
+  color: #1da1f2; 
 }
 
 .curio__sign p {
