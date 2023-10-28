@@ -114,17 +114,43 @@ const HeaderCurio = () => {
         If trigger is true, display it, if not don't*/}
       <div
         className={
-          triggerMenu === true ? "hamburger-menu-active" : "display-none"
+          triggerMenu === true
+            ? "hamburger-menu-active gradient_bg"
+            : "display-none"
         }
       >
         <div className="hamburger-menu-context">
-          <FaGithub />
+          <a
+            href="https://github.com/Curio-org/Curio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="github_icon">
+              <FaGithub />
+            </div>
+          </a>
         </div>
         <div className="hamburger-menu-context">
-          <FaLinkedin />
+          <a
+            href="https://www.linkedin.com/company/curio-cic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="linkedin_icon">
+              <FaLinkedin />
+            </div>
+          </a>
         </div>
         <div className="hamburger-menu-context">
-          <FaTwitter />
+          <a
+            href="https://twitter.com/_CURI0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="twitter_icon">
+              <FaTwitter />
+            </div>
+          </a>
         </div>
       </div>
     </>

@@ -70,22 +70,55 @@
   align-items: center;
   position: absolute;
   z-index: 100;
-  background-color: #040c18;
   height: 60vw;
   width: 96vw;
-  transition-duration: 1s;
   font-size: 1.1rem;
   font-family: Manrope;
 }
 .hamburger-menu-context:active {
   opacity: 0.2;
 }
-.hamburger-menu-context:hover {
-  opacity: 0.2;
-}
+/* .hamburger-menu-context:hover {
+  opacity: 1;
+} */
 .hamburger-menu-context svg {
-  margin-right: 10px;
-  font-size: 25px;
+  font-size: 30px;
+  color: #dfdfdf;
+}
+.gradient_bg {
+  background: -moz-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
 }
 .gradient__text {
   background: var(--gradient-text);
