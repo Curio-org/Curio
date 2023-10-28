@@ -41,8 +41,8 @@
   border-bottom-left-radius: 0px;
 }
 
-.curio__search :hover {
-  color: black;
+.search_button :hover {
+  background-color: black;
 }
 
 .curio__search__input {
