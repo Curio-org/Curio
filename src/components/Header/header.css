@@ -21,20 +21,23 @@
   gap: 1vw;
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.2s;
+  margin-top: 5px;
 }
 .lines-rotated-left-m {
-  height: 1.2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
   position: absolute;
   transform: rotate(50deg);
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
+  border-radius: 20%;
 }
 .lines-rotated-right-m {
-  height: 1.2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
   position: absolute;
   transform: rotate(-50deg);
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
+  border-radius: 20%;
 }
 .hamburger-m:active {
   opacity: 0.6;
@@ -43,10 +46,11 @@
   opacity: 0.6;
 }
 .hamburger-lines-m {
-  height: 2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
+  border-radius: 20%;
 
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
 }
 .curio__header-m {
   font-family: Manrope;
@@ -78,9 +82,6 @@
 .hamburger-menu-context:active {
   opacity: 0.2;
 }
-/* .hamburger-menu-context:hover {
-  opacity: 1;
-} */
 .hamburger-menu-context svg {
   font-size: 30px;
   color: #dfdfdf;
