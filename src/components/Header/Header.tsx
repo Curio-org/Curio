@@ -34,21 +34,27 @@ const HeaderCurio = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub />
+              <div className="github_icon">
+                <FaGithub />
+              </div>
             </a>
             <a
               href="https://www.linkedin.com/company/curio-cic"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <div className="linkedin_icon">
+                <FaLinkedin />
+              </div>
             </a>
             <a
               href="https://twitter.com/_CURI0"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter />
+              <div className="twitter_icon">
+                <FaTwitter />
+              </div>
             </a>
           </div>
         </Router>

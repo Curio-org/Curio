@@ -84,7 +84,7 @@
   opacity: 0.2;
 }
 .hamburger-menu-context svg {
-  margin-right: 10px; 
+  margin-right: 10px;
   font-size: 25px;
 }
 .gradient__text {
@@ -121,7 +121,7 @@
 }
 
 .curio__sign svg:hover {
-  color: #1da1f2; 
+  color: #1da1f2;
 }
 
 .curio__sign p {
@@ -150,6 +150,30 @@
 
   background: #ff4820;
   border-radius: 5px;
+}
+
+.github_icon svg {
+  transition: color 0.3s;
+}
+
+.github_icon:hover svg {
+  color: #696363;
+}
+
+.linkedin_icon svg {
+  transition: color 0.3s;
+}
+
+.linkedin_icon:hover svg {
+  color: #0077b5;
+}
+
+.twitter_icon svg {
+  transition: color 0.3s;
+}
+
+.twitter_icon:hover svg {
+  color: #26a7de;
 }
 
 @media only screen and (min-width: 768px) {
