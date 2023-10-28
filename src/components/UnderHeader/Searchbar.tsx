@@ -29,16 +29,9 @@ const Searchbar: React.FC<SearchbarProps> = ({ handleFormSubmit }) => {
               value={term}
               name="video-search"
               type="text"
-              id="searchBar"
               placeholder="Search Video..."
             />
-            <Button
-              onClick={() => handleSubmit}
-              type="submit"
-              appearance="primary"
-              size="sm"
-              id="searchButton"
-            >
+            <Button onClick={() => handleSubmit} type="submit">
               <SearchIcon />
             </Button>
           </div>

@@ -37,6 +37,12 @@
 
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.search_button :hover {
+  background-color: black;
 }
 
 .curio__search__input {

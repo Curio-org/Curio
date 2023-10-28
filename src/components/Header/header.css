@@ -21,20 +21,23 @@
   gap: 1vw;
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.2s;
+  margin-top: 5px;
 }
 .lines-rotated-left-m {
-  height: 1.2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
   position: absolute;
   transform: rotate(50deg);
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
+  border-radius: 20%;
 }
 .lines-rotated-right-m {
-  height: 1.2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
   position: absolute;
   transform: rotate(-50deg);
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
+  border-radius: 20%;
 }
 .hamburger-m:active {
   opacity: 0.6;
@@ -43,10 +46,11 @@
   opacity: 0.6;
 }
 .hamburger-lines-m {
-  height: 2vw;
-  width: 8vw;
+  height: 1vw;
+  width: 6vw;
+  border-radius: 20%;
 
-  background-image: linear-gradient(to right, purple, pink);
+  background: var(--gradient-text);
 }
 .curio__header-m {
   font-family: Manrope;
@@ -70,22 +74,52 @@
   align-items: center;
   position: absolute;
   z-index: 100;
-  background-color: #040c18;
   height: 60vw;
   width: 96vw;
-  transition-duration: 1s;
   font-size: 1.1rem;
   font-family: Manrope;
 }
 .hamburger-menu-context:active {
   opacity: 0.2;
 }
-.hamburger-menu-context:hover {
-  opacity: 0.2;
-}
 .hamburger-menu-context svg {
-  margin-right: 10px; 
-  font-size: 25px;
+  font-size: 30px;
+  color: #dfdfdf;
+}
+.gradient_bg {
+  background: -moz-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%
+  );
 }
 .gradient__text {
   background: var(--gradient-text);
@@ -121,7 +155,7 @@
 }
 
 .curio__sign svg:hover {
-  color: #1da1f2; 
+  color: #1da1f2;
 }
 
 .curio__sign p {
@@ -150,6 +184,30 @@
 
   background: #ff4820;
   border-radius: 5px;
+}
+
+.github_icon svg {
+  transition: color 0.3s;
+}
+
+.github_icon:hover svg {
+  color: #696363;
+}
+
+.linkedin_icon svg {
+  transition: color 0.3s;
+}
+
+.linkedin_icon:hover svg {
+  color: #0077b5;
+}
+
+.twitter_icon svg {
+  transition: color 0.3s;
+}
+
+.twitter_icon:hover svg {
+  color: #26a7de;
 }
 
 @media only screen and (min-width: 768px) {
