@@ -1,49 +1,64 @@
 import React, { useState } from "react";
+import LoadingBar from "react-top-loading-bar";
 import "./Twilio.css";
 
 const Twilio = () => {
   const [number, setNumber] = useState("");
   const [body, setBody] = useState("");
+  const [progress, setProgress] = useState(0);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    await e.preventDefault();
+    setProgress(30);
+    e.preventDefault();
+
+    setProgress(60);
 
     const res = await fetch("/api/sendMessage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ to: number, body: body }),
+      body: JSON.stringify({ to: number, body: body })
     });
 
     const data = await res.json();
 
     if (data.success) {
-      await setNumber("");
-      await setBody("");
+      setNumber("");
+      setBody("");
     } else {
-      await setNumber("An Error has occurred.");
-      await setBody("An Error has occurred.");
+      setNumber("Error occurred"); 
+      setBody("Error occurred");
     }
+    
+    setProgress(100);
   };
 
   return (
     <div className="request">
-      <h2 className="gradient__text">Send us the Video</h2>
+      <LoadingBar 
+        color="#f11946"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
+
+      <h2 className="gradient__text">Send Video</h2>
+
       <div className="request_form">
         <form onSubmit={onSubmit}>
-          <input
+          <input 
             value={number}
-            placeholder="Enter The Language"
+            placeholder="Enter Language"
             onChange={(e) => setNumber(e.target.value)}
           />
+          
           <input
-            placeholder="Enter the URL of Video"
+            placeholder="Enter Video URL"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-          {/* {console.log(`Number is ${number} and the Message is ${body}`)} */}
-          <button type="submit">Send</button>
+
+          <button type="submit">Send</button>        
         </form>
       </div>
     </div>
