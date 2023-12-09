@@ -1,42 +1,47 @@
 .request {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .request h2 {
   font-size: 1.8rem;
-  line-height: 45px;
+  /* line-height: 45px; */
+  line-height: 2.5rem;
   font-weight: 800;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family: var(--font-family);
   max-width: 510px;
   margin-bottom: 1.5rem;
-  margin-left: 0.2rem;
 }
 
 .request_form {
-  justify-content: center;
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .request_form input {
-  display: flex;
-  flex: 2;
+  /* display: flex; */
+  /* flex: 2; */
   width: 100%;
   min-height: 50px;
-  margin: 2px;
+  margin: 10px 0;
   font-family: var(--font-family);
   background: #fff;
   border: 2px solid #fff;
   padding: 0 1rem;
   outline: none;
-  color: #fff;
+  color:  #3d6184;
   border-radius: 5px;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.2rem;
-  line-height: 27px;
-  color: #3d6184;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* color: #3d6184; */
   transition: ease 0.2s;
-  margin-top: 5px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .request_form input:focus{
@@ -44,14 +49,14 @@
 }
 
 .request_form button {
-  flex: 0.6;
+  /* flex: 0.6; */
   width: 100%;
   min-height: 50px;
-  margin: 2px;
+  margin: 10px 0;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.2rem;
+  line-height: 1.5;
   background: #ff4820;
   border: 2px solid #ff4820;
   padding: 0 1rem;
@@ -67,3 +72,4 @@
 .request_form button:hover{
   background: #ce3a19 ;
 }
+
