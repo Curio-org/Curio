@@ -73,3 +73,14 @@
   background: #ce3a19 ;
 }
 
+
+@media only screen and (max-width: 768px) {
+  .request_form {
+    max-width: 80%; /* Adjust the maximum width for smaller screens */
+  }
+
+  .request_form input,
+  .request_form button {
+    width: 100%;
+  }
+}
