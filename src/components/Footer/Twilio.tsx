@@ -36,14 +36,16 @@ const Twilio = () => {
             value={number}
             placeholder="Enter The Language"
             onChange={(e) => setNumber(e.target.value)}
+            className="twilio-input"
           />
           <input
             placeholder="Enter the URL of Video"
             value={body}
             onChange={(e) => setBody(e.target.value)}
+            className="twilio-input"
           />
           {/* {console.log(`Number is ${number} and the Message is ${body}`)} */}
-          <button type="submit">Send</button>
+          <button type="submit" className="twilio-button" >Send</button>
         </form>
       </div>
     </div>
