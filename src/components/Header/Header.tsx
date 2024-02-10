@@ -19,10 +19,12 @@ const HeaderCurio = () => {
             <div className="gradient__text">
               <h1>
                 <img src={Curiologo} alt="Curio" className="curio__icon" />
-                <span>URIO</span>
+                <span style={{ fontSize: "larger" }}>urio</span>
               </h1>
               <p className="curio__tag">
-                <b>Your Video Translator :)</b>
+                <b style={{ fontFamily: "Manrope" }}>
+                  Your Video Translator :)
+                </b>
               </p>
             </div>
           </Link>

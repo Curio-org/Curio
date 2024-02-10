@@ -50,14 +50,15 @@ const Twilio = () => {
             value={number}
             placeholder="Enter Language"
             onChange={(e) => setNumber(e.target.value)}
+            className="twilio-input"
           />
           
           <input
             placeholder="Enter Video URL"
             value={body}
             onChange={(e) => setBody(e.target.value)}
+            className="twilio-input"
           />
-
           <button type="submit">Send</button>        
         </form>
       </div>

@@ -3,25 +3,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background: var(--color-footer);
+  /* background: #292c35; */
+  /* background: var(--color-footer); */
+  padding: 30px;
+  color: #fff;
 }
 
 .curio_footer-heading {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100%; */
   text-align: center;
 
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .curio_footer-heading h1 {
-  font-family: var(--font-family);
+  /* font-family: var(--font-family); */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 800;
-  font-size: 2.1rem;
-  line-height: 35px;
-  margin-top: 3rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  /* margin-top: 3rem; */
 }
 
 .curio_footer-btn {
@@ -47,57 +50,63 @@
 
 .curio_footer_links {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: space-around;
   align-items: flex-start;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
-
   width: 100%;
   text-align: left;
+  margin-top: 2rem;
 }
 
-.curio_footer_links div {
+/* .curio_footer_links div {
   width: 250px;
   margin: 1rem;
-}
+  display: flex;
+} */
 
 .curio_footer_links_logo {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .curio_footer_links_logo img {
-  width: 20vw;
-  height: 20vw;
-
+  /* width: 20vw;
+  height: 20vw; */
+  /* width: 100px; */
+  width: 45%;
+  height: auto;
   margin-bottom: 1rem;
 }
 
 .curio_footer_links_logo p {
   font-family: var(--font-family);
-  font-size: 0.85rem;
-  line-height: 15px;
-  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  /* color: #fff; */
 }
 
 .curio_footer_links_div {
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  align-items: center;
   flex-direction: column;
+  margin-right: 30px;
 }
 
 .curio_footer_links_div h4 {
-  font-size: 1rem;
-  line-height: 17px;
+  font-size: 1.1rem;
+  /* line-height: 17px; */
   font-family: var(--font-family);
   color: #fff;
-
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .curio_footer_links_div p {
-  font-size: 0.7rem;
-  line-height: 15px;
+  font-size: 0.8rem;
+  line-height: 1.2;
   font-family: var(--font-family);
   color: #fff;
 
@@ -108,7 +117,7 @@
 .curio_footer_copyright {
   margin-top: 2rem;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .curio_footer_copyright p {
@@ -118,9 +127,19 @@
   color: #fff;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .curio_footer_links_logo img {
-    width: 7vw;
-    height: 7vw;
+    width: 80%;
+  }
+
+  .curio_footer_links {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .curio_footer_links_div {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
