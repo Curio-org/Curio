@@ -12,7 +12,7 @@
     "assert": "^2.0.0",
     "audio-buffer-utils": "^5.1.2",
     "audiobuffer-to-wav": "^1.0.0",
-    "aws-sdk": "^2.1462.0",
+    "aws-sdk": "^2.1609.0",
     "axios": "^1.6.0",
     "bootstrap": "^5.2.2",
     "concatenateblobs": "^1.0.2",
