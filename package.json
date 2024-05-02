@@ -39,7 +39,7 @@
     "standardized-audio-context": "^25.3.32",
     "twilio": "^3.83.2",
     "typescript": "^5.2.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.5.2"
   },
   "overrides": {
     "typescript": "^5.2.2"
