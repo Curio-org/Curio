@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "rsuite";
 import "./video.css";
+import LoadingBar from 'react-top-loading-bar';
 
 interface VideoItemProps {
   video: {
@@ -22,17 +23,41 @@ interface VideoItemProps {
   setRecId: (videoId: string) => void;
 }
 
-const VideoItem: React.FC<VideoItemProps> = ({
-  video,
-  setPlayId,
-  setRecId,
-}) => {
+const VideoItem: React.FC<VideoItemProps> = ({ video, setPlayId, setRecId }) => {
+  const loadingBarRef = useRef<any>(null);
+
+  const startLoadingBar = () => {
+    if (loadingBarRef.current) {
+      loadingBarRef.current.continuousStart();
+    }
+  };
+
+  const completeLoadingBar = () => {
+    if (loadingBarRef.current) {
+      loadingBarRef.current.complete();
+    }
+  };
+
+  const handleWatchClick = () => {
+    startLoadingBar();
+    setPlayId(video.id.videoId);
+    completeLoadingBar();
+  };
+
+  const handleTranslateClick = () => {
+    startLoadingBar();
+    setRecId(video.id.videoId);
+    completeLoadingBar();
+  };
+
   return (
     <div className="video_item">
-      <img
-        src={video.snippet.thumbnails.medium.url}
-        alt={video.snippet.description}
+      <LoadingBar
+        color='#f11946'
+        height={3}
+        ref={loadingBarRef}
       />
+      <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.description} />
       <div>
         <div className="title">
           <h4>{video.snippet.title}</h4>
@@ -41,10 +66,10 @@ const VideoItem: React.FC<VideoItemProps> = ({
           <p>{video.snippet.channelTitle}</p>
         </div>
         <span className="watch">
-          <Button onClick={() => setPlayId(video.id.videoId)}>Watch</Button>
+          <Button onClick={handleWatchClick}>Watch</Button>
         </span>
         <span className="translate">
-          <Button onClick={() => setRecId(video.id.videoId)}>Translate</Button>
+          <Button onClick={handleTranslateClick}>Translate</Button>
         </span>
       </div>
     </div>
