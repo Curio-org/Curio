@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Curiologo from "../assets/images/Csmall.png";
 import "./header.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const HeaderCurio = () => {
   //Used to toggle the hamburger menu
@@ -55,7 +55,7 @@ const HeaderCurio = () => {
               rel="noopener noreferrer"
             >
               <div className="twitter_icon">
-                <FaTwitter />
+                <FaXTwitter/>
               </div>
             </a>
           </div>
@@ -150,7 +150,7 @@ const HeaderCurio = () => {
             rel="noopener noreferrer"
           >
             <div className="twitter_icon">
-              <FaTwitter />
+              <FaXTwitter />
             </div>
           </a>
         </div>
