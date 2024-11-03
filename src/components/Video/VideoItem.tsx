@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "rsuite";
+import LoadingBar from "react-top-loading-bar";
 import "./video.css";
 
 interface VideoItemProps {
@@ -27,8 +28,28 @@ const VideoItem: React.FC<VideoItemProps> = ({
   setPlayId,
   setRecId,
 }) => {
+  const loadingBarRef = useRef<any>(null);
+
+  const handleWatch = (videoId: string) => {
+    loadingBarRef.current.continuousStart();
+    setTimeout(() => {
+      setPlayId(videoId);
+      loadingBarRef.current.complete();
+    },1500); 
+  };
+
+  const handleTranslate = (videoId: string) => {
+    
+    loadingBarRef.current.continuousStart();
+    setTimeout(() => {
+      setRecId(videoId);
+      loadingBarRef.current.complete();
+    }, 1000);
+  };
+
   return (
     <div className="video_item">
+      <LoadingBar color="#f11946" height={3} ref={loadingBarRef} />
       <img
         src={video.snippet.thumbnails.medium.url}
         alt={video.snippet.description}
@@ -41,10 +62,10 @@ const VideoItem: React.FC<VideoItemProps> = ({
           <p>{video.snippet.channelTitle}</p>
         </div>
         <span className="watch">
-          <Button onClick={() => setPlayId(video.id.videoId)}>Watch</Button>
+          <Button onClick={() => handleWatch(video.id.videoId)}>Watch</Button>
         </span>
         <span className="translate">
-          <Button onClick={() => setRecId(video.id.videoId)}>Translate</Button>
+          <Button onClick={() => handleTranslate(video.id.videoId)}>Translate</Button>
         </span>
       </div>
     </div>
