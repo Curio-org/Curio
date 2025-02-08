@@ -29,7 +29,7 @@
     "react-media-recorder": "^1.7.1",
     "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
-    "react-top-loading-bar": "^2.3.1",
+    "react-top-loading-bar": "^3.0.2",
     "react-video-player": "^1.0.0",
     "react-video-player-extended": "^9.2.1",
     "react-youtube": "^10.0.0",
