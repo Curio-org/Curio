@@ -13,7 +13,7 @@
     "audio-buffer-utils": "^5.1.2",
     "audiobuffer-to-wav": "^1.0.0",
     "aws-sdk": "^2.1692.0",
-    "axios": "^1.8.4",
+    "axios": "^1.13.6",
     "bootstrap": "^5.3.3",
     "concatenateblobs": "^1.0.2",
     "crunker": "^2.4.0",
